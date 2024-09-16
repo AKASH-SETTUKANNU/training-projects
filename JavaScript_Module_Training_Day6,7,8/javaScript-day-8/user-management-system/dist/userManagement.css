@@ -1,0 +1,141 @@
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+main{
+    display: flex;
+    width: 800px;
+    height: 500px;
+    margin-top: 50px;
+    background-color: rgb(236, 233, 233);
+    border: 1px solid rgb(10, 211, 238);
+    padding: 5px;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    width: 100%;
+    background-color:white;
+    padding:20px;
+}
+
+.heading{
+    border-bottom: 1px solid rgb(214, 211, 211);
+}
+
+.input-detials{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+.input-detials input{
+    width: 150px;
+    height: 35px;
+    border: 1px solid rgb(184, 182, 182);
+    border-radius: 3px;
+}
+select{
+    width: 100px;
+    height: 40px;
+    border: 1px solid rgb(184, 182, 182);
+    border-radius: 3px;
+} 
+option{
+    width: 100px;
+    height: 20px;
+    background-color: rgb(238, 237, 235);
+    border: 1px solid rgb(184, 182, 182);
+    border-radius: 3px;
+} 
+.users-data{
+    display: flex;
+    flex-direction:column;
+    overflow-y: scroll;
+    padding: 10px;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.user-data{
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(240, 239, 239);
+    border-radius: 5px;
+    
+    padding: 10px;
+    gap: 10px;
+}
+.user-data span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    width: 20%;
+    font-weight: 200;
+}
+.edit-btn {
+    width: 50px;
+    height: 40px;
+    color: white;
+    background-color:  rgb(28, 128, 209);
+    border: 1px solid  rgb(28, 128, 209);
+    border-radius: 3px;
+}
+.delete-btn {
+    width: 80px;
+    height: 40px;
+    color: white;
+    background-color: rgb(28, 128, 209);
+    border: 1px solid  rgb(28, 128, 209);
+    border-radius: 5px;
+}
+
+.user-add-btn{
+    width: 90px;
+    height: 40px;
+    color: white;
+    background-color: rgb(28, 128, 209);
+    border: 1px solid  rgb(28, 128, 209);
+    border-radius: 5px;
+}
+.action-button{
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.error-message{
+    color: red;
+}
+
+.user-search{
+    display: flex;
+    flex-direction:row;
+}
+.user-search input{
+    width: 300px;
+    height: 25px;
+    border: 1px solid rgb(184, 182, 182);
+    border-radius: 3px;
+}
+
+.user-search button{
+    width: 70px;
+    height: 30px;
+    color: white;
+    margin-left: 20px;
+    background-color: rgb(28, 128, 209);
+    border: 1px solid  rgb(28, 128, 209);
+    border-radius: 5px;
+}

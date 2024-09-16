@@ -1,0 +1,63 @@
+<main>
+    <div class="userManagement">
+      <div class="userManagement-heading">
+        <h1>{{ editingUserId !== null ? "Edit User" : "Add User" }}</h1>
+      </div>
+      <div class="userManagement-data-input">
+        <div class="input-element">
+          <label for="user-name">Name:</label>
+          <input
+            type="text"
+            class="user-name"
+            id="user-name"
+            [(ngModel)]="userName"
+          />
+          <p *ngIf="emailError" class="error-message">{{ nameError }}</p>
+        </div>
+  
+        <div class="input-element">
+          <label for="user-email">Email:</label>
+          <input
+            type="email"
+            class="user-email"
+            id="user-email"
+            [(ngModel)]="userEmail"
+          />
+          <p *ngIf="emailError" class="error-message">{{ emailError }}</p>
+        </div>
+  
+        <div class="input-element">
+          <label for="user-role">Role:</label>
+          <select name="user-role" id="user-role" [(ngModel)]="userRole">
+            <option value="admin">Admin</option>
+            <option value="user">User</option>
+          </select>
+          <p *ngIf="roleError" class="error-message">{{ roleError }}</p>
+        </div>
+  
+        <div class="button-element">
+          <button id="add-user-btn" (click)="addUser()">
+            {{ editingUserId !== null ? "Edit User" : "Add User" }}
+          </button>
+        </div>
+        
+      </div>
+      <div class="user-list-heading">
+        <h1>User List</h1>
+      </div>
+      <div class="user-list-container">
+        <ul id="user-list">
+          <li *ngFor="let user of users">
+            <span id="user-name-list">{{ user.userName }}</span>
+            <span id="user-email-list">{{ user.userEmail }}</span>
+            <span id="user-role-list">{{ user.userRole }}</span>
+            <button id="user-edit-btn" (click)="editUser(user.id)">Edit</button>
+            <button id="user-delete-btn" (click)="deleteUser(user.id)">
+              Delete
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+  

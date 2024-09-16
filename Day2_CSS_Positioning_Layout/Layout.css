@@ -1,0 +1,174 @@
+<<<<<<< HEAD
+header h1{
+    background-color: rgb(238, 236, 236);
+    padding: 3px;
+    margin :0;
+    text-align: center;
+}
+
+header nav{
+    background-color: black;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    
+}
+header a{
+    color: white;
+    text-decoration: none;
+    align-items: center;
+    margin-left: 200px;
+    margin-right: 50px;
+    align-content: space-around;
+}
+
+a:hover
+{
+    color: blueviolet;
+}
+
+a:active
+{
+    color: yellow;
+}
+
+a:focus{
+    color: brown;
+}
+.Intro h1
+{
+    font-weight: normal;
+}
+.Intro{
+    background-color: rgb(236, 234, 234);
+    padding: 20px;
+    margin-top: 20px;
+    line-height: 30px;
+
+}
+.box{
+    display: flex ;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 20px;
+    
+}
+.box > section{
+   flex: 1 1 calc(33.33% -20px);
+  padding: 20px;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+.box > section:last-child{
+    flex: 1 1 100%;
+   margin-top: 10px;
+   border: none;
+   
+   background-color: rgb(192, 190, 190);
+   
+}
+.box-content:hover{
+    background-color: gray;
+}
+.Pseudo p::before{
+    content: "Start of para :";
+    color: green;
+
+}
+.Pseudo p::after{
+    content: ":end of para";
+    color: red;
+}
+footer{
+    background-color: rgb(233, 232, 232);
+    text-align: center;
+    padding: 10px;
+=======
+header h1{
+    background-color: rgb(238, 236, 236);
+    padding: 3px;
+    margin :0;
+    text-align: center;
+}
+
+header nav{
+    background-color: black;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    
+}
+header a{
+    color: white;
+    text-decoration: none;
+    align-items: center;
+    margin-left: 200px;
+    margin-right: 50px;
+    align-content: space-around;
+}
+
+a:hover
+{
+    color: blueviolet;
+}
+
+a:active
+{
+    color: yellow;
+}
+
+a:focus{
+    color: brown;
+}
+.Intro h1
+{
+    font-weight: normal;
+}
+.Intro{
+    background-color: rgb(236, 234, 234);
+    padding: 20px;
+    margin-top: 20px;
+    line-height: 30px;
+
+}
+.box{
+    display: flex ;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 20px;
+    
+}
+.box > section{
+   flex: 1 1 calc(33.33% -20px);
+  padding: 20px;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+.box > section:last-child{
+    flex: 1 1 100%;
+   margin-top: 10px;
+   border: none;
+   
+   background-color: rgb(192, 190, 190);
+   
+}
+.box-content:hover{
+    background-color: gray;
+}
+.Pseudo p::before{
+    content: "Start of para :";
+    color: green;
+
+}
+.Pseudo p::after{
+    content: ":end of para";
+    color: red;
+}
+footer{
+    background-color: rgb(233, 232, 232);
+    text-align: center;
+    padding: 10px;
+>>>>>>> c26a28a0985516daccb3781248be335f6dd484f2
+}

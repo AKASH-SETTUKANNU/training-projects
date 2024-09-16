@@ -1,0 +1,47 @@
+h1 {
+    background-color: rgb(241, 236, 236);
+    padding-top: 25px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+.mainBox {
+    border: 1px solid black;
+    position: relative;
+    width: 350px;
+    height: 200px;
+    top: 30px;
+    left: 500px;
+    background-color: rgb(233, 229, 229);
+}
+
+.dragBox {
+    border: none;
+    position: absolute;
+    width: 137px;
+    height: 30px;
+    padding: 5px;
+    background-color: rgb(90, 214, 90);
+    display: flex;
+    align-items: center;
+    cursor: move;
+}
+
+footer {
+    background-color: rgb(233, 229, 229);
+    text-align: center;
+    padding: 8px;
+    margin-top: 200px;
+}
+
+.dragInfo {
+    background-color: rgb(118, 175, 207);
+    display: flex;
+    justify-content: center;
+    position: fixed; 
+    top: 80px; 
+    left: 307px;
+    width: 180px;
+    padding: 5px;
+    cursor: move; 
+}
