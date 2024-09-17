@@ -1,0 +1,17 @@
+/* src/app/pickup-order/pickup-order.component.css */
+.pickup-detials {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 15px 0;
+    align-items: center;
+  }
+  
+  .pickup-time select {
+    height: 47px;
+    width: 8rem;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ffffff7c;
+  }
+  

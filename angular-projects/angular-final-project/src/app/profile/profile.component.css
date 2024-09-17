@@ -1,0 +1,16 @@
+/* src/app/profile/profile.component.css */
+.customer-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 0;
+  }
+  
+  .customer-info img {
+    height: 36px;
+    aspect-ratio: 1/1;
+    border-radius: 24px;
+  }
+  

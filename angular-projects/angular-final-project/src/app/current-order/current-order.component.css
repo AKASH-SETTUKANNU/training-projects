@@ -1,0 +1,12 @@
+/* src/app/current-order/current-order.component.css */
+.current-order {
+    background-color: white;
+    border-radius: 10px;
+    padding: 0;
+    margin-bottom: 0;
+  }
+  
+  .current-order-info {
+    border: none;
+  }
+  

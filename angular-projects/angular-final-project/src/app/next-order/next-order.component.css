@@ -1,0 +1,18 @@
+/* src/app/next-order/next-order.component.css */
+.next-order {
+    background-color: white;
+    border-radius: 10px;
+    padding: 0;
+    margin-bottom: 0;
+  }
+  
+  .next-order-delivery-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55%;
+    height: 100%;
+    padding: 7px;
+    box-sizing: border-box;
+  }
+  

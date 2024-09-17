@@ -1,0 +1,44 @@
+/* Profile Styles */
+.customer-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: nowrap;
+    margin-bottom: 0;
+  }
+  
+  .customer-info h2 {
+    margin-right: 555px;
+    flex-shrink: 0;
+  }
+  
+  .customer-info img {
+    height: fit-content;
+    height: 36px;
+    aspect-ratio: 1/1;
+    border-radius: 24px;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .customer-info {
+      justify-content: start;
+      gap: 0;
+    }
+  
+    .customer-info img {
+      margin-top: 3px;
+    }
+  
+    .customer-info h2 {
+      margin-right: 48px;
+    }
+  }
+  
+  @media screen and (min-width: 1000px) {
+    .customer-info h2 {
+      margin-right: 418px;
+    }
+  }
+  

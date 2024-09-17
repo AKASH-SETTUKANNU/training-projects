@@ -1,0 +1,17 @@
+/* src/app/last-order/last-order.component.css */
+.last-order {
+    background-color: rgba(92, 255, 92, 0.382);
+    border-radius: 10px;
+    height: 50px;
+  }
+  
+  .last-order table {
+    border: none;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .last-order table td {
+    padding: 8px;
+  }
+  
