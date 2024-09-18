@@ -6,11 +6,12 @@ import { LastOrderComponent } from './last-order/last-order.component';
 import { CurrentOrderComponent } from './current-order/current-order.component';
 import { NextOrderComponent } from './next-order/next-order.component';
 import { MenuBarComponent } from './menu-bar/menu-bar.component';
+import { CompanyNameComponent } from './company-name/company-name.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,ProfileComponent,PickupOrderComponent,LastOrderComponent,CurrentOrderComponent,NextOrderComponent,MenuBarComponent],
+  imports: [RouterOutlet,ProfileComponent,PickupOrderComponent,LastOrderComponent,CurrentOrderComponent,NextOrderComponent,MenuBarComponent,CompanyNameComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
