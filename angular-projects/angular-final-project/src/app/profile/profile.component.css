@@ -1,16 +1,92 @@
-/* src/app/profile/profile.component.css */
+
 .customer-info {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content:space-between;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 0;
+    gap: 20px;
   }
+  .profile-detials{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .search-container{
+    margin-right: 40px;
+  }
+  .notification-symbol{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 30px;
+    background-color:white;
+    padding: 5px;
+    border-radius: 30px;
+    height: 30px;
+    aspect-ratio: 1/1;
+  }
+
+  #profile-detials-icon{
+     margin-left: 5px;
+  }
+  .search-container input{
+    border: 1px solid rgb(216, 213, 213);
+    padding: 10px;
+    border-radius: 3px;
+    width: 200px;
+  }
+  .search-container input::placeholder {
+    color: #888; 
+    text-align: center; 
+  }
+  .search-container i{
+   position: absolute;
+   margin-top: 10px;
+   margin-left: 10px;
+   color: #888;
+  }
+
   
   .customer-info img {
+    height: fit-content;
     height: 36px;
     aspect-ratio: 1/1;
     border-radius: 24px;
   }
   
+  #notification-dot{
+    position: absolute;
+    color: red;
+    margin-bottom: 30px;
+    margin-top: 5px;
+    margin-left: 8px;
+  }
+  .notification-data{
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    background-color: rgb(106, 221, 236);
+    padding: 10px;
+    height: 100px;
+    width: 150px;
+    /* overflow-y: scroll; */
+    border-radius: 5px;
+    margin-top:170px;
+    margin-left: 250px;
+  }
+  @media only screen and (max-width: 500px) {
+    .search-container{
+      margin-right: 0px;
+    }
+    .notification-symbol{
+      margin-right: 0px;
+    }
+  
+    #profile-detials-icon{
+       margin-left: 0px;
+    }
+    .search-container input{
+      width: 180px;
+    }
+  }

@@ -7,8 +7,8 @@
     align-items: center;
   }
   
-  .pickup-time select {
-    height: 47px;
+  .pickup-select select {
+    height: 40px;
     width: 8rem;
     padding: 10px;
     border-radius: 5px;
