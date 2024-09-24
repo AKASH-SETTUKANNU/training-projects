@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { User } from '../models/user';
-
+import { Guests } from '../models/user';
 @Injectable({
   providedIn: 'root',
 })
@@ -25,7 +25,7 @@ export class StorageService {
   }
 
   saveEventItems(events: any[]): void {
-    const users = JSON.parse(localStorage.getItem('users') || '[]');
+    const users = this.getUsers();
     const user = this.getLoggedInUser();
     const currentUser = users.find((u:User )=> u.userEmail === user?.userEmail);
     if (currentUser) {
@@ -57,6 +57,16 @@ export class StorageService {
     if (user && user.events) {
       user.events = user.events.filter(event => event.id !== id);
       this.setLoggedInUser(user);
+    }
+  }
+
+  addGuests(guests: any[]):void{
+    const logedInUser=this.getLoggedInUser();
+    const users=this.getUsers();
+    const currentUser=users.find((u:User)=>{u.userEmail===logedInUser?.userEmail});
+    if(currentUser){
+      currentUser.guests=guests;
+      localStorage.setItem('users',JSON.stringify(users));
     }
   }
 }

@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
+import { Guests } from '../../models/user';
+import { StorageService } from '../../storage/storage.service';
 @Component({
   selector: 'app-admin-guests',
   standalone: true,
@@ -13,7 +14,7 @@ export class AdminGuestsComponent {
     guestName: string = '';
     guestEmail: string = '';
     guestLocation: string = '';
-    guests: { name: string; email: string; location: string }[] = [];
+    guests: Guests[] = [];
     searchEmail: string = '';
     searchResults: any[] = [];
     nameError: string = '';
@@ -22,14 +23,15 @@ export class AdminGuestsComponent {
     successMessage: string = '';
     resultGuestError: string = 'Enter Guest Email to Find the...';
   
+    constructor(private guestService:Guests){}
     addGuest(): void {
       if (this.validateGuest()) {
-        const newGuest = {
+        const newGuest:Guests = {
           name: this.guestName,
           email: this.guestEmail,
           location: this.guestLocation
         };
-        this.guests.push(newGuest);
+       this.addGuest(newGuest);
         this.successMessage = 'Guest added successfully!';
         this.resetForm();
       }

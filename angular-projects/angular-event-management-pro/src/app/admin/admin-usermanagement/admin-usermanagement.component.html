@@ -1,4 +1,73 @@
-
 <div class="admin-index-container">
-    <p>admin-usermanagement works!</p>
-</div>
+    <div id="user-management">
+      <h2>Add New User</h2>
+      <form id="add-user-form" (ngSubmit)="addUser()">
+        <input type="text" 
+               [(ngModel)]="newUser.userName" 
+               name="userName" 
+               placeholder="Name" 
+               required 
+               (blur)="validateOnBlur('userName')"/>
+        <p *ngIf="showNameError" id="error">Enter the name</p>
+  
+  
+        <input type="email" 
+               [(ngModel)]="newUser.userEmail" 
+               name="userEmail" 
+               placeholder="Email" 
+               required 
+               (blur)="validateOnBlur('userEmail')"/>
+               <p *ngIf="showEmailExistError" id="error">Email already exists. Please use a different email.</p>
+        <p *ngIf="showEmailError"  id="error">Enter a valid email</p>
+  
+        <input type="password" 
+               [(ngModel)]="newUser.userPassword" 
+               name="userPassword" 
+               placeholder="Password" 
+               required 
+               (blur)="validateOnBlur('userPassword')"/>
+        <p *ngIf="showPasswordError"  id="error">Password must be at least 8 characters long, contain an uppercase letter, a number, and a special character.</p>
+  
+        <select [(ngModel)]="newUser.userRole" name="userRole" required>
+          <option value="user">User</option>
+          <option value="admin">Admin</option>
+        </select>
+  
+        <input type="date" 
+               [ngModel]="formattedUserBirthDate" 
+               (ngModelChange)="formattedUserBirthDate = $event" 
+               name="userBirthDate" 
+               (blur)="validateOnBlur('userBirthDate')"/>
+        <p *ngIf="showBirthDateError"  id="error">Select a valid date of birth</p>
+  
+        <button type="submit">{{ editIndex !== null ? 'Update User' : 'Add User' }}</button>
+        <p id="success-message" *ngIf="showSuccessMessage">user added successfully....</p>
+      </form>
+  
+      <h2>Manage Users</h2>
+      <table id="user-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Date of Birth</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users; let i = index">
+            <td>{{ user.userName }}</td>
+            <td>{{ user.userEmail }}</td>
+            <td>{{ user.userRole }}</td>
+            <td>{{ user.userBirthDate | date: 'dd/MM/yyyy' }}</td>
+            <td>
+              <button (click)="editUser(i)" class="edit-btn">Edit</button>
+              <button (click)="deleteUser(user.userEmail)" class="delete-btn">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

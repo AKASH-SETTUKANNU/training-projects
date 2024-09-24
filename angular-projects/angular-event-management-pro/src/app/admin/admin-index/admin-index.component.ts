@@ -96,16 +96,15 @@ export class AdminIndexComponent implements OnInit {
     const event = this.events.find(event => event.id === id);
     
     if (event) {
-      this.eventName = event.eventName;
-      this.eventDate = event.eventDate;
-      this.eventDescription = event.eventDescription;
-      this.eventStatus = event.eventStatus;
-      this.eventCategory = event.eventCategory;
+        this.eventName = event.eventName;
+        this.eventDate = new Date(event.eventDate).toISOString().split('T')[0];
+        this.eventDescription = event.eventDescription;
+        this.eventStatus = event.eventStatus;
+        this.eventCategory = event.eventCategory;
+    } else {
+        console.error('Event not found:', id);
     }
-  }
-  
-  
-
+}
   viewDetail(event: Event): void {
     this.eventDetail = {
       name: event.eventName,
