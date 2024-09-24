@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pick Your Cloth</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./index.js" defer></script>
+  </head>
+  <body>
+    <section>
+      <main>
+        <aside>
+          <div class="company-name">
+            <span>Pick</span> Your <span>Cloth</span>
+          </div>
+          <nav class="menu-bar">
+            <ul>
+              <li>
+                <img
+                  src="./images/dashboard.png"
+                  alt="dashboard"
+                  class="icon"
+                />
+                <p>Dashboard</p>
+              </li>
+              <li>
+                <i class="fa-solid fa-cart-shopping"></i>
+                <p>Orders</p>
+              </li>
+              <li>
+                <i class="fa-solid fa-chart-pie"></i>
+                <p>Statistic</p>
+              </li>
+              <li>
+                <i class="fa-solid fa-box"></i>
+                <p>Product</p>
+              </li>
+              <li>
+                <i class="fa-solid fa-box-open"></i>
+                <p>Stock</p>
+              </li>
+              <li>
+                <i class="fa-solid fa-tag"></i>
+                <p>Offer</p>
+              </li>
+            </ul>
+          </nav>
+        </aside>
+        <div class="order-info">
+          <div class="customer-info">
+            <div>
+              <h2 style="font-weight: bolder">Order</h2>
+            </div>
+            <div class="search-container">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" placeholder="Search in Knock N Door" />
+            </div>
+            <div class="notification-symbol">
+              <i class="fa-regular fa-bell"></i>
+            </div>
+            <div>
+              <img src="./images/profile image.avif" alt="profile" />
+            </div>
+            <div>
+              <i id="downAngle" class="fa-solid fa-angle-down"></i>
+            </div>
+          </div>
+
+          <div class="menu-bar-icon" onclick="myFunction()">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+
+          <div class="pickup-detials">
+            <div class="pickup-time">
+              <div>
+                <h3 style="font-weight: bolder">Pickup 1</h3>
+              </div>
+              <div>
+                <h3 style="font-weight: bolder">24 Orders - 9:05 am</h3>
+              </div>
+            </div>
+            <div class="pickup-select">
+              <select name="products" id="products">
+                <option value="Cheese Stack">Pickups</option>
+              </select>
+            </div>
+          </div>
+          <div class="last-order">
+            <table>
+              <tbody>
+                <tr>
+                  <td>#2541</td>
+                  <td>Jondan Smith</td>
+                  <td>31 July 2020</td>
+                  <td>$46.00</td>
+                  <td><div class="delivery-status">Completed</div></td>
+                  <td>
+                    <div class="last-order-icon1">
+                      <i class="fa-solid fa-gear"></i>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="last-order-icon">
+                      <i class="fa-solid fa-angle-down"></i>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="current-order">
+            <div class="current-order-info">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Order Id</th>
+                    <th>Customer</th>
+                    <th>Date</th>
+                    <th>Price</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                    <th>
+                      <div class="current-order-info-icon">
+                        <i class="fa-solid fa-angle-up"></i>
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>#2540</td>
+                    <td>Rowean Rice</td>
+                    <td>31 July 2020</td>
+                    <td>$62.00</td>
+                    <td><div class="current-order-status">Pending</div></td>
+                    <td>
+                      <div class="current-order-info-icon1">
+                        <i class="fa-solid fa-gear"></i>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="order-details-heading">
+              <h1>Order Details</h1>
+            </div>
+            <div class="order-items">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Sn</th>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1.</td>
+                    <td>Cheese Stack</td>
+                    <td>1 pic</td>
+                    <td>$2.00</td>
+                    <td>$2.00</td>
+                  </tr>
+                  <tr>
+                    <td>2.</td>
+                    <td>Cheese Stack</td>
+                    <td>1 pic</td>
+                    <td>$2.00</td>
+                    <td>$2.00</td>
+                  </tr>
+                  <tr>
+                    <td>3.</td>
+                    <td>Cheese Stack</td>
+                    <td>1 pic</td>
+                    <td>$2.00</td>
+                    <td>$2.00</td>
+                  </tr>
+                  <tr>
+                    <td>4.</td>
+                    <td>Cheese Stack</td>
+                    <td>1 pic</td>
+                    <td>$2.00</td>
+                    <td>$2.00</td>
+                  </tr>
+                  <tr>
+                    <td colspan="4">
+                      <div class="total-price-label">Total Price</div>
+                    </td>
+                    <td>$62.00</td>
+                  </tr>
+                  <tr>
+                    <td colspan="5">
+                      <div class="order-pickup-button">
+                        <button id="order-cancel-button">Cancel Order</button>
+                        <button id="order-accept-button">
+                          Accept for Pickup
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="next-order">
+            <table>
+              <tbody>
+                <tr>
+                  <td>#2541</td>
+                  <td>Jondan Smith</td>
+                  <td>31 July 2020</td>
+                  <td>$46.00</td>
+                  <td><div class="next-order-delivery-status">Pending</div></td>
+                  <td>
+                    <div class="next-order-icon1">
+                      <i class="fa-solid fa-gear"></i>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="next-order-icon">
+                      <i class="fa-solid fa-angle-down"></i>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </section>
+  </body>
+</html>

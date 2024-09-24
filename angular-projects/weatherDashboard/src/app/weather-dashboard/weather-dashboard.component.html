@@ -1,0 +1,33 @@
+<main>
+    <section>
+        <div class="weather-dashboard-heading">
+            <p>Weather Dashboard</p>
+        </div>
+        <form (ngSubmit)="onSubmit()" #weatherForm="ngForm">
+            <div class="city-data">
+                <input type="text" [(ngModel)]="cityName" name="city" placeholder="Enter City name" required>
+                <button type="submit" class="search-button">Search</button>
+            </div>
+            <p id="data-error" *ngIf="errorMessage">{{ errorMessage }}</p>
+        </form>
+        <div class="city-weather-details" *ngIf="weatherData">
+            <div class="data-display">
+                <p>City Name:</p>
+                <span>{{ weatherData?.name }}</span>
+            </div>
+            <div class="data-display">
+                <p>Temperature:</p>
+                <span>{{ weatherData?.main?.temp }} °C</span>
+            </div>
+            <div class="data-display">
+                <p>Humidity:</p>
+                <span>{{ weatherData?.main?.humidity }}%</span>
+            </div>
+        </div>
+        <div class="weather-icon" *ngIf="weatherData">
+            <div class="weather-background">
+                <img [src]="weatherIcon" alt="Weather Icon" />
+            </div>
+        </div>
+    </section>
+</main>

@@ -1,0 +1,47 @@
+<div class="main-container">
+  <main>
+    <div class="todolist-container">
+      <div class="list heading">
+        <h1>TO-DO List</h1>
+      </div>
+      <div class="task-input">
+        <input
+          type="text"
+          [(ngModel)]="newTask"
+          id="task-input-area"
+          placeholder="Enter new task"
+        />
+        <button (click)="addTask()" id="add-task-btn">Add Task</button>
+      </div>
+      <ul id="task-list">
+        <li *ngFor="let task of tasks">
+          <input
+            type="checkbox"
+            [checked]="task.completed"
+            (change)="toggleCompletion(task.id)"
+          />
+
+          <!-- execute if the editing id is equal to task Id  -->
+          <ng-container *ngIf="editingTaskId === task.id; else viewMode">
+            <input
+              type="text"
+              [(ngModel)]="task.name"
+              (blur)="saveTask(task.id, task.name)"
+              id="edit-task-input"
+            />
+            <button (click)="saveTask(task.id, task.name)" id="save-btn">Save</button>
+            <button (click)="cancelEdit()" id="cancel-btn">Cancel</button>
+          </ng-container>
+
+           <!-- execute if the editing id is not equal to task Id  -->
+          <ng-template #viewMode>
+            <span id="task" [ngClass]="{ completed: task.completed }">{{ task.name }}</span>
+            <button (click)="editTask(task.id)" id="edit-btn">Edit</button>
+            <button (click)="deleteTask(task.id)" id="delete-btn">Delete</button>
+          </ng-template>
+
+        </li>
+      </ul>
+    </div>
+  </main>
+</div>

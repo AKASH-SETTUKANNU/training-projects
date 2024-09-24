@@ -1,0 +1,29 @@
+<div class="customer-info">
+  <div>
+    <div class="order-heading">
+      <h2 style="font-weight: bolder">Order</h2>
+    </div>
+  </div>
+  <div class="profile-detials">
+    <div class="search-container">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" placeholder="Search in Knock N Door" />
+    </div>
+    <div class="notification-symbol" (click)="toggleNotificationIcon()">
+      <i class="fa-regular fa-bell"></i>
+      <h1 id="notification-dot">.</h1>
+    </div >
+    <div class="notification-data" *ngIf="showNotification">
+        Nothing to Display
+    </div>
+    <div id="profile-image">
+      <img src="https://i.etsystatic.com/15418561/r/il/f06c80/3233862560/il_fullxfull.3233862560_jwqd.jpg" alt="profile" />
+    </div>
+    <div id="profile-detials-icon">
+      <i id="downAngle" class="fa-solid fa-angle-down"></i>
+    </div>
+  </div>
+</div>
+<!-- <div class="menu-bar-icon">
+  <i class="fa-solid fa-bars"></i>
+</div> -->

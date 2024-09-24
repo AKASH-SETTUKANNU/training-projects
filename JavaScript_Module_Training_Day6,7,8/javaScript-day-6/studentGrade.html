@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./studentGrade.css" />
+  </head>
+  <body>
+    <main>
+      <div class="student-grade-container">
+        <div class="student-grade-heading">
+          <h1>Student Grades Manager</h1>
+        </div>
+        <div class="student-input">
+          <label for="student-name">Student Name:</label>
+          <input
+            type="text"
+            class="student-name"
+            id="student-name"
+            placeholder="Enter student Name"
+            onblur="clearSuccess()"
+          />
+          <label for="grade" id="grade">Grade:</label>
+          <input
+            type="text"
+            class="student-grade"
+            id="student-grade"
+            placeholder="Enter grade"
+          />
+          <p id="grade-success-area"></p>
+          <button id="add-student-btn" onclick="addStudent()">
+            Add Student
+          </button>
+          <button id="grade-display-btn" onclick="displayGrades()">
+            Display Grades
+          </button>
+        </div>
+        <div class="grade-list">
+          <h1>Grades List:</h1>
+          <ol id="garde-order-list"></ol>
+        </div>
+        <div id="grade-display-area" class="grade-display-area">
+          <button id="average-calculate-btn" onclick="averageGrade()">
+            Calculate Average Grade
+          </button>
+          <h3 id="average-grade">Average Grade:</h3>
+        </div>
+      </div>
+    </main>
+    <script src="./studenGrade.js"></script>
+  </body>
+</html>

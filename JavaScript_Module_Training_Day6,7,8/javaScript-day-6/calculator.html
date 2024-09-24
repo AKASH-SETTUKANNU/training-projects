@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./calculator.css" />
+  </head>
+  <body>
+    <main>
+      <form id="Calculator">
+        <div class="Calculator-heading">
+          <h1>Advance Simple Interest Calculator</h1>
+        </div>
+        <div class="principal-amount">
+          <p>Principal Amount:</p>
+          <input
+            type="text"
+            placeholder="Enter principal amount"
+            onblur="validatePrincipal(this)"
+          />
+          <p id="principal-error" class="error-message"></p>
+        </div>
+        <div class="interest-rate">
+          <p>Rate of Interest(%):</p>
+          <input
+            type="text"
+            placeholder="Enter interest-rate"
+            onblur="validateNumber(this, 'interest-error')"
+          />
+          <p id="interest-error" class="error-message"></p>
+        </div>
+        <div class="time-period">
+          <p>Time(Years):</p>
+          <input
+            type="text"
+            placeholder="Enter time in years"
+            onblur="validateNumber(this, 'time-error')"
+          />
+          <p id="time-error" class="error-message"></p>
+        </div>
+        <div class="Calculate-button">
+          <button type="button" onclick="calculateInterest()">
+            Calculate Interest
+          </button>
+        </div>
+        <div class="interest">
+          <h3>Interest:</h3>
+          <h3 id="interest"></h3>
+        </div>
+        <div class="total-amount">
+          <h3>Total Amount:</h3>
+          <h3 id="total"></h3>
+        </div>
+        <div class="Additional-information">
+          <h3>Additional Information:</h3>
+          <h3 id="information"></h3>
+        </div>
+      </form>
+      <script src="./calculator.js"></script>
+    </main>
+  </body>
+</html>

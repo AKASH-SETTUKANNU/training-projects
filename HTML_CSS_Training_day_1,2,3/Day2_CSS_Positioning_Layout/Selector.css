@@ -1,0 +1,260 @@
+<<<<<<< HEAD
+*{
+    
+    color: black;
+    margin: 20px;
+    padding: 0;
+    margin-bottom: 0;
+    box-sizing: border-box;
+}
+
+section{
+    border: 1px solid black;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background-color: rgb(221, 219, 219);
+}
+header h1{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: rgb(241, 240, 240);
+    padding: 5px;
+    margin-left: 5px;
+   
+}
+
+nav a { 
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    margin: 0 15px;
+    padding: 10px;
+    display: inline-block;
+   
+}
+
+nav{
+    display: flex;
+    width: 100%;
+    margin-top: 0;
+    background-color: black;
+    justify-content: center;
+    padding: 5px;
+    margin-left: 5px;
+
+}
+
+.classSelector  {
+    background-color: rgb(229, 250, 39);
+
+}
+.classSelector h1 {
+    padding: 5px;
+
+}
+.classSelector p {
+    padding: 5px;
+
+}
+
+#idSelector{
+   background-color: rgb(221, 219, 219);
+  
+
+}
+
+#idSelector h1{
+    padding: 5px;
+    color: red;
+}
+
+#idSelector p{
+    padding: 5px;
+    color: red;
+}
+.attributeSelector input{
+
+    padding: 3px;
+}
+
+.attributeSelector{
+    background-color: rgb(221, 219, 219);
+}
+
+.attributeSelector h1{
+    padding: 5px;
+
+}
+.attributeSelector p{
+    padding: 5px;
+}
+.attributeSelector input:focus{
+    padding: 5px;
+    border: none;
+    outline: 2px solid rgb(221, 219, 219);
+    background-color: rgb(221, 219, 219);
+}
+
+.descendantSelector{
+    background-color: rgb(232, 226, 236);
+}
+.descendantSelector p{
+    background-color: rgb(221, 219, 219);
+}
+
+.childSelector ul>li{
+    background-color: rgb(221, 219, 219);
+}
+.adjacentSelector{
+    background-color:rgb(221, 219, 219);
+}
+.adjacentSelector h4{
+    font-weight: bolder;
+}
+ 
+ h3+p{
+    background-color:rgb(221, 219, 219);
+}
+
+h4~p{
+    background-color: rgb(221, 219, 219);
+    font-weight: bolder;
+    
+}
+
+footer
+{
+    text-align: center;
+=======
+*{
+    
+    color: black;
+    margin: 20px;
+    padding: 0;
+    margin-bottom: 0;
+    box-sizing: border-box;
+}
+
+section{
+    border: 1px solid black;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background-color: rgb(221, 219, 219);
+}
+header h1{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: rgb(241, 240, 240);
+    padding: 5px;
+    margin-left: 5px;
+   
+}
+
+nav a { 
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    margin: 0 15px;
+    padding: 10px;
+    display: inline-block;
+   
+}
+
+nav{
+    display: flex;
+    width: 100%;
+    margin-top: 0;
+    background-color: black;
+    justify-content: center;
+    padding: 5px;
+    margin-left: 5px;
+
+}
+
+.classSelector  {
+    background-color: rgb(229, 250, 39);
+
+}
+.classSelector h1 {
+    padding: 5px;
+
+}
+.classSelector p {
+    padding: 5px;
+
+}
+
+#idSelector{
+   background-color: rgb(221, 219, 219);
+  
+
+}
+
+#idSelector h1{
+    padding: 5px;
+    color: red;
+}
+
+#idSelector p{
+    padding: 5px;
+    color: red;
+}
+.attributeSelector input{
+
+    padding: 3px;
+}
+
+.attributeSelector{
+    background-color: rgb(221, 219, 219);
+}
+
+.attributeSelector h1{
+    padding: 5px;
+
+}
+.attributeSelector p{
+    padding: 5px;
+}
+.attributeSelector input:focus{
+    padding: 5px;
+    border: none;
+    outline: 2px solid rgb(221, 219, 219);
+    background-color: rgb(221, 219, 219);
+}
+
+.descendantSelector{
+    background-color: rgb(232, 226, 236);
+}
+.descendantSelector p{
+    background-color: rgb(221, 219, 219);
+}
+
+.childSelector ul>li{
+    background-color: rgb(221, 219, 219);
+}
+.adjacentSelector{
+    background-color:rgb(221, 219, 219);
+}
+.adjacentSelector h4{
+    font-weight: bolder;
+}
+ 
+ h3+p{
+    background-color:rgb(221, 219, 219);
+}
+
+h4~p{
+    background-color: rgb(221, 219, 219);
+    font-weight: bolder;
+    
+}
+
+footer
+{
+    text-align: center;
+>>>>>>> c26a28a0985516daccb3781248be335f6dd484f2
+}

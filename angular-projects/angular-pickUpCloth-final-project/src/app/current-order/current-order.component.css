@@ -1,0 +1,202 @@
+.current-order {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  gap: 20px;
+  border-radius: 10px;
+  padding: 0;
+  margin-bottom: 0;
+}
+.current-order-info {
+  margin-top: 15px;
+  margin-left: 0px;
+}
+.order-details-heading {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+.current-order-info table {
+  border: none;
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+}
+.current-order-info table td {
+  padding: 8px;
+}
+.current-order-info td {
+  padding: 8px;
+  text-align: center;
+}
+.order-items table {
+  border: none;
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+}
+.order-items table td {
+  padding: 8px;
+}
+.order-items td {
+  padding: 8px;
+  text-align: center;
+}
+.current-order-info table td:nth-child(5) {
+  width: 190px;
+}
+.current-order-info table td:nth-child(1) {
+  width: 80px;
+}
+.current-order-info table td:nth-child(2) {
+  width: 190px;
+}
+.current-order-info table td:nth-child(3) {
+  width: 160px;
+}
+.current-order-info table td:nth-child(4) {
+  width: 110px;
+}
+#order-cancel-button {
+  border: 1px solid rgb(27, 169, 194);
+  background-color: white;
+  padding: 10px;
+  border-radius: 3px;
+  color: rgb(61, 209, 247);
+}
+
+#order-accept-button {
+  border: 1px solid rgb(27, 169, 194);
+  background-color: rgb(35, 179, 204);
+  margin-left: 25px;
+  margin-right: 20px;
+  padding: 10px;
+  border-radius: 3px;
+  color: white;
+}
+.order-pickup-button {
+  display: flex;
+  justify-content: end;
+}
+
+.current-order-info-icon i {
+  background-color: rgb(220, 243, 245);
+  padding: 5px;
+  border-radius: 5px;
+}
+.current-order-info-icon1 i {
+  background-color: rgb(220, 243, 245);
+  padding: 5px;
+  border-radius: 5px;
+}
+.current-order-status {
+  color: rgb(2, 170, 192);
+  background-color: rgb(188, 238, 245);
+  width: 80px;
+  padding: 5px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 800px) {
+  .current-order-info table td:nth-child(1) {
+    display: none;
+  }
+  .current-order-info td:nth-child(2) {
+    width: 50px;
+  }
+  .current-order-info table td:nth-child(3) {
+    width: 120px;
+  }
+  .current-order-info table td:nth-child(5) {
+    width: 50px;
+  }
+  .current-order-info table td:nth-child(6) {
+    width: 50px;
+  }
+
+  .current-order-info table th:nth-child(1) {
+    display: none;
+  }
+  .current-order-info th:nth-child(2) {
+    width: 70px;
+  }
+  .current-order-info table th:nth-child(3) {
+    width: 100px;
+  }
+  .current-order-info table th:nth-child(5) {
+    width: 70px;
+  }
+  .current-order-info table th:nth-child(6) {
+    width: 50px;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .current-order-info table td:nth-child(1) {
+    display: none;
+  }
+  .current-order-info table td:nth-child(2) {
+    width: 50px;
+  }
+  .current-order-info table td:nth-child(6) {
+    width: 10px;
+  }
+  .current-order-info table td:nth-child(7) {
+    width: 10px;
+  }
+  .current-order-info table td:nth-child(4) {
+    display: none;
+  }
+
+  .current-order-info table th:nth-child(1) {
+    display: none;
+  }
+  .current-order-info table th:nth-child(2) {
+    width: 50px;
+  }
+  .current-order-info table th:nth-child(6) {
+    width: 10px;
+  }
+  .current-order-info table th:nth-child(7) {
+    width: 10px;
+  }
+  .current-order-info table th:nth-child(4) {
+    display: none;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .current-order-info table td:nth-child(1) {
+    display: none;
+  }
+  .current-order-info table td:nth-child(2) {
+    width: 50px;
+  }
+  .current-order-info table td:nth-child(3) {
+    width: 50px;
+  }
+  .current-order-info table td:nth-child(5) {
+    width: 50px;
+  }
+  .current-order-info table td:nth-child(6) {
+    width: 10px;
+  }
+
+  .current-order-info table th:nth-child(1) {
+    display: none;
+  }
+  .current-order-info table th:nth-child(2) {
+    width: 50px;
+  }
+  .current-order-info table th:nth-child(3) {
+    width: 50px;
+  }
+  .current-order-info table th:nth-child(5) {
+    width: 50px;
+  }
+  .current-order-info table th:nth-child(6) {
+    width: 10px;
+  }
+}
