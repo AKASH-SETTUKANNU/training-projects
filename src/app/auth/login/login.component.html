@@ -1,0 +1,40 @@
+
+  <div class="login-container">
+    <form (ngSubmit)="loginUser()" #loginForm="ngForm">
+      <div class="heading">
+        <h1>Login</h1>
+      </div>
+      <div class="input-element">
+        <label for="user-mail">Email:</label>
+        <input
+          type="email"
+          id="user-mail"
+          name="email"
+          [(ngModel)]="email"
+          required
+          (blur)="emailErrorHandle()"
+          autocomplete="email"
+        />
+        <p class="error" *ngIf="emailError">{{ emailError }}</p>
+      </div>
+      <div class="input-element">
+        <label for="user-password">Password:</label>
+        <input
+          type="password"
+          id="user-password"
+          name="password"
+          [(ngModel)]="password"
+          required
+          (blur)="passwordErrorHandle()"
+          autocomplete="current-password"
+        />
+        <p class="error" *ngIf="passwordError">{{ passwordError }}</p>
+      </div>
+      <div class="login-btn">
+        <button type="submit">Login</button>
+      </div>
+      <div class="signup-elemet">
+        <p>Don't have an account? <a routerLink="/signup">Sign up</a></p>
+      </div>
+    </form>
+  </div>

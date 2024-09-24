@@ -1,0 +1,102 @@
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 90%;
+    max-width: 500px; 
+    height: auto; 
+    background-color: rgb(243, 247, 250);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(5, 52, 209);
+    background-color: rgb(252, 204, 164);
+    border-radius: 5px;
+    padding: 20px; 
+    width: 100%;
+}
+
+.heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.heading h1 {
+    font-size: 30px;
+    color: rgb(253, 109, 57);
+    padding: 0;
+    margin: 0;
+}
+
+.input-element {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+    margin-left: 50px;
+}
+
+.input-element label {
+    margin-bottom: 10px;
+}
+
+.input-element input {
+    height: 30px;
+    width: 100%;
+    max-width: 350px;
+    border-radius: 3px;
+    border: none;
+    padding: 0 10px; 
+}
+
+.input-element input:focus {
+    border: 1px solid orange;
+    box-shadow: 0 0 5px rgba(255, 165, 0, 0.5);
+    outline: none;
+}
+
+.error {
+    display: block;
+    color: red;
+    font-size: 14px;
+}
+
+.input-element a {
+    text-decoration: none;
+    color: orangered;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.signup-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-btn button {
+    height: 40px;
+    width: 90px;
+    border-radius: 5px;
+    background-color: rgb(58, 58, 218);
+    color: white;
+    border: 1px solid blue;
+    cursor: pointer;
+}
+
+.signup-btn button:hover {
+    background-color: rgb(45, 45, 170);
+}
+
+@media only screen and (max-width: 500px) {
+    .input-element {
+        margin-left: 0;
+    }
+}

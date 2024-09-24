@@ -1,0 +1,73 @@
+<header>
+  <button class="menu-icon" id="menu-icon" (click)="menubarDisplay()">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+  <div class="logo">
+    <img src="./eventLogo.jfif" alt="Logo" />
+  </div>
+ <div class="search-profile">
+  <div class="search-bar">
+    <i  class="fa-solid fa-magnifying-glass"></i>
+    <input type="text" placeholder="search..." [(ngModel)]="searchText" />
+  </div>
+
+
+    <div class="event-add-profile">
+      <div
+      class="event-add-block"
+      id="event-add-block"
+      *ngIf="showEventAddBlock"
+    >
+      <ul>
+        <li *ngFor="let category of eventCategories">
+          <div class="icon">
+            <i [class]="category.icon"></i>
+          </div>
+          {{ category.name }}
+        </li>
+      </ul>
+    </div>
+      <div class="event-add-btn" id="event-add-btn">
+        <button type="button" (click)="addEvent()">+</button>
+      </div>
+    
+      <div class="notification-bell" (click)="displayNotification()">
+        <p id="notification-dot">.</p>
+        <i id="notification-bell-icon" class="fa-regular fa-bell"></i>
+      </div>
+      <div class="notification-display" *ngIf="showNotificationDisplay">
+        <div *ngFor="let notification of notifications" class="notification">
+          <div class="notification-profile">
+            <img src="./profile.webp" alt="profile" />
+          </div>
+          <div class="notification-content">
+            <h3>{{ notification.name }}</h3>
+            <p class="notification-message">{{ notification.message }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="profile">
+        <img src="./profile.webp" alt="" class="profile-icon" />
+        <div class="profile-details">
+          <p id="profile-name">{{ profile.name }}</p>
+          <p id="profile-dateOfBirth">{{ profile.dateOfBirth}}</p>
+        </div>
+        <div
+          id="profile-edit-icon"
+          class="profile-edit-icon"
+          (click)="displayLogout()"
+        >
+          <i class="fa-solid fa-angle-down"></i>
+        </div>
+        <div class="profile-edit-area" *ngIf="showProfileEditArea">
+          <button id="logout-btn">
+            <a href="../index.html">Log Out</a>
+          </button>
+          <button id="profile-edit-btn">
+            <a href="#">Edit Profile</a>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

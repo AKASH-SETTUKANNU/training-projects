@@ -1,0 +1,81 @@
+<div class="background-image"></div>
+<main>
+  <section>
+    <form (ngSubmit)="addUser()" #signupForm="ngForm">
+      <div class="heading">
+        <h1>Signup</h1>
+      </div>
+
+      <div class="input-element">
+        <label for="user-name">Name:</label>
+        <input
+          type="text"
+          id="user-name"
+          name="userName"
+          [(ngModel)]="userName"
+          required
+          (blur)="nameError()"
+        />
+        <p class="error" *ngIf="nameErrorMsg">{{ nameErrorMsg }}</p>
+      </div>
+
+      <div class="input-element">
+        <label for="user-mail">Email:</label>
+        <input
+          type="email"
+          id="user-mail"
+          name="email"
+          [(ngModel)]="email"
+          required
+          (blur)="emailError()"
+        />
+        <p class="error" *ngIf="emailErrorMsg">{{ emailErrorMsg }}</p>
+      </div>
+
+      <div class="input-element">
+        <label for="user-birth-date">Date of Birth:</label>
+        <input
+          type="date"
+          id="user-birth-date"
+          name="birthDate"
+          [(ngModel)]="birthDate"
+          required
+          (blur)="dateError()"
+        />
+        <p class="error" *ngIf="dateErrorMsg">{{ dateErrorMsg }}</p>
+      </div>
+
+      <div class="input-element">
+        <label for="user-password">Password:</label>
+        <input
+          type="password"
+          id="user-password"
+          name="password"
+          [(ngModel)]="password"
+          required
+        />
+      </div>
+
+      <div class="input-element">
+        <label for="confirm-password">Confirm Password:</label>
+        <input
+          type="password"
+          id="confirm-password"
+          name="confirmPassword"
+          [(ngModel)]="confirmPassword"
+          required
+          (blur)="passwordInputError()"
+        />
+        <p class="error" *ngIf="passwordErrorMsg">{{ passwordErrorMsg }}</p>
+      </div>
+
+      <div class="signup-btn">
+        <button type="submit">Signup</button>
+      </div>
+
+      <div class="input-element">
+        <p>Have an account? <a routerLink="/login">Login</a></p>
+      </div>
+    </form>
+  </section>
+</main>

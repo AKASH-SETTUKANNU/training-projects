@@ -1,0 +1,59 @@
+<div class="admin-events-container">
+  <div class="form-container">
+    <form [formGroup]="eventForm" (ngSubmit)="saveEvent()" class="event-form">
+      <div class="Event-heading">
+        <h1>Add Event</h1>
+      </div>
+      <div class="event-data-name">
+        <label for="event-name">Event Name:<span class="required-symbol">*</span></label>
+        <mat-form-field class="input-field">
+          <input matInput formControlName="eventName" placeholder="Enter event name" />
+          <mat-error *ngIf="eventForm.get('eventName')?.hasError('required')">{{ errorMessages['eventName'] }}</mat-error>
+        </mat-form-field>
+       
+      </div>
+      <div class="event-data-date">
+        <label for="event-date">Event Date:<span class="required-symbol">*</span></label>
+        <mat-form-field class="input-field">
+          <mat-label>Choose a date</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="eventDate" />
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="eventForm.get('eventDate')?.hasError('required')">{{ errorMessages['eventDate'] }}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="event-data-description">
+        <label for="event-description">Description:<span class="required-symbol">*</span></label>
+        <mat-form-field class="input-field">
+          <textarea matInput formControlName="eventDescription" rows="4" placeholder="Enter event description"></textarea>
+          <mat-error *ngIf="eventForm.get('eventDescription')?.hasError('required')">{{ errorMessages['eventDescription'] }}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="event-data-status">
+        <label for="event-status">Event Status:<span class="required-symbol">*</span></label>
+        <mat-form-field class="input-field">
+          <mat-select formControlName="eventStatus">
+            <mat-option value="planning">Planning</mat-option>
+            <mat-option value="finalized">Finalized</mat-option>
+            <mat-option value="canceled">Canceled</mat-option>
+          </mat-select>
+          <mat-error *ngIf="eventForm.get('eventStatus')?.hasError('required')">{{ errorMessages['eventStatus'] }}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="event-data-category">
+        <label for="event-category">Event Category:<span class="required-symbol">*</span></label>
+        <mat-form-field class="input-field">
+          <mat-select formControlName="eventCategory">
+            <mat-option value="conference">Conference</mat-option>
+            <mat-option value="wedding">Wedding</mat-option>
+            <mat-option value="birthday">Birthday</mat-option>
+          </mat-select>
+          <mat-error *ngIf="eventForm.get('eventCategory')?.hasError('required')">{{ errorMessages['eventCategory'] }}</mat-error>
+        </mat-form-field>
+      </div>
+      <p *ngIf="successMessage" class="add-event-success">{{ successMessage }}</p>
+      <button type="submit">Save Event</button>
+    </form>
+  </div>
+</div>
