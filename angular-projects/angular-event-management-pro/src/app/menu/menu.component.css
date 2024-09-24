@@ -1,0 +1,30 @@
+
+.menu-list li a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color:black;
+    transition: background-color 0.3s;
+}
+
+.menu-list li a:hover {
+    background-color: rgb(253, 190, 94); 
+    border-radius: 5px;
+}
+.icon {
+    margin-right: 10px; 
+}
+.icon i{
+    background-color: white;
+    padding: 7px;
+    border-radius: 3px;
+}
+.menu-list li a.active {
+    font-weight: bold;
+    background-color: rgb(253, 190, 94);
+}
+.menu-list{
+    list-style-type: none;
+    padding: 0px; 
+}
