@@ -1,0 +1,102 @@
+<<<<<<< HEAD
+.Title{
+    background-color: rgb(231, 229, 229);
+    text-align: center;
+    padding: 15px;
+  
+}
+.NavBar{
+    background-color: black;
+    color: white;
+    padding: 2px;
+}
+.NavBar ul{
+    list-style: none;
+    display: flex;
+  
+    align-items: center;
+    justify-content: center;
+}
+
+.NavBar li{
+   justify-content: center;
+   
+    margin-left: 60px;
+}
+h1{
+    font-size: 3 rem;
+}
+
+table,th,td{
+    border-collapse: collapse;
+    border: 1px solid;
+    text-align: center;
+    padding: 5px;
+    
+}
+
+ul,ol,dl {
+    margin-left: 30px;
+}
+footer{
+    margin-top: 15px;
+    background-color: rgb(231, 229, 229);
+    text-align: center;
+    padding: 15px;
+}
+
+.Container{
+    display: flex;
+    justify-content: space-around;
+=======
+.Title{
+    background-color: rgb(231, 229, 229);
+    text-align: center;
+    padding: 15px;
+  
+}
+.NavBar{
+    background-color: black;
+    color: white;
+    padding: 2px;
+}
+.NavBar ul{
+    list-style: none;
+    display: flex;
+  
+    align-items: center;
+    justify-content: center;
+}
+
+.NavBar li{
+   justify-content: center;
+   
+    margin-left: 60px;
+}
+h1{
+    font-size: 3 rem;
+}
+
+table,th,td{
+    border-collapse: collapse;
+    border: 1px solid;
+    text-align: center;
+    padding: 5px;
+    
+}
+
+ul,ol,dl {
+    margin-left: 30px;
+}
+footer{
+    margin-top: 15px;
+    background-color: rgb(231, 229, 229);
+    text-align: center;
+    padding: 15px;
+}
+
+.Container{
+    display: flex;
+    justify-content: space-around;
+>>>>>>> c26a28a0985516daccb3781248be335f6dd484f2
+}

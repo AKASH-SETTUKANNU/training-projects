@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory System</title>
+    <link rel="stylesheet" href="inventory.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <main>
+        <section> 
+            <div class="inventory-container">
+                <div class="inventory-heading">
+                    <p>Inventory System</p>
+                </div>
+                <form id="inventory-form-data" class="inventory-form-data">
+                    <label for="product-name">Name:</label>
+                    <input type="text" class="product-name" id="product-name" placeholder="Enter Product Name" >
+                    <p id="name-error" class="name-error"></p>
+                    <label for="product-price">Price:</label>
+                    <input type="text" class="product-price" id="product-price" placeholder="Enter Product Price" onblur="priceError(this)">
+                    <p id="price-error" class="price-error" ></p>
+                    <label for="product-quantity">Quantity:</label>
+                    <input type="text" class="product-quantity" id="product-quantity" placeholder="Enter Product Quantity" onblur="quantityError(this)">
+                    <p id="quantity-error" class="quantity-error" ></p>
+                    <button class="add-product-btn" id="add-product-btn" type="submit">Add Product</button>
+                </form>
+                <div class="inventory-list-heading">
+                    <p>Inventory List</p>
+                </div>
+                <div class="inventory-list-area">
+                    <table class="inventory-list-table">
+                        <thead>
+                            <tr>
+                                <th>Product Name</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th colspan="2">Action</th> 
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                    <p id="already-exist-error" class="already-exist-error"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="./inventory.js"></script>
+</body>
+</html>

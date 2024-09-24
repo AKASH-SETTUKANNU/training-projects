@@ -1,0 +1,58 @@
+header h1{
+    background-color: rgb(247, 242, 242);
+    display: flex;
+   justify-content: center;
+   align-items: center;
+    padding: 5px;
+    margin-bottom: 0px;
+    height: 100px;
+}
+header nav{
+    background-color: black;
+    color: white;
+    display: flex;
+    padding: 15px;
+    justify-content: center;
+    gap: 30px;
+  
+    margin-bottom: 45px;
+}
+.contentBox{
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+    justify-content: center;
+    gap: 50px;
+}
+
+.content{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(13, 168, 65);
+    padding: 25px;
+    width: 250px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+footer{
+    background-color: rgb(236, 231, 231);
+    text-align: center;
+    padding: 20px;
+}
+
+.mainBox .contentBox:last-child {
+    margin-bottom: 30px;
+}
+
+
+@media (max-width: 800px) {
+    .contentBox {
+        flex-direction: column;
+    }
+    .content {
+        width: 100%; 
+    }
+}

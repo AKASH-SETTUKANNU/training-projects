@@ -1,0 +1,131 @@
+.main-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+main {
+  background-color: white;
+  padding: 20px;
+  border: 1px solid black;
+  box-shadow: 10px 24px 28px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+
+#task-input-area {
+  border: 1px solid rgb(196, 195, 195);
+  padding: 6px;
+  border-radius: 5px;
+  height: 30px;
+  width: 300px;
+}
+
+.task-input button {
+  padding: 5px;
+  height: 40px;
+  width: 100px;
+  border-radius: 3px;
+  border: 1px solid rgb(185, 185, 243);
+  color: white;
+  background-color: rgb(77, 148, 196);
+  margin-left: 10px;
+}
+#edit-task-input{
+    width: 70px;
+    border: 1px solid rgb(122, 122, 122);
+    border-radius: 3px;
+    padding: 5px;
+}
+.task-input button:hover {
+  background-color: blue;
+}
+
+#task-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  margin-left: 0;
+  padding: 5px;
+}
+
+#task-list li {
+  display: flex;
+  padding: 5px;
+  transition: background-color 0.3s;
+}
+
+#task-list span.completed {
+  background-color: #e0ffe0;
+  text-decoration: line-through;
+}
+
+#task-list li input {
+  margin-right: 40px;
+}
+
+#task-list li span {
+  margin-right: 50px;
+}
+#cancel-btn{
+    margin-left: 10px;
+    padding: 5px;
+    width: 100px;
+    background-color: rgb(250, 70, 70);
+    border: 1px solid rgb(245, 9, 9);
+    color: white;
+    border-radius: 3px;
+}
+#delete-btn {
+  margin-left: 10px;
+  padding: 5px;
+  width: 100px;
+  background-color: rgb(250, 70, 70);
+  border: 1px solid rgb(245, 9, 9);
+  color: white;
+  border-radius: 3px;
+}
+#cancel-btn:hover {
+    background-color: rgb(182, 4, 4);
+    border: 1px solid rgb(128, 3, 3);
+  }
+#delete-btn:hover {
+  background-color: rgb(182, 4, 4);
+  border: 1px solid rgb(128, 3, 3);
+}
+
+#save-btn{
+    padding: 5px;
+    width: 100px;
+    background-color: rgb(77, 168, 221);
+    border: 1px solid rgb(92, 199, 248);
+    color: white;
+    border-radius: 3px;
+}
+#edit-btn {
+  padding: 5px;
+  width: 100px;
+  background-color: rgb(77, 168, 221);
+  border: 1px solid rgb(92, 199, 248);
+  color: white;
+  border-radius: 3px;
+}
+#save-btn:hover {
+    background-color: rgb(19, 95, 139);
+    border: 1px solid rgb(92, 199, 248);
+  }
+#edit-btn:hover {
+  background-color: rgb(19, 95, 139);
+  border: 1px solid rgb(92, 199, 248);
+}
+
+#task {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

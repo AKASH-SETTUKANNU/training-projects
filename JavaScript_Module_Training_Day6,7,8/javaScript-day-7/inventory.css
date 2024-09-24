@@ -1,0 +1,119 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(41, 145, 241);
+    border-radius: 3px;
+    box-sizing:border-box;
+    padding: 5px;
+    width: 35%;
+    height: 51%;
+}
+section{
+    display: flex;
+    box-sizing: border-box;
+    border: 1px solid black;
+    box-sizing:border-box;
+    border-radius: 3px;
+    padding: 10px;
+    width: 100%;
+    height: 50%;
+}
+.inventory-heading p{
+     font-weight: bolder;
+     font-size: 25px;
+     padding: 8px;
+     margin: 0;
+}
+.inventory-list-heading p{
+    font-weight: bold;
+    font-size: 20px;
+    padding: 8px;
+}
+.inventory-form-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px;
+}
+.inventory-form-data input{
+  border: 1px solid rgb(202, 198, 198);
+  border-radius: 3px;
+  padding: 8px;
+}
+.inventory-form-data > * {
+    padding: 7px;
+}
+
+.inventory-form-data button {
+    padding: 7px;
+    margin-top: 15px;
+    border: 1px solid rgb(10, 116, 214);
+    background-color: rgb(12, 161, 187);
+}
+
+.inventory-list-area {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    
+}
+
+.inventory-list-area table {
+    border-collapse: collapse; 
+    width: 100%;
+}
+
+.inventory-list-area table th,
+.inventory-list-area table td {
+    border: 1px solid rgb(177, 176, 176);
+    padding: 10px; 
+    
+}
+
+@media only screen and (max-width: 700px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid rgb(41, 145, 241);
+        border-radius: 3px;
+        box-sizing:border-box;
+        padding: 5px;
+        width: 50%;
+        height: 51%;
+    }
+ 
+}
+
+.name-error,
+.price-error,
+.quantity-error,
+.already-exist-error{
+    display: none;
+    color:red;
+}
+
+.delete-btn{
+    width: 60px;
+    height: 30px;
+    border-radius: 2px;
+    border: 1px solid rgb(250, 56, 56);
+    background-color: rgb(250, 56, 56);
+}
+.update-btn{
+    width: 60px;
+    height: 30px;
+    border-radius: 2px;
+    border: 1px solid rgb(22, 177, 224);
+    background-color: rgb(52, 202, 212);
+}
+.action-btn{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
