@@ -4,6 +4,7 @@ export interface User {
   userPassword: string;
   userRole: string;
   userBirthDate: string;
+  userLocation?:string;
   events?: Event[]; 
   guests?:Guests[];
 }
@@ -19,7 +20,9 @@ export interface Event {
 }
 
 export interface Guests{
-  userName: string;
-  userEmail: string;
-  userBirthDate: string;
+  guestId:number;
+  guestName: string;
+  guestEmail: string;
+  guestBirthDate: string;
+  guestLocation?:string;
 }

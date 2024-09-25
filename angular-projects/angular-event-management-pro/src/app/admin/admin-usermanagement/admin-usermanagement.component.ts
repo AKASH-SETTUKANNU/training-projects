@@ -28,6 +28,7 @@ export class AdminUsermanagementComponent implements OnInit {
 
   ngOnInit() {
     this.displayUsers();
+     
   }
 
   displayUsers() {

@@ -1,17 +1,19 @@
 import { Injectable } from '@angular/core';
 import { User } from '../models/user';
 import { Guests } from '../models/user';
+
 @Injectable({
   providedIn: 'root',
 })
 export class StorageService {
   private users: User[] = JSON.parse(localStorage.getItem('users') || '[]');
+
   addUser(user: User): void {
     this.users.push(user);
     localStorage.setItem('users', JSON.stringify(this.users));
   }
 
-  getUsers(): any[] {
+  getUsers(): User[] {
     return JSON.parse(localStorage.getItem('users') || '[]');
   }
 
@@ -25,48 +27,81 @@ export class StorageService {
   }
 
   saveEventItems(events: any[]): void {
-    const users = this.getUsers();
     const user = this.getLoggedInUser();
-    const currentUser = users.find((u:User )=> u.userEmail === user?.userEmail);
+    const currentUser = this.users.find((u: User) => u.userEmail === user?.userEmail);
     if (currentUser) {
       currentUser.events = events;
-      localStorage.setItem('users', JSON.stringify(users)); 
+      localStorage.setItem('users', JSON.stringify(this.users));
     }
   }
 
   getEventItems(): any[] {
     const user = this.getLoggedInUser();
-    const users=JSON.parse(localStorage.getItem('users')||'[]');
-    const currentUser=users.find((u:User)=>u.userEmail===user?.userEmail);
+    const currentUser = this.users.find((u: User) => u.userEmail === user?.userEmail);
     return currentUser ? currentUser.events || [] : [];
   }
 
   updateEventItem(updatedEvent: any): void {
     const user = this.getLoggedInUser();
-    if (user && user.events) {
-      const index = user.events.findIndex(event => event.id === updatedEvent.id);
+    const currentUser = this.users.find((u: User) => u.userEmail === user?.userEmail);
+    if (currentUser && currentUser.events) {
+      const index = currentUser.events.findIndex(event => event.id === updatedEvent.id);
       if (index !== -1) {
-        user.events[index] = updatedEvent;
-        this.setLoggedInUser(user);
+        currentUser.events[index] = updatedEvent;
+        localStorage.setItem('users', JSON.stringify(this.users));
       }
     }
   }
 
   deleteEventItem(id: string): void {
     const user = this.getLoggedInUser();
-    if (user && user.events) {
-      user.events = user.events.filter(event => event.id !== id);
-      this.setLoggedInUser(user);
+    const currentUser = this.users.find((u: User) => u.userEmail === user?.userEmail);
+    if (currentUser && currentUser.events) {
+      currentUser.events = currentUser.events.filter(event => event.id !== id);
+      localStorage.setItem('users', JSON.stringify(this.users));
     }
   }
 
-  addGuests(guests: any[]):void{
-    const logedInUser=this.getLoggedInUser();
-    const users=this.getUsers();
-    const currentUser=users.find((u:User)=>{u.userEmail===logedInUser?.userEmail});
-    if(currentUser){
-      currentUser.guests=guests;
-      localStorage.setItem('users',JSON.stringify(users));
+  getGuestsList(): Guests[] {
+    const loggedInUser = this.getLoggedInUser();
+    const currentUser = this.users.find((u: User) => u.userEmail === loggedInUser?.userEmail);
+    return currentUser?.guests || [];
+  }
+
+  addGuests(guests: Guests[]): void {
+    const loggedInUser = this.getLoggedInUser();
+    const currentUser = this.users.find((u: User) => u.userEmail === loggedInUser?.userEmail);
+    if (currentUser) {
+      currentUser.guests = currentUser.guests || [];
+      currentUser.guests.push(...guests);
+      localStorage.setItem('users', JSON.stringify(this.users));
+    }
+  }
+
+  findEditGuest(guestId: number): Guests | undefined {
+    const loggedInUser = this.getLoggedInUser();
+    const currentUser = this.users.find((u: User) => u.userEmail === loggedInUser?.userEmail);
+    return currentUser?.guests?.find((guest: Guests) => guest.guestId === guestId);
+  }
+
+  updateGuest(updatedGuest: Guests): void {
+    const loggedInUser = this.getLoggedInUser();
+    const currentUser = this.users.find((u: User) => u.userEmail === loggedInUser?.userEmail);
+    if (currentUser && currentUser.guests) {
+      const index = currentUser.guests.findIndex((guest: Guests) => guest.guestId === updatedGuest.guestId);
+      if (index !== -1) {
+        currentUser.guests[index] = updatedGuest;
+        localStorage.setItem('users', JSON.stringify(this.users));
+      }
+    }
+  }
+
+  deleteGuest(guestId: number): void {
+    const loggedInUser = this.getLoggedInUser();
+    const currentUser = this.users.find((u: User) => u.userEmail === loggedInUser?.userEmail);
+    if (currentUser && currentUser.guests) {
+      currentUser.guests = currentUser.guests.filter((guest: Guests) => guest.guestId !== guestId);
+      localStorage.setItem('users', JSON.stringify(this.users));
     }
   }
 }
