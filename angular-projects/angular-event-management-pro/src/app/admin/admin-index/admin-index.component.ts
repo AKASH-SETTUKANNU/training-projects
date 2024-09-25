@@ -140,4 +140,18 @@ export class AdminIndexComponent implements OnInit {
   formatDate(dateString: string): string {
     return this.datePipe.transform(dateString, 'dd/MM/yyyy') || '';
   }
+
+  getStatusClass(status: string): string {
+    switch (status) {
+      case 'canceled':
+        return 'event-canceled';
+      case 'planning':
+        return 'event-planning'; 
+      case 'finalized':
+        return 'event-finalized'; 
+      default:
+        return ''; 
+    }
+  }
+  
 }

@@ -257,3 +257,30 @@ p {
 #Birthday-heading {
   margin: 0;
 }
+.event-canceled{
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  color: white;
+  padding: 5px;
+}
+.event-planning{
+  background-color: rgb(201, 201, 12);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  color: white;
+  padding: 5px;
+}
+.event-finalized{
+  background-color: green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  color: white;
+  padding: 5px;
+}

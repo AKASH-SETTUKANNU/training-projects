@@ -84,7 +84,7 @@
                 <span>{{ event.eventName }}</span>
                 <span>{{ formatDate(event.eventDate) }}</span>
                 <span id="event-description-span">{{ event.eventDescription }}</span>
-                <span>{{ event.eventStatus }}</span>
+                <span [ngClass]="getStatusClass(event.eventStatus)">{{ event.eventStatus }}</span>
               </div>
               <div class="events-action-icon">
                 <i class="fa-solid fa-info" (click)="viewDetail(event)" id="viewDetail-icon"></i>
@@ -110,7 +110,7 @@
                 <span>{{ event.eventName }}</span>
                 <span>{{ formatDate(event.eventDate) }}</span>
                 <span id="event-description-span">{{ event.eventDescription }}</span>
-                <span>{{ event.eventStatus }}</span>
+                <span [ngClass]="getStatusClass(event.eventStatus)">{{ event.eventStatus }}</span>
               </div>
               <div class="events-action-icon">
                 <i class="fa-solid fa-info" (click)="viewDetail(event)" id="viewDetail-icon"></i>
@@ -136,7 +136,7 @@
                 <span>{{ event.eventName }}</span>
                 <span>{{ formatDate(event.eventDate) }}</span>
                 <span id="event-description-span">{{ event.eventDescription }}</span>
-                <span>{{ event.eventStatus }}</span>
+                <span [ngClass]="getStatusClass(event.eventStatus)">{{ event.eventStatus }}</span>
               </div>
               <div class="events-action-icon">
                 <i class="fa-solid fa-info" (click)="viewDetail(event)" id="viewDetail-icon"></i>
