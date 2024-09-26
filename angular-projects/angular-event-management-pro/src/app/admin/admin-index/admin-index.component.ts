@@ -35,6 +35,7 @@ export class AdminIndexComponent implements OnInit {
 
   closeBackdrop() {
     this.showBackdrop = false;
+   this.showEdit=false;
   }
 
   ngOnInit(): void {
@@ -75,6 +76,7 @@ export class AdminIndexComponent implements OnInit {
     }
 
     this.eventImageService.saveEventItems(this.events);
+
     this.closeBackdrop();
     this.loadEvents();
     this.resetForm();

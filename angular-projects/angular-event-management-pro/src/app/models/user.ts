@@ -4,10 +4,9 @@ export interface User {
   userPassword: string;
   userRole: string;
   userBirthDate: string;
-  userLocation?:string;
-  events?: Event[]; 
-  guests?:Guests[];
-  agendas?:Agenda[];
+  userLocation?: string;
+  events?: Event[];
+  agendas?: Agenda[];
 }
 
 export interface Event {
@@ -17,22 +16,23 @@ export interface Event {
   eventDescription: string;
   eventStatus: string;
   eventCategory: string;
-  imageUrl?: string; 
+  imageUrl?: string;
+  guests?: Guests[];
 }
 
-export interface Guests{
-  guestId:number;
+export interface Guests {
+  guestId: number;
   guestName: string;
   guestEmail: string;
   guestBirthDate: string;
-  guestLocation?:string;
+  guestLocation?: string;
 }
 
-export interface Agenda{
-  agendaId:number;
-  agendaLocation:string;
-  agendaDate:string;
-  agendaStartTime:string;
-  agendaEndtime:string;
-  agendaDescription:string;
+export interface Agenda {
+  agendaId: number;
+  agendaLocation: string;
+  agendaDate: string;
+  agendaStartTime: string;
+  agendaEndtime: string;
+  agendaDescription: string;
 }
