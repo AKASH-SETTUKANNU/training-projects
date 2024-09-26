@@ -49,7 +49,7 @@ export class AdminEventsComponent  {
   saveEvent(): void {
     if (this.eventForm.valid) {
       const { eventName, eventDate, eventDescription, eventStatus, eventCategory } = this.eventForm.value;
-       this.events=this.storageService.getEventItems();
+       this.events=this.eventImageService.getEventItems();
       const newEvent: Event = {
         id: this.generateUniqueId(),
         eventName,
@@ -60,7 +60,7 @@ export class AdminEventsComponent  {
         imageUrl:this.eventImageService.getImageUrl(eventCategory),
       };
       this.events.push(newEvent);
-      this.storageService.saveEventItems(this.events); 
+      this.eventImageService.saveEventItems(this.events); 
       this.resetForm();
       this.successMessage = 'Event saved successfully!';
 

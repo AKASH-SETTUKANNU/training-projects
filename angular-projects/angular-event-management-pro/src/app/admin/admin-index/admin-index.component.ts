@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { StorageService } from '../../storage/storage.service';
 import { UserService } from '../../services/user.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { User, Event } from '../../models/user';
 import { DatePipe } from '@angular/common';
+import { StorageService } from '../../storage/storage.service';
 import { EventImageService } from '../../services/event-image.service';
 @Component({
   selector: 'app-admin-index',
@@ -31,7 +31,7 @@ export class AdminIndexComponent implements OnInit {
   weddingEvents: Event[] = [];
   conferenceEvents: Event[] = [];
 
-  constructor(private storageService: StorageService, private userService: UserService, private datePipe: DatePipe,private eventImageService:EventImageService) {}
+  constructor(private storageService:StorageService,private userService: UserService, private datePipe: DatePipe,private eventImageService:EventImageService) {}
 
   closeBackdrop() {
     this.showBackdrop = false;
@@ -43,7 +43,7 @@ export class AdminIndexComponent implements OnInit {
   }
 
   loadEvents(): void {
-    this.events = this.storageService.getEventItems() || [];
+    this.events = this.eventImageService.getEventItems() || [];
     this.categorizeEvents();
   }
 
@@ -74,7 +74,7 @@ export class AdminIndexComponent implements OnInit {
       this.events.push(newEvent);
     }
 
-    this.storageService.saveEventItems(this.events);
+    this.eventImageService.saveEventItems(this.events);
     this.closeBackdrop();
     this.loadEvents();
     this.resetForm();
@@ -86,7 +86,7 @@ export class AdminIndexComponent implements OnInit {
 
   deleteEvent(id: string): void {
     this.events = this.events.filter(event => event.id !== id);
-    this.storageService.saveEventItems(this.events);
+    this.eventImageService.saveEventItems(this.events);
     this.loadEvents();
   }
 

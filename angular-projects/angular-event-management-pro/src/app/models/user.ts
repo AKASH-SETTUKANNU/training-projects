@@ -7,6 +7,7 @@ export interface User {
   userLocation?:string;
   events?: Event[]; 
   guests?:Guests[];
+  agendas?:Agenda[];
 }
 
 export interface Event {
@@ -25,4 +26,13 @@ export interface Guests{
   guestEmail: string;
   guestBirthDate: string;
   guestLocation?:string;
+}
+
+export interface Agenda{
+  agendaId:number;
+  agendaLocation:string;
+  agendaDate:string;
+  agendaStartTime:string;
+  agendaEndtime:string;
+  agendaDescription:string;
 }

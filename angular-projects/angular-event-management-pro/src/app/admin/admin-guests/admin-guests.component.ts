@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { StorageService } from '../../storage/storage.service';
 import { Guests } from '../../models/user';
-
+import { GuestService } from '../../services/guest.service';
 @Component({
   selector: 'app-admin-guests',
   standalone: true,
@@ -34,7 +34,7 @@ export class AdminGuestsComponent implements OnInit {
   showBirtDateError: boolean = false;
   showLocationError: boolean = false;
 
-  constructor(private storageService: StorageService) {}
+  constructor(private storageService: StorageService,private guestService:GuestService) {}
 
   ngOnInit(): void {
     this.refreshGuestsList();
@@ -42,7 +42,7 @@ export class AdminGuestsComponent implements OnInit {
 
   addGuest(): void {
     if (this.validateGuest()) {
-      const existingGuest = this.storageService.findEditGuest(this.guestId);
+      const existingGuest = this.guestService.findEditGuest(this.guestId);
       const emailExists = this.isEmailExists(this.guestEmail);
 
       if (!this.iseditGuest && emailExists) {
@@ -60,10 +60,10 @@ export class AdminGuestsComponent implements OnInit {
       };
 
       if (existingGuest) {
-        this.storageService.updateGuest(newGuest);
+        this.guestService.updateGuest(newGuest);
         this.successMessage = 'Guest updated successfully!';
       } else {
-        this.storageService.addGuests([newGuest]);
+        this.guestService.addGuests([newGuest]);
         this.successMessage = 'Guest added successfully!';
       }
 
@@ -86,7 +86,7 @@ export class AdminGuestsComponent implements OnInit {
       return;
     }
   
-    const foundGuests = this.storageService.getGuestsList();
+    const foundGuests = this.guestService.getGuestsList();
     this.searchResults = foundGuests.filter(guest => 
       guest.guestEmail.toLowerCase() === this.searchEmail.toLowerCase()
     );
@@ -97,7 +97,7 @@ export class AdminGuestsComponent implements OnInit {
   editGuest(guestId: number): void {
     this.guestDisplay = true;
     this.iseditGuest = true;
-    const guest = this.storageService.findEditGuest(guestId);
+    const guest = this.guestService.findEditGuest(guestId);
     if (guest) {
       this.guestId = guest.guestId; 
       this.guestName = guest.guestName;
@@ -110,7 +110,7 @@ export class AdminGuestsComponent implements OnInit {
   }
 
   deleteGuest(guestId: number): void {
-    this.storageService.deleteGuest(guestId);
+    this.guestService.deleteGuest(guestId);
     this.refreshGuestsList();
   }
 
@@ -159,7 +159,7 @@ export class AdminGuestsComponent implements OnInit {
   }
 
   private refreshGuestsList(): void {
-    this.guests = this.storageService.getGuestsList() || [];
+    this.guests = this.guestService.getGuestsList() || [];
     this.guestId = this.guests.length > 0 ? Math.max(...this.guests.map(g => g.guestId)) + 1 : 1;
   }
 }
