@@ -1,63 +1,34 @@
 <div class="admin-agenda-container">
-  <div class="agenda-container">
-    <div class="add-event-heading">
-      <h2 class="event-heading">Add Agenda</h2>
-      <i class="fa-solid fa-plus" (click)="displayAddAgenda()" *ngIf="!isDisplayAddAgendaArea"></i>
-      <i class="fa-solid fa-angle-up" (click)="displayAddAgenda()" *ngIf="isDisplayAddAgendaArea"></i>
+  <h2 class="event-heading">Add New Event</h2>
+  <form (ngSubmit)="saveEventLocationDetails()">
+    <div class="event-location-details">
+      <div class="event-location">
+        <label for="location-name">Location:</label>
+        <input type="text" [(ngModel)]="agendaLocation" name="location-name" placeholder="Event Location..." (blur)="validateOnBlur('eventLocation')">
+      </div>
+      <div class="event-date">
+        <label for="event-date">Date:</label>
+        <input type="date" [(ngModel)]="agendaDate" name="event-date" (blur)="validateOnBlur('eventDate')">
+      </div>
+      <div class="event-start-time">
+        <label for="start-time">Start Time:</label>
+        <input type="time" [(ngModel)]="agendaStartTime" name="start-time" (blur)="validateOnBlur('eventStartAt')">
+      </div>
+      <div class="event-end-time">
+        <label for="end-time">End Time:</label>
+        <input type="time" [(ngModel)]="agendaEndTime" name="end-time" (blur)="validateOnBlur('eventEndAt')">
+      </div>
     </div>
-    
-    <form (ngSubmit)="saveEventLocationDetails()" *ngIf="isDisplayAddAgendaArea">
-      <div class="event-location-details">
-        <div class="event-location">
-          <label for="location-name">Location:</label>
-          <input type="text" [(ngModel)]="agendaLocation" name="location-name" placeholder="Event Location..." (blur)="validateOnBlur('eventLocation')">
-          <p class="error" *ngIf="showLocationError">{{locationError}}</p>
-        </div>
-        <div class="event-date">
-          <label for="event-date">Date:</label>
-          <input type="date" [(ngModel)]="agendaDate" name="event-date" (blur)="validateOnBlur('eventDate')">
-          <p class="error" *ngIf="showDateError">{{dateError}}</p>
-        </div>
-        <div class="event-start-time">
-          <label for="start-time">Start Time:</label>
-          <input type="time" [(ngModel)]="agendaStartTime" name="start-time" (blur)="validateOnBlur('eventStartAt')">
-          <p class="error" *ngIf="showStartTimeError">{{startTimeError}}</p>
-        </div>
-        <div class="event-end-time">
-          <label for="end-time">End Time:</label>
-          <input type="time" [(ngModel)]="agendaEndTime" name="end-time" (blur)="validateOnBlur('eventEndAt')">
-          <p class="error" *ngIf="showEndTimeError">{{endTimeError}}</p>
-        </div>
-      </div>
-      <div class="event-description">
-        <label for="event-description">Description:</label>
-        <textarea name="event-description" [(ngModel)]="agendaDescription" (blur)="validateOnBlur('eventDescription')"></textarea>
-        <p class="error" *ngIf="showDescriptionError">{{descriptionError}}</p>
-      </div>
-      <div class="event-save-btn">
-        <button type="submit">Save Event</button>
-      </div>
-    </form>
-  </div>
-  
+    <div class="event-description">
+      <label for="event-description">Description:</label>
+      <textarea name="event-description" [(ngModel)]="agendaDescription" (blur)="validateOnBlur('eventDescription')"></textarea>
+    </div>
+    <div class="event-save-btn">
+      <button type="submit">Save Event</button>
+    </div>
+  </form>
   <div class="display-agenda">
     <h2>Event Agenda</h2>
-    <div class="event-selector">
-      <label for="event-select">Select Event:</label>
-      <select [(ngModel)]="selectedEventId" (change)="onEventChange()">
-        <option *ngFor="let event of events" [value]="event.id">{{ event.eventName }}</option>
-      </select>
-    </div>
-    
-    <div *ngIf="selectedEventGuests?.length">
-      <h3>Guests for Selected Event</h3>
-      <ul>
-        <li *ngFor="let guest of selectedEventGuests">
-          {{ guest.guestName }} - {{ guest.guestEmail }}
-        </li>
-      </ul>
-    </div>
-    
     <table *ngIf="agendas.length > 0; else noAgenda">
       <thead>
         <tr>
@@ -75,15 +46,14 @@
           <td>{{ agenda.agendaDate }}</td>
           <td>{{ agenda.agendaStartTime }}</td>
           <td>{{ agenda.agendaEndtime }}</td>
-          <td><span id="agenda-description">{{ agenda.agendaDescription }}</span></td>
-          <td class="actions-cell">
+          <td>{{ agenda.agendaDescription }}</td>
+          <td>
             <button (click)="editAgenda(agenda.agendaId)" class="agenda-edit-btn">Edit</button>
             <button (click)="deleteAgenda(agenda.agendaId)" class="agenda-delete-btn">Delete</button>
           </td>
         </tr>
       </tbody>
     </table>
-    
     <ng-template #noAgenda>
       <p>No Agenda to display....</p>
     </ng-template>

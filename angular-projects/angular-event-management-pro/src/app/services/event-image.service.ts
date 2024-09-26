@@ -1,70 +1,55 @@
 import { Injectable } from '@angular/core';
 import { StorageService } from '../storage/storage.service';
-import { User, Guests } from '../models/user';
-
+import { User } from '../models/user';
 @Injectable({
   providedIn: 'root'
 })
-export class GuestsService {
+export class EventImageService {
+  private eventImages:any = {
+    birthday: './birthday.jfif',
+    wedding: './wedding.png',
+    conference: './conference.jfif',
+  };
   private users: User[] = JSON.parse(localStorage.getItem('users') || '[]');
+  constructor(private storageServide:StorageService) {}
 
-  constructor(private storageService: StorageService) {}
-
-  // Add a guest to the selected event
-  addGuest(eventId: string, newGuest: Guests): void {
-    const user = this.storageService.getLoggedInUser();
-    const currentUser = this.users.find(u => u.userEmail === user?.userEmail);
-
+  getImageUrl(category: string): string | undefined {
+    return this.eventImages[category];
+  }
+  saveEventItems(events: any[]): void {
+    const user = this.storageServide.getLoggedInUser();
+    const currentUser = this.users.find((u: User) => u.userEmail === user?.userEmail);
     if (currentUser) {
-      const event = currentUser.events?.find(event => event.id === eventId);
-      if (event) {
-        event.guests = event.guests || [];
-        event.guests.push(newGuest);
+      currentUser.events = events;
+      localStorage.setItem('users', JSON.stringify(this.users));
+    }
+  }
+
+  getEventItems(): any[] {
+    const user = this.storageServide.getLoggedInUser();
+    const currentUser = this.users.find((u: User) => u.userEmail === user?.userEmail);
+    return currentUser ? currentUser.events || [] : [];
+  }
+
+  updateEventItem(updatedEvent: any): void {
+    const user = this.storageServide.getLoggedInUser();
+    const currentUser = this.users.find((u: User) => u.userEmail === user?.userEmail);
+    if (currentUser && currentUser.events) {
+      const index = currentUser.events.findIndex(event => event.id === updatedEvent.id);
+      if (index !== -1) {
+        currentUser.events[index] = updatedEvent;
         localStorage.setItem('users', JSON.stringify(this.users));
       }
     }
   }
 
-  // Get guests for a specific event
-  getGuests(eventId: string): Guests[] {
-    const user = this.storageService.getLoggedInUser();
-    const currentUser = this.users.find(u => u.userEmail === user?.userEmail);
-
-    if (currentUser) {
-      const event = currentUser.events?.find(event => event.id === eventId);
-      return event ? event.guests || [] : [];
-    }
-    return [];
-  }
-
-  // Update an existing guest's details
-  updateGuest(eventId: string, updatedGuest: Guests): void {
-    const user = this.storageService.getLoggedInUser();
-    const currentUser = this.users.find(u => u.userEmail === user?.userEmail);
-
-    if (currentUser) {
-      const event = currentUser.events?.find(event => event.id === eventId);
-      if (event && event.guests) {
-        const index = event.guests.findIndex(guest => guest.guestId === updatedGuest.guestId);
-        if (index !== -1) {
-          event.guests[index] = updatedGuest;
-          localStorage.setItem('users', JSON.stringify(this.users));
-        }
-      }
+  deleteEventItem(id: string): void {
+    const user = this.storageServide.getLoggedInUser();
+    const currentUser = this.users.find((u: User) => u.userEmail === user?.userEmail);
+    if (currentUser && currentUser.events) {
+      currentUser.events = currentUser.events.filter(event => event.id !== id);
+      localStorage.setItem('users', JSON.stringify(this.users));
     }
   }
 
-  // Delete a guest from the selected event
-  deleteGuest(eventId: string, guestId: number): void {
-    const user = this.storageService.getLoggedInUser();
-    const currentUser = this.users.find(u => u.userEmail === user?.userEmail);
-
-    if (currentUser) {
-      const event = currentUser.events?.find(event => event.id === eventId);
-      if (event && event.guests) {
-        event.guests = event.guests.filter(guest => guest.guestId !== guestId);
-        localStorage.setItem('users', JSON.stringify(this.users));
-      }
-    }
-  }
 }

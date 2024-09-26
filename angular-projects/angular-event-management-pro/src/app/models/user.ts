@@ -7,6 +7,7 @@ export interface User {
   userLocation?: string;
   events?: Event[];
   agendas?: Agenda[];
+  guests?: Guests[];
 }
 
 export interface Event {
@@ -17,7 +18,7 @@ export interface Event {
   eventStatus: string;
   eventCategory: string;
   imageUrl?: string;
-  guests?: Guests[];
+ 
 }
 
 export interface Guests {
