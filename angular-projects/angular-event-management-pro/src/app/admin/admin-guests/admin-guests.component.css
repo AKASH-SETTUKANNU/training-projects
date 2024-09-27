@@ -41,9 +41,15 @@
     aspect-ratio: 1/1;
     border-radius: 5px;
 }
-.add-guest-heading h3 {
-    margin-bottom: 15px;
-}
+.event-heading {
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-align: left; 
+        margin-bottom: 10px;
+        margin-top: 0;
+        color: rgb(248, 102, 17);
+        padding: 10px 0;
+    }
 
 .add-guest-data form {
     display: flex;
@@ -178,4 +184,23 @@
 }
 #success-message{
     color: green;
+}
+.admin-main-container select{
+    width: 100%;
+    height: 40px;
+    padding: 5px;
+    border: 1px solid orangered;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.admin-main-container select:focus{
+    outline: 2px solid rgb(255, 115, 0);
+}
+
+.admin-main-container select{
+    background-color: rgb(210, 250, 250);
+    border-radius: 5px;
+}
+.admin-main-container select:focus{
+    background-color: rgb(218, 253, 243);
 }

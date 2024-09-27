@@ -170,7 +170,6 @@ export class AdminGuestsComponent implements OnInit {
     this.guestBirthDate = ''; 
     this.successMessage = '';
     this.guestId = 0; 
-    this.selectedEventId =0; 
   }
 
   refreshGuestsList(): void {

@@ -1,129 +1,115 @@
 <div class="admin-main-container">
-  <!-- Find guest -->
-  <div class="find-guest" id="find-guest">
-    <div class="find-guest-input">
-      <label for="find-guest-email">Email</label>
-      <input
-        type="email"
-        class="find-guest-email"
-        id="find-guest-email"
-        [(ngModel)]="searchEmail"
-        placeholder="Enter Guest Email Id..."
-        required
-      />
-      <button type="button" class="find-user-btn" id="find-user-btn" (click)="findGuest()">
-        Find User
-      </button>
-    </div>
-  </div>
-  <p id="result-guest-error">{{ resultGuestError }}</p>
+  <h2 class="event-heading">Select Event to Manage Guests</h2>
+  <select [(ngModel)]="selectedEventId" (change)="refreshGuestsList()" required>
+    <option value="0">-- Select an Event --</option>
+    <option *ngFor="let event of events" [value]="event.id">{{ event.eventName }}</option>
+  </select>
 
-  <!-- Display find user -->
-  <div class="display-search-guest" id="display-search-guest" *ngIf="searchResults.length > 0">
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Location</th>
-          <th>Date of Birth</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody id="result-guest">
-        <tr *ngFor="let guest of searchResults">
-          <td>{{ guest.guestName }}</td>
-          <td>{{ guest.guestEmail }}</td>
-          <td>{{ guest.guestLocation }}</td>
-          <td>{{ guest.guestBirthDate | date: 'dd/MM/yyyy' }}</td>
-          <td>
-            <button (click)="editGuest(guest.guestId)" class="guest-edit-btn">Edit</button>
-            <button (click)="deleteGuest(guest.guestId)" class="guest-delete-btn">Delete</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="add-guest-data">
-    <div class="add-guest-heading">
-      <h3>Add Guest</h3>
-      <div (click)="displayAddGuest()">
-        <i *ngIf="!guestDisplay" class="fa-solid fa-plus"></i>
-        <i *ngIf="guestDisplay" class="fa-solid fa-angle-up"></i>
+  <div *ngIf="selectedEventId">
+    <div class="find-guest" id="find-guest">
+      <div class="find-guest-input">
+        <label for="find-guest-email">Email</label>
+        <input
+          type="email"
+          class="find-guest-email"
+          id="find-guest-email"
+          [(ngModel)]="searchEmail"
+          placeholder="Enter Guest Email Id..."
+          required
+        />
+        <button type="button" class="find-user-btn" id="find-user-btn" (click)="findGuest()">
+          Find User
+        </button>
       </div>
     </div>
-    <form id="addGuestForm" (ngSubmit)="addGuest()" *ngIf="guestDisplay">
-      <div class="input-user-data">
-        <label for="guest-name">Name</label>
-        <input type="text" class="guest-name" id="guest-name" [(ngModel)]="guestName" name="guestName" placeholder="Enter Guest Name..." (blur)="validateOnBlur('guestName')" required />
-        <p id="name-error" *ngIf="showNameError">{{ nameError }}</p>
-      </div>
-      <div class="input-user-data">
-        <label for="guest-email">Email</label>
-        <input type="email" class="guest-email" id="guest-email" [(ngModel)]="guestEmail" name="guestEmail" placeholder="Enter Guest Email..." (blur)="validateOnBlur('guestEmail')" required />
-        <p id="email-error" *ngIf="showEmailError">{{ emailError }}</p>
-      </div>
-      <div class="input-user-data">
-        <label for="user-birth-date">Date of Birth:</label>
-        <input type="date" id="guest-birth-date" name="birthDate" [(ngModel)]="guestBirthDate" required (blur)="validateOnBlur('guestBirthDate')" />
-        <p id="birthDate-error" *ngIf="showBirtDateError">{{ dateError }}</p>
-      </div>
-      <div class="input-user-data">
-        <label for="event-select">Select Event</label>
-        <select id="event-select" [(ngModel)]="selectedEventId" name="eventSelect" required>
-          <option value="">-- Select an Event --</option>
-          <option *ngFor="let event of events" [value]="event.id">{{ event.eventName }}</option>
-        </select>
-      </div>
-      <div class="input-user-data">
-        <label for="guest-location">Location</label>
-        <input type="text" class="guest-location" id="guest-location" [(ngModel)]="guestLocation" name="guestLocation" placeholder="Enter Guest Location..." (blur)="validateOnBlur('guestLocation')" required />
-        <p id="location-error" *ngIf="showLocationError">{{ locationError }}</p>
-      </div>
-      <div class="input-user-data">
-        <button type="submit">{{ iseditGuest ? "Update Guest" : "Add Guest" }}</button>
-      </div>
-      <p id="success-message" *ngIf="successMessage">{{ successMessage }}</p>
-    </form>
-  </div>
+    <p id="result-guest-error">{{ resultGuestError }}</p>
 
-  <!-- Display guests -->
-  <div class="display-guest" id="display-guest">
-    <div class="event-selection">
+    <div class="display-search-guest" id="display-search-guest" *ngIf="searchResults.length > 0">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Location</th>
+            <th>Date of Birth</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="result-guest">
+          <tr *ngFor="let guest of searchResults">
+            <td>{{ guest.guestName }}</td>
+            <td>{{ guest.guestEmail }}</td>
+            <td>{{ guest.guestLocation }}</td>
+            <td>{{ guest.guestBirthDate | date: 'dd/MM/yyyy' }}</td>
+            <td>
+              <button (click)="editGuest(guest.guestId)" class="guest-edit-btn">Edit</button>
+              <button (click)="deleteGuest(guest.guestId)" class="guest-delete-btn">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="add-guest-data">
+      <div class="add-guest-heading">
+        <h3>Add Guest</h3>
+        <div (click)="displayAddGuest()">
+          <i *ngIf="!guestDisplay" class="fa-solid fa-plus"></i>
+          <i *ngIf="guestDisplay" class="fa-solid fa-angle-up"></i>
+        </div>
+      </div>
+      <form id="addGuestForm" (ngSubmit)="addGuest()" *ngIf="guestDisplay">
+        <div class="input-user-data">
+          <label for="guest-name">Name</label>
+          <input type="text" class="guest-name" id="guest-name" [(ngModel)]="guestName" name="guestName" placeholder="Enter Guest Name..." required />
+        </div>
+        <div class="input-user-data">
+          <label for="guest-email">Email</label>
+          <input type="email" class="guest-email" id="guest-email" [(ngModel)]="guestEmail" name="guestEmail" placeholder="Enter Guest Email..." required />
+        </div>
+        <div class="input-user-data">
+          <label for="user-birth-date">Date of Birth:</label>
+          <input type="date" id="guest-birth-date" name="birthDate" [(ngModel)]="guestBirthDate" required />
+        </div>
+        <div class="input-user-data">
+          <label for="guest-location">Location</label>
+          <input type="text" class="guest-location" id="guest-location" [(ngModel)]="guestLocation" name="guestLocation" placeholder="Enter Guest Location..." required />
+        </div>
+        <div class="input-user-data">
+          <button type="submit">{{ iseditGuest ? "Update Guest" : "Add Guest" }}</button>
+        </div>
+        <p id="success-message" *ngIf="successMessage">{{ successMessage }}</p>
+      </form>
+    </div>
+
+    <div class="display-guest" id="display-guest">
       <h1>Guests List</h1>
-      <label for="event-select">Select Event</label>
-      <select id="event-select" [(ngModel)]="selectedEventId" (change)="refreshGuestsList()" required>
-        <option value="0">-- Select an Event --</option>
-        <option *ngFor="let event of events" [value]="event.id">{{ event.eventName }}</option>
-    </select>
-    
+      <table *ngIf="guests.length > 0; else noGuests">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Location</th>
+            <th>Date of Birth</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="guest-table">
+          <tr *ngFor="let guest of guests">
+            <td>{{ guest.guestName }}</td>
+            <td>{{ guest.guestEmail }}</td>
+            <td>{{ guest.guestLocation }}</td>
+            <td>{{ guest.guestBirthDate | date: 'dd/MM/yyyy' }}</td>
+            <td>
+              <button (click)="editGuest(guest.guestId)" class="guest-edit-btn">Edit</button>
+              <button (click)="deleteGuest(guest.guestId)" class="guest-delete-btn">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <ng-template #noGuests>
+        <p>No guests to display...</p>
+      </ng-template>
     </div>
-    <table *ngIf="guests.length > 0; else noGuests">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Location</th>
-          <th>Date of Birth</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody id="guest-table">
-        <tr *ngFor="let guest of guests">
-          <td>{{ guest.guestName }}</td>
-          <td>{{ guest.guestEmail }}</td>
-          <td>{{ guest.guestLocation }}</td>
-          <td>{{ guest.guestBirthDate | date: 'dd/MM/yyyy' }}</td>
-          <td>
-            <button (click)="editGuest(guest.guestId)" class="guest-edit-btn">Edit</button>
-            <button (click)="deleteGuest(guest.guestId)" class="guest-delete-btn">Delete</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <ng-template #noGuests>
-      <p>No guests to display...</p>
-    </ng-template>
   </div>
 </div>

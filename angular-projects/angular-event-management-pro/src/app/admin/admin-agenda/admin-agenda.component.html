@@ -5,8 +5,9 @@
     <option *ngFor="let event of events" [value]="event.id">{{ event.eventName }}</option>
   </select>
 
-  <h2 class="event-heading">Add New Agenda</h2>
+ 
   <form (ngSubmit)="saveEventLocationDetails()" *ngIf="selectedEventId">
+    <h2 class="event-heading">Add New Agenda</h2>
     <div class="event-location-details">
       <div class="event-location">
         <label for="location-name">Location:</label>
@@ -34,7 +35,7 @@
     </div>
   </form>
   
-  <div class="display-agenda">
+  <div class="display-agenda" *ngIf="selectedEventId">
     <h2>Event Agenda</h2>
     <table *ngIf="agendas.length > 0; else noAgenda">
       <thead>
