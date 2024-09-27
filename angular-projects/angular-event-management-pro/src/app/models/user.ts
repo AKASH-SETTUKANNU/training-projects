@@ -6,7 +6,6 @@ export interface User {
   userBirthDate: string;
   userLocation?: string;
   events?: Event[];
-  agendas?: Agenda[];
  
 }
 
@@ -19,6 +18,7 @@ export interface Event {
   eventCategory: string;
   imageUrl?: string;
   guests?: Guests[];
+  agendas?: Agenda[];
 }
 
 export interface Guests {

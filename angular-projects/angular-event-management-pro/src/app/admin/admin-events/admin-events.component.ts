@@ -58,7 +58,8 @@ export class AdminEventsComponent  {
         eventStatus,
         eventCategory,
         imageUrl:this.eventImageService.getImageUrl(eventCategory),
-        guests: []
+        guests: [],
+        agendas:[]
       };
       this.events.push(newEvent);
       this.eventImageService.saveEventItems(this.events); 

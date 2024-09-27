@@ -17,6 +17,10 @@
       <span>Event Category: {{ eventDetail.category }}</span>
       <span>Event Status: {{ eventDetail.status }}</span>
     </div>
+    <div class="action-btn">
+      <button (click)="manageAgenda()">Manage Agenda</button>
+      <button (click)="manageGuests()">Manage Guests</button>
+    </div>
   </div>
 
   <!-- Edit form  -->

@@ -6,6 +6,8 @@ import { User, Event } from '../../models/user';
 import { DatePipe } from '@angular/common';
 import { StorageService } from '../../storage/storage.service';
 import { EventImageService } from '../../services/event-image.service';
+import { Route } from '@angular/router';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-admin-index',
   standalone: true,
@@ -31,8 +33,15 @@ export class AdminIndexComponent implements OnInit {
   weddingEvents: Event[] = [];
   conferenceEvents: Event[] = [];
 
-  constructor(private storageService:StorageService,private userService: UserService, private datePipe: DatePipe,private eventImageService:EventImageService) {}
+  constructor(private storageService:StorageService,private userService: UserService, private datePipe: DatePipe,private eventImageService:EventImageService,private router:Router) {}
 
+  manageAgenda(): void {
+    this.router.navigate(['/admin/admin-agenda']);
+  }
+
+  manageGuests(): void {
+    this.router.navigate(['/admin/admin-guests']);
+  }
   closeBackdrop() {
     this.showBackdrop = false;
    this.showEdit=false;

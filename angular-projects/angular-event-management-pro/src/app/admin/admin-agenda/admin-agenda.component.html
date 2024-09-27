@@ -1,32 +1,39 @@
 <div class="admin-agenda-container">
-  <h2 class="event-heading">Add New Event</h2>
-  <form (ngSubmit)="saveEventLocationDetails()">
+  <h2 class="event-heading">Select Event to Manage Agenda</h2>
+  <select [(ngModel)]="selectedEventId" (change)="onEventChange(selectedEventId)">
+    <option value="0">-- Select an Event --</option>
+    <option *ngFor="let event of events" [value]="event.id">{{ event.eventName }}</option>
+  </select>
+
+  <h2 class="event-heading">Add New Agenda</h2>
+  <form (ngSubmit)="saveEventLocationDetails()" *ngIf="selectedEventId">
     <div class="event-location-details">
       <div class="event-location">
         <label for="location-name">Location:</label>
-        <input type="text" [(ngModel)]="agendaLocation" name="location-name" placeholder="Event Location..." (blur)="validateOnBlur('eventLocation')">
+        <input type="text" [(ngModel)]="agendaLocation" name="location-name" placeholder="Event Location...">
       </div>
       <div class="event-date">
         <label for="event-date">Date:</label>
-        <input type="date" [(ngModel)]="agendaDate" name="event-date" (blur)="validateOnBlur('eventDate')">
+        <input type="date" [(ngModel)]="agendaDate" name="event-date">
       </div>
       <div class="event-start-time">
         <label for="start-time">Start Time:</label>
-        <input type="time" [(ngModel)]="agendaStartTime" name="start-time" (blur)="validateOnBlur('eventStartAt')">
+        <input type="time" [(ngModel)]="agendaStartTime" name="start-time">
       </div>
       <div class="event-end-time">
         <label for="end-time">End Time:</label>
-        <input type="time" [(ngModel)]="agendaEndTime" name="end-time" (blur)="validateOnBlur('eventEndAt')">
+        <input type="time" [(ngModel)]="agendaEndTime" name="end-time">
       </div>
     </div>
     <div class="event-description">
       <label for="event-description">Description:</label>
-      <textarea name="event-description" [(ngModel)]="agendaDescription" (blur)="validateOnBlur('eventDescription')"></textarea>
+      <textarea name="event-description" [(ngModel)]="agendaDescription"></textarea>
     </div>
     <div class="event-save-btn">
-      <button type="submit">Save Event</button>
+      <button type="submit">Save Agenda</button>
     </div>
   </form>
+  
   <div class="display-agenda">
     <h2>Event Agenda</h2>
     <table *ngIf="agendas.length > 0; else noAgenda">

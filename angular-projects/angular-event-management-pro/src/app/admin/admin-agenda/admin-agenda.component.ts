@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Agenda } from '../../models/user';
+import { Agenda, Event } from '../../models/user';
 import { AgendaService } from '../../services/agenda.service';
+import { EventImageService } from '../../services/event-image.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -9,9 +10,11 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './admin-agenda.component.html',
-  styleUrl: './admin-agenda.component.css'
+  styleUrls: ['./admin-agenda.component.css']
 })
 export class AdminAgendaComponent implements OnInit {
+  events: Event[] = [];
+  selectedEventId: number = 0;
   agendas: Agenda[] = [];
   agendaId: number = 0;
   agendaLocation: string = '';
@@ -19,16 +22,36 @@ export class AdminAgendaComponent implements OnInit {
   agendaStartTime: string = '';
   agendaEndTime: string = '';
   agendaDescription: string = '';
+  eventImageUrl: string | undefined;
 
-  constructor(private agendaService: AgendaService) {}
+  constructor(private agendaService: AgendaService, private eventService: EventImageService) {}
 
   ngOnInit(): void {
+    this.loadEvents();
+  }
+
+  loadEvents(): void {
+    this.events = this.eventService.getEventItems(); 
+  }
+
+  onEventChange(eventId: number): void {
+    this.selectedEventId = eventId;
     this.loadAgendas();
+ 
   }
 
   loadAgendas(): void {
-    this.agendas = this.agendaService.getAgendas();
+    console.log("enter load agenda");
+    if (this.selectedEventId) {
+      console.log("enter selected agenda");
+      this.agendas = this.agendaService.getAgendas(this.selectedEventId);
+      console.log(this.agendas);
+    } else {
+      this.agendas = [];
+    }
   }
+
+
 
   saveEventLocationDetails(): void {
     const newAgenda: Agenda = {
@@ -41,9 +64,11 @@ export class AdminAgendaComponent implements OnInit {
     };
 
     if (this.agendaId) {
-      this.agendaService.updateAgenda(newAgenda);
+      console.log("eneter the update agenda add ");
+      this.agendaService.updateAgenda(this.selectedEventId, newAgenda);
     } else {
-      this.agendaService.addAgenda(newAgenda);
+      console.log("eneter the new agenda add ");
+      this.agendaService.addAgenda(this.selectedEventId, newAgenda);
     }
 
     this.resetForm();
@@ -63,7 +88,7 @@ export class AdminAgendaComponent implements OnInit {
   }
 
   deleteAgenda(agendaId: number): void {
-    this.agendaService.deleteAgenda(agendaId);
+    this.agendaService.deleteAgenda(this.selectedEventId, agendaId);
     this.loadAgendas();
   }
 
@@ -75,6 +100,4 @@ export class AdminAgendaComponent implements OnInit {
     this.agendaEndTime = '';
     this.agendaDescription = '';
   }
-
-  validateOnBlur(field: string): void {}
 }
