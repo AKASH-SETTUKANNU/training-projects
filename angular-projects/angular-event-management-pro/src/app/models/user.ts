@@ -7,18 +7,18 @@ export interface User {
   userLocation?: string;
   events?: Event[];
   agendas?: Agenda[];
-  guests?: Guests[];
+ 
 }
 
 export interface Event {
-  id: string;
+  id: number;
   eventName: string;
   eventDate: string;
   eventDescription: string;
   eventStatus: string;
   eventCategory: string;
   imageUrl?: string;
- 
+  guests?: Guests[];
 }
 
 export interface Guests {

@@ -43,7 +43,7 @@ export class EventImageService {
     }
   }
 
-  deleteEventItem(id: string): void {
+  deleteEventItem(id: number): void {
     const user = this.storageServide.getLoggedInUser();
     const currentUser = this.users.find((u: User) => u.userEmail === user?.userEmail);
     if (currentUser && currentUser.events) {

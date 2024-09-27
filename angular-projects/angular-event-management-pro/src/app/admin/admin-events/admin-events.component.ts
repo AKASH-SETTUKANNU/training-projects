@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { StorageService } from '../../storage/storage.service';
 import { UserService } from '../../services/user.service';
-import { User, Event } from '../../models/user';
+import { User, Event,Guests} from '../../models/user';
 import { CommonModule } from '@angular/common';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -58,6 +58,7 @@ export class AdminEventsComponent  {
         eventStatus,
         eventCategory,
         imageUrl:this.eventImageService.getImageUrl(eventCategory),
+        guests: []
       };
       this.events.push(newEvent);
       this.eventImageService.saveEventItems(this.events); 
@@ -67,8 +68,8 @@ export class AdminEventsComponent  {
     }
   }
 
-  private generateUniqueId(): string {
-    return (this.events.length + 1).toString();
+  private generateUniqueId(){
+    return this.events.length + 1;
   }
 
 

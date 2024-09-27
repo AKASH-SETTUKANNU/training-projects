@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { StorageService } from '../../storage/storage.service';
-import { Guests } from '../../models/user';
+import { Guests, User, Event } from '../../models/user';
+
 @Component({
   selector: 'app-admin-guests',
   standalone: true,
@@ -18,6 +19,8 @@ export class AdminGuestsComponent implements OnInit {
   guestBirthDate: string = '';
   guestLocation: string = '';
   guests: Guests[] = [];
+  users: User[] = [];
+  events: Event[] = [];
   searchEmail: string = '';
   searchResults: Guests[] = [];
   nameError: string = 'Name is required!';
@@ -33,16 +36,26 @@ export class AdminGuestsComponent implements OnInit {
   showEmailError: boolean = false;
   showBirtDateError: boolean = false;
   showLocationError: boolean = false;
+  selectedEventId: number = 0;
 
-  constructor(private storageService: StorageService,private guestService:GuestService) {}
+  constructor(private storageService: StorageService, private guestService: GuestService) {}
 
   ngOnInit(): void {
+    this.loadEvents();
     this.refreshGuestsList();
   }
 
+  loadEvents(): void {
+    const loggedInUser = this.storageService.getLoggedInUser();
+    this.users = this.storageService.getUsers();
+    const currentUser = this.users.find((u: User) => u.userEmail === loggedInUser?.userEmail);
+    this.events = currentUser?.events || [];
+    console.log('Loaded events:', this.events);
+  }
+
   addGuest(): void {
-    if (this.validateGuest()) {
-      const existingGuest = this.guestService.findEditGuest(this.guestId);
+    if (this.validateGuest() && this.selectedEventId !== null) {
+      const existingGuest = this.guestService.findEditGuest(this.selectedEventId, this.guestId);
       const emailExists = this.isEmailExists(this.guestEmail);
 
       if (!this.iseditGuest && emailExists) {
@@ -52,7 +65,7 @@ export class AdminGuestsComponent implements OnInit {
       }
 
       const newGuest: Guests = {
-        guestId: this.guestId,
+        guestId: this.guestId|| this.generateGuestId(),
         guestName: this.guestName,
         guestEmail: this.guestEmail,
         guestBirthDate: this.guestBirthDate,
@@ -60,10 +73,11 @@ export class AdminGuestsComponent implements OnInit {
       };
 
       if (existingGuest) {
-        this.guestService.updateGuest(newGuest);
+        this.guestService.updateGuest(this.selectedEventId, newGuest);
         this.successMessage = 'Guest updated successfully!';
       } else {
-        this.guestService.addGuests([newGuest]);
+        this.guestService.addGuests(String(this.selectedEventId), [newGuest]);
+
         this.successMessage = 'Guest added successfully!';
       }
 
@@ -72,32 +86,29 @@ export class AdminGuestsComponent implements OnInit {
       this.refreshGuestsList();
     }
   }
-
+  private generateGuestId(): number {
+    return Math.max(0, ...this.guests.map(g => g.guestId)) + 1; 
+}
   displayAddGuest(): void {
     this.guestDisplay = !this.guestDisplay;
   }
 
   findGuest(): void {
-    const isEmailValid = this.isValidEmail(this.searchEmail);
-  
-    if (!isEmailValid) {
+    if (!this.isValidEmail(this.searchEmail)) {
       this.resultGuestError = 'Please enter a valid full email address.';
       this.searchResults = []; 
       return;
     }
-  
-    const foundGuests = this.guestService.getGuestsList();
-    this.searchResults = foundGuests.filter(guest => 
-      guest.guestEmail.toLowerCase() === this.searchEmail.toLowerCase()
-    );
-  
+
+    const foundGuests = this.guestService.getGuestsList(this.selectedEventId);
+    this.searchResults = foundGuests.filter(guest => guest.guestEmail.toLowerCase() === this.searchEmail.toLowerCase());
     this.resultGuestError = this.searchResults.length > 0 ? '' : 'Guest not found';
   }
 
   editGuest(guestId: number): void {
     this.guestDisplay = true;
     this.iseditGuest = true;
-    const guest = this.guestService.findEditGuest(guestId);
+    const guest = this.guestService.findEditGuest(this.selectedEventId, guestId);
     if (guest) {
       this.guestId = guest.guestId; 
       this.guestName = guest.guestName;
@@ -108,13 +119,16 @@ export class AdminGuestsComponent implements OnInit {
       console.error('Guest not found');
     }
   }
-
+  
   deleteGuest(guestId: number): void {
-    this.guestService.deleteGuest(guestId);
-    this.refreshGuestsList();
+      this.guestService.deleteGuest(this.selectedEventId, guestId);
+      this.refreshGuestsList();
   }
+  
 
-  validateOnBlur(field: string) {
+
+
+  validateOnBlur(field: string): void {
     switch(field) {
       case 'guestName':
         this.showNameError = !this.guestName;
@@ -136,7 +150,7 @@ export class AdminGuestsComponent implements OnInit {
     this.showEmailError = !this.guestEmail || !this.isValidEmail(this.guestEmail);
     this.showBirtDateError = !this.guestBirthDate;
     this.showLocationError = !this.guestLocation;
-  
+
     return !(this.showNameError || this.showEmailError || this.showBirtDateError || this.showLocationError);
   }
 
@@ -156,10 +170,14 @@ export class AdminGuestsComponent implements OnInit {
     this.guestBirthDate = ''; 
     this.successMessage = '';
     this.guestId = 0; 
+    this.selectedEventId =0; 
   }
 
-  private refreshGuestsList(): void {
-    this.guests = this.guestService.getGuestsList() || [];
-    this.guestId = this.guests.length > 0 ? Math.max(...this.guests.map(g => g.guestId)) + 1 : 1;
+  refreshGuestsList(): void {
+    if (this.selectedEventId > 0) {
+      this.guests = this.guestService.getGuestsList(this.selectedEventId);
+    } else {
+      this.guests = [];
+    }
   }
 }

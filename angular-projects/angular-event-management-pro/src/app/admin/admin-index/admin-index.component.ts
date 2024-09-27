@@ -15,7 +15,7 @@ import { EventImageService } from '../../services/event-image.service';
   providers: [DatePipe],
 })
 export class AdminIndexComponent implements OnInit {
-  eventToEditId: string | null = null;
+  eventToEditId: number= 0;
   user: User | null = null;
   events: Event[] = [];
   eventName: string = '';
@@ -70,7 +70,7 @@ export class AdminIndexComponent implements OnInit {
       if (eventIndex !== -1) {
         this.events[eventIndex] = { ...newEvent };
       }
-      this.eventToEditId = null; 
+      this.eventToEditId = 0; 
     } else {
       this.events.push(newEvent);
     }
@@ -82,17 +82,17 @@ export class AdminIndexComponent implements OnInit {
     this.resetForm();
   }
 
-  private generateUniqueId(): string {
-    return (this.events.length + 1).toString();
+  private generateUniqueId(): number {
+    return this.events.length + 1;
   }
 
-  deleteEvent(id: string): void {
+  deleteEvent(id: number): void {
     this.events = this.events.filter(event => event.id !== id);
     this.eventImageService.saveEventItems(this.events);
     this.loadEvents();
   }
 
-  editEvent(id: string): void {
+  editEvent(id: number): void {
     this.showEdit = true; 
     this.eventToEditId = id; 
     const event = this.events.find(event => event.id === id);
