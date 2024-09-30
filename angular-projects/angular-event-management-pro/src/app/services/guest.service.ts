@@ -41,7 +41,15 @@ addGuests(eventId: string, guests: Guests[]): void {
 }
 
 
-
+findGuest(email:string):boolean{
+    const users:User[]=JSON.parse(localStorage.getItem('users')||'[]');
+    const userFind=users.find((u:User)=>u.userEmail===email);
+    if(userFind){
+        return true;
+    }
+    return false;
+    
+  }
 
   findEditGuest(eventId: number, guestId: number): Guests | undefined {
     const loggedInUser = this.storageService.getLoggedInUser();

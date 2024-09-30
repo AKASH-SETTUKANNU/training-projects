@@ -1,4 +1,3 @@
-
 export interface User {
   userName: string;
   userEmail: string;
@@ -7,18 +6,17 @@ export interface User {
   userBirthDate: string;
   userLocation?: string;
   events?: Event[];
-  invitations?:Invitation[];
+  invitations?: Invitation[];
+  notifications?: Invitation[]; 
 }
 export interface Invitation {
-  guestId: number;
-  guestName: string;
+  senderEmail: string; 
+  senderName: string;  
   guestEmail: string;
   eventId: number;
   eventName: string;
   eventLocation: string;
   eventDate: string;
-  eventStartTime: string;
-  eventEndTime: string;
   eventDescription: string;
   agendaLocation: string;
   agendaDate: string;

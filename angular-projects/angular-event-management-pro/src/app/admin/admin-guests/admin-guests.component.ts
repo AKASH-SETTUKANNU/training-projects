@@ -26,7 +26,7 @@ export class AdminGuestsComponent implements OnInit {
   searchResults: Guests[] = [];
   invites: Invitation[] = [];
   nameError: string = 'Name is required!';
-  emailError: string = 'Valid email is required!';
+  emailError: string = '';
   locationError: string = 'Location is required!';
   dateError: string = 'Date of Birth is required!';
   successMessage: string = '';
@@ -64,10 +64,10 @@ export class AdminGuestsComponent implements OnInit {
 
       if (!this.iseditGuest && emailExists) {
         this.showEmailError = true;
-        this.emailError = 'Email already exists!';
+        this.emailError = 'guest already Added...!';
         return;
       }
-
+       if(this.guestService.findGuest(this.guestEmail)){
       const newGuest: Guests = {
         guestId: this.guestId || this.generateGuestId(),
         guestName: this.guestName,
@@ -76,6 +76,7 @@ export class AdminGuestsComponent implements OnInit {
         guestLocation: this.guestLocation,
       };
 
+
       if (existingGuest) {
         this.guestService.updateGuest(this.selectedEventId, newGuest);
         this.successMessage = 'Guest updated successfully!';
@@ -83,6 +84,9 @@ export class AdminGuestsComponent implements OnInit {
         this.guestService.addGuests(String(this.selectedEventId), [newGuest]);
 
         this.successMessage = 'Guest added successfully!';
+      }}
+      else{
+        this.emailError = 'User Not exists...!';
       }
 
       this.iseditGuest = false;
@@ -189,31 +193,43 @@ export class AdminGuestsComponent implements OnInit {
       
       // Get agendas from the selected event directly
       const eventAgendas = selectedEvent?.agendas || []; 
-      console.log(eventAgendas);
-      console.log(selectedEvent);
-      console.log(eventAgendas.length);
   
       if (selectedEvent && eventAgendas.length > 0) {
         const agenda = eventAgendas[0];
-        this.invites = this.guests.map(guest => {
-          return {
-            guestId: guest.guestId,
-            guestName: guest.guestName,
-            guestEmail: guest.guestEmail,
-            eventId: selectedEvent.id,
-            eventName: selectedEvent.eventName,
-            eventLocation: agenda.agendaLocation,
-            eventDate: agenda.agendaDate,
-            eventStartTime: agenda.agendaStartTime,
-            eventEndTime: agenda.agendaEndtime,
-            eventDescription: agenda.agendaDescription,
-            agendaLocation: agenda.agendaLocation,
-            agendaDate: agenda.agendaDate,
-            agendaStartTime: agenda.agendaStartTime,
-            agendaEndTime: agenda.agendaEndtime,
-            agendaDescription: agenda.agendaDescription,
-            invitationSent: true
-          };
+        this.invites = [];
+  
+        this.guests.forEach(guest => {
+          const { guestEmail } = guest;
+  
+          const user = this.users.find(user => user.userEmail === guestEmail);
+          const loggedInUser=this.storageService.getLoggedInUser();
+          if (user) {
+            const invitation: Invitation = {
+              senderEmail: loggedInUser?.userEmail || '', 
+              senderName: loggedInUser?.userName || '',  
+              guestEmail: guest.guestEmail,
+              eventId: selectedEvent.id,
+              eventName: selectedEvent.eventName,
+              eventLocation: agenda.agendaLocation,
+              eventDate: agenda.agendaDate,
+              eventDescription: agenda.agendaDescription,
+              agendaLocation: agenda.agendaLocation,
+              agendaDate: agenda.agendaDate,
+              agendaStartTime: agenda.agendaStartTime,
+              agendaEndTime: agenda.agendaEndtime,
+              agendaDescription: agenda.agendaDescription,
+              invitationSent: true
+            };
+  
+            this.invites.push(invitation);
+            if (!user.notifications) {
+              user.notifications = [];
+            }
+            user.notifications.push(invitation);
+  
+            // Update the user in storage after adding the notification
+            this.storageService.updateUser(user);
+          }
         });
   
         console.log('Invitations sent with agendas:', this.invites);
@@ -225,5 +241,8 @@ export class AdminGuestsComponent implements OnInit {
       alert('No guests or event selected.');
     }
   }
+  
+
+  
   
 }

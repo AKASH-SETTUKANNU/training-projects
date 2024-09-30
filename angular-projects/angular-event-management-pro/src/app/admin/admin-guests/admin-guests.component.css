@@ -226,3 +226,6 @@
 .guest-invite-btn button:hover{
    background-color: green;
 }
+.emailError{
+    color: red;
+}

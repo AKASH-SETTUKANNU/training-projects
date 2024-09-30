@@ -79,7 +79,7 @@
           <button type="submit">{{ iseditGuest ? "Update Guest" : "Add Guest" }}</button>
         </div>
         <p id="success-message" *ngIf="successMessage">{{ successMessage }}</p>
-       
+       <p class="emailError" *ngIf="emailError">{{emailError}}</p>
       </form>
     </div>
 
