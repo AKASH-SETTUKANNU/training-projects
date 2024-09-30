@@ -165,7 +165,7 @@ header {
 .notification-display {
     position: absolute;
     margin-top: 200px;
-    margin-left: 80px;
+    margin-left: 50px;
     max-height: 150px;
     width: 200px;
     overflow-y: auto;
@@ -174,13 +174,14 @@ header {
     padding: 5px;
 }
 
-.notification {
+.notification{
     display: flex;
     align-items: center;
     justify-content: flex-start;
     border-bottom: 1px solid rgb(255, 221, 169);
     gap: 10px;
     padding: 5px 0;
+    max-width: 250px; 
 }
 
 .notification-profile img {
@@ -199,10 +200,11 @@ header {
 }
 
 .notification-message {
+    display: inline-block;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    max-width: 200px;
+    max-width: 100px;
 }
 .profile-edit-area{
     position: absolute;
@@ -255,7 +257,7 @@ header {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background-color: white;
+        background-color: rgb(247, 183, 65);
         border-radius: 5px;
         padding: 20px;
         z-index: 400;
@@ -268,6 +270,7 @@ header {
 .invitation-action-btn{
     display: flex;
     flex-direction:row ;
+    margin-top: 7px;
     gap: 5px;
 }
 .backdrop {
@@ -291,4 +294,42 @@ header {
     color: white;
     width: 110px;
     height: 25px;
+}
+.pending-btn{
+    padding: 5px;
+    border: 1px solid rgb(194, 191, 13);
+    background-color: rgb(127, 141, 3);
+    border-radius: 5px;
+    color: white;
+    width: 110px;
+    height: 25px;
+}
+.reject-btn{
+    padding: 5px;
+    border: 1px solid rgb(206, 30, 30);
+    background-color: rgb(128, 0, 0);
+    border-radius: 5px;
+    color: white;
+    width: 110px;
+    height: 25px;
+}
+.closeNotification{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 5px;
+    background-color: white;
+    height: 10px;
+    aspect-ratio: 1/1;
+    border-radius: 30px;
+    margin-bottom: 5px;
+}
+.notification-describtion h3{
+    margin: 0;
+}
+.notification-detials-profile img{
+    height: 70px;
+    aspect-ratio: 1/1;
+    border-radius: 30px;
 }

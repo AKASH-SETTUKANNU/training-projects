@@ -34,6 +34,9 @@ export interface Event {
   eventDescription: string;
   eventStatus: string;
   eventCategory: string;
+  accept?:number;
+  pending?:number;
+  reject?:number;
   imageUrl?: string;
   guests?: Guests[];
   agendas?: Agenda[];

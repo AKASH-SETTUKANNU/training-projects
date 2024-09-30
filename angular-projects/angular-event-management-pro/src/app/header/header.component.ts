@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { StorageService } from '../storage/storage.service';
-import { Invitation, User } from '../models/user';
+import { Invitation, User,Event } from '../models/user';
 
 @Component({
   selector: 'app-header',
@@ -16,7 +16,8 @@ export class HeaderComponent implements OnInit {
   showNotificationDisplay = false;
   showProfileEditArea = false;
   searchText: string = '';
-
+  
+  isrespondSend:boolean=true;
   isShowNotificationInfo: boolean = false;
   notifications: Invitation[] = [];
   detailNotification: Invitation | undefined;
@@ -88,4 +89,41 @@ export class HeaderComponent implements OnInit {
   closenotification(): void {
     this.isShowNotificationInfo = false;
   }
+  invitationRespond(respond: string, eventId: number | undefined) {
+    const loggedUser = this.storageService.getLoggedInUser();
+    const users = this.storageService.getUsers();
+    
+    const user = users.find((u: User) => u.userEmail === loggedUser?.userEmail);
+    
+    if (user) {
+      const events = user.events || [];
+      const event = events.find((eve: Event) => eve.id === eventId);
+      
+      if (event) {
+        if (respond === 'accept') {
+          event.accept = (event.accept || 0) + 1;
+        } else if (respond === 'pending') {
+          event.pending = (event.pending || 0) + 1;
+        } else if (respond === 'reject') {
+          event.reject = (event.reject || 0) + 1;
+        }
+  
+        const invitationIndex = user.invitations?.findIndex((inv: Invitation) => inv.eventId === eventId) || -1;
+        
+        if (invitationIndex >= 0) {
+          user.invitations = user.invitations || [];
+          user.invitations[invitationIndex].invitationSent = true; // Mark as responded
+        }
+  
+        this.storageService.updateUser(user);
+        console.log(`Response recorded: ${respond} for event ID: ${eventId}`);
+      } else {
+        console.error(`Event with ID ${eventId} not found.`);
+      }
+    } else {
+      console.error("User not found");
+    }
+  }
+  
+  
 }

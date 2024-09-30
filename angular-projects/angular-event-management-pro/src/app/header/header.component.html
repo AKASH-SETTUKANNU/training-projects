@@ -39,7 +39,7 @@
           <div class="notification-content">
             <strong>{{ notification.senderName }}</strong>
             <br>
-            <span class="notification-message">{{ notification.eventDescription }}</span>
+            <span class="notification-message">{{ notification.eventDescription}}</span>
             <br>
             <small>{{ notification.agendaStartTime }} to {{ notification.agendaEndTime }}</small>
           </div>
@@ -52,29 +52,36 @@
 
       <div class="backdrop" *ngIf="isShowNotificationInfo" (click)="closenotification()"></div>
       <div *ngIf="isShowNotificationInfo" class="notificationDetails">
-          <div class="closeNotification" (click)="closenotification()">
-              <i class="fa-solid fa-xmark"></i>
+        <div class="closeNotification" (click)="closenotification()">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="notification-detials-profile">
+          <img src="./profile.webp" alt="profile" />
+        </div>
+        <div class="notification-describtion">
+          <h3>Invitation.</h3>
+          <span><strong>Name: </strong>{{ detailNotification?.senderName || 'No details available' }}</span>
+          <span><strong>Mail Id:</strong> {{ detailNotification?.senderEmail || 'No details available' }}</span>
+          <span><strong>Event Name:</strong> {{ detailNotification?.eventName || 'No details available' }}</span>
+          <span><strong>Agenda:</strong> {{ detailNotification?.agendaLocation || 'No details available' }}</span>
+          <span><strong>Event date:</strong> {{ detailNotification?.eventDate || 'No details available' }}</span>
+          <span><strong>Start Time:</strong> {{ detailNotification?.agendaStartTime || 'No details available' }}</span>
+          <span><strong>End Time:</strong> {{ detailNotification?.agendaEndTime || 'No details available' }}</span>
+          <span><strong>Description:</strong> {{ detailNotification?.eventDescription || 'No details available' }}</span>
+          
+          <div class="invitation-action-btn" *ngIf="!detailNotification?.invitationSent; else respondSended">
+            <button class="accept-btn" (click)="invitationRespond('accept', detailNotification?.eventId)">Accept</button>
+            <button class="pending-btn" (click)="invitationRespond('pending', detailNotification?.eventId)">Pending</button>
+            <button class="reject-btn" (click)="invitationRespond('reject', detailNotification?.eventId)">Reject</button>
           </div>
-          <div class="notification-profile">
-              <img src="./profile.webp" alt="profile" />
-          </div>
-          <div class="notification-describtion">
-              <h3>Invitation.</h3>
-              <span>Name: {{ detailNotification?.senderName || 'No details available' }}</span>
-              <span>Mail Id: {{ detailNotification?.senderEmail || 'No details available' }}</span>
-              <span>Event Name: {{ detailNotification?.eventName || 'No details available' }}</span>
-              <span>Agenda: {{ detailNotification?.agendaLocation || 'No details available' }}</span>
-              <span>Event date: {{ detailNotification?.eventDate || 'No details available' }}</span>
-              <span>Start Time: {{ detailNotification?.agendaStartTime || 'No details available' }}</span>
-              <span>End Time: {{ detailNotification?.agendaEndTime || 'No details available' }}</span>
-              <span>Description: {{ detailNotification?.agendaDescription || 'No details available' }}</span>
-              <div class="invitation-action-btn">
-                  <button class="accept-btn">Accept</button>
-                  <button class="pending-btn">Pending</button>
-                  <button class="cancle-btn">Reject</button>
-              </div>
-          </div>
+          
+          <ng-template #respondSended>
+            <span>Response sent</span>
+          </ng-template>
+        </div>
       </div>
+      
+      
       
 
       <div class="profile">

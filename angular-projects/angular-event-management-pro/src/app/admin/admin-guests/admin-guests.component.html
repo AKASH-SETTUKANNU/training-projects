@@ -1,10 +1,10 @@
 <div class="admin-main-container">
   <h2 class="event-heading">Select Event to Manage Guests</h2>
-  <select [(ngModel)]="selectedEventId" (change)="refreshGuestsList()" required>
+  <select [(ngModel)]="selectedEventId" (change)="onEventChange()" required>
     <option value="0">-- Select an Event --</option>
     <option *ngFor="let event of events" [value]="event.id">{{ event.eventName }}</option>
   </select>
-
+  
   <div *ngIf="selectedEventId">
     <div class="find-guest" id="find-guest">
       <div class="find-guest-input">
@@ -85,7 +85,7 @@
 
     <div class="display-guest" id="display-guest">
       <h1>Guests List</h1>
-      <table *ngIf="guests.length > 0; else noGuests">
+      <table *ngIf="guests.length > 0 ; else noGuests" (onchange)=" this.updateResponseCounts()">
         <thead>
           <tr>
             <th>Name</th>
@@ -119,5 +119,42 @@
         <p>No guests to display...</p>
       </ng-template>
     </div>
+    <div class="responds-status" *ngIf="guests.length">
+      <h1>Respond Status</h1>
+      <div class="respond-container">
+      <div class="respond-accept">
+        <div class="content">
+        <i class="fa-regular fa-thumbs-up"></i>
+        {{ respondAcceptCount }}
+      </div>
+
+      <div>
+        <h5>Accept</h5>
+      </div>
+      </div>
+
+
+      <div class="respond-pending">
+        <div class="content">
+        <i class="fa-solid fa-spinner"></i>
+        {{ respondPendingCount }}
+      </div>
+
+      <div>
+       <h5>Pending</h5> 
+      </div>
+      </div>
+      <div class="respond-reject">
+        <div class="content">
+        <i class="fa-regular fa-thumbs-down"></i>
+        {{ respondCancelCount }}
+      </div>
+      <div>
+      <h5>Reject</h5>
+      </div>
+      </div>
+    </div>
+    </div>
+    
   </div>
 </div>

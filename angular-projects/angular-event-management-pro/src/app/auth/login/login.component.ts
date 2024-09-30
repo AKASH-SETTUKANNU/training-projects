@@ -61,15 +61,16 @@ export class LoginComponent implements OnInit{
   loginUser(): void {
     const user = this.userService.getUserByEmail(this.email);
     if (user && user.userPassword === this.password) {
-      this.storageService.setLoggedInUser(user);
-      if (user.userRole === 'admin') {
-        this.router.navigate(['/admin/admin-index']);
-      } else {
-        alert(`Welcome, ${user.userName}!`);
-        this.router.navigate(['/guest/guest-index']);
-      }
+        this.storageService.setLoggedInUser(user);
+        if (user.userRole === 'admin') {
+            this.router.navigate(['/admin/admin-index']);
+        } else {
+            alert(`Welcome, ${user.userName}!`);
+            this.router.navigate(['/guest/guest-index']);
+        }
     } else {
-      alert('Invalid email or password.');
+        alert('Invalid email or password.');
     }
+    
   }
 }

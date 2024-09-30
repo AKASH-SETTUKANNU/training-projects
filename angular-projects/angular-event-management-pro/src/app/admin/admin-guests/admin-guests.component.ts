@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { StorageService } from '../../storage/storage.service';
-import { Guests, User, Event, Invitation, Agenda } from '../../models/user'; // Ensure Agenda is imported
+import { Guests, User, Event, Invitation, Agenda } from '../../models/user'; 
 
 @Component({
   selector: 'app-admin-guests',
@@ -14,6 +14,10 @@ import { Guests, User, Event, Invitation, Agenda } from '../../models/user'; // 
 })
 export class AdminGuestsComponent implements OnInit {
   guestId: number = 0;
+  respondAcceptCount:number=0;
+  respondPendingCount:number=0;
+  respondCancelCount:number=0;
+
   guestName: string = '';
   guestEmail: string = '';
   guestBirthDate: string = '';
@@ -45,8 +49,25 @@ export class AdminGuestsComponent implements OnInit {
   ngOnInit(): void {
     this.loadEvents();
     this.refreshGuestsList();
+   
   }
-
+  updateResponseCounts(): void {
+    const currentUser = this.storageService.getLoggedInUser();
+    const user = this.storageService.getUsers().find((u: User) => u.userEmail === currentUser?.userEmail);
+    const events = user?.events || [];
+    const event = events.find((e: Event) => e.id === Number(this.selectedEventId));
+  
+    if (event) {
+      console.log("enter.,.,.");
+      this.respondAcceptCount = event.accept || 0;
+      this.respondPendingCount = event.pending || 0;
+      this.respondCancelCount = event.reject || 0;
+    } else {
+      this.respondAcceptCount = 0;
+      this.respondPendingCount = 0;
+      this.respondCancelCount = 0;
+    }
+  }
   loadEvents(): void {
     const loggedInUser = this.storageService.getLoggedInUser();
     this.users = this.storageService.getUsers();
@@ -92,6 +113,7 @@ export class AdminGuestsComponent implements OnInit {
       this.iseditGuest = false;
       this.resetForm();
       this.refreshGuestsList();
+      this.updateResponseCounts();
     }
   }
 
@@ -211,14 +233,14 @@ export class AdminGuestsComponent implements OnInit {
               eventId: selectedEvent.id,
               eventName: selectedEvent.eventName,
               eventLocation: agenda.agendaLocation,
-              eventDate: agenda.agendaDate,
-              eventDescription: agenda.agendaDescription,
+              eventDate: selectedEvent.eventDate,
+              eventDescription: selectedEvent.eventDescription,
               agendaLocation: agenda.agendaLocation,
               agendaDate: agenda.agendaDate,
               agendaStartTime: agenda.agendaStartTime,
               agendaEndTime: agenda.agendaEndtime,
               agendaDescription: agenda.agendaDescription,
-              invitationSent: true
+              invitationSent: false
             };
   
             this.invites.push(invitation);
@@ -240,6 +262,10 @@ export class AdminGuestsComponent implements OnInit {
     } else {
       alert('No guests or event selected.');
     }
+  }
+  onEventChange(): void {
+    this.refreshGuestsList(); 
+    this.updateResponseCounts();
   }
   
 

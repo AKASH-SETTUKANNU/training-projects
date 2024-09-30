@@ -229,3 +229,52 @@
 .emailError{
     color: red;
 }
+.responds-status{
+    display: flex;
+    background-color: antiquewhite;
+    height: 200px;
+    padding: 5px;
+}
+.respond-accept,
+.respond-pending,
+.respond-reject {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.respond-accept i,
+.respond-pending i,
+.respond-reject i {
+  font-size: 48px;
+  color: #4CAF50;
+}
+
+.respond-pending i {
+  color: #FFC107;
+}
+
+.respond-reject i {
+  color: #F44336;
+}
+.responds-status{
+    display: flex;
+    flex-direction: column;
+}
+.respond-container{
+    display: flex;
+    flex-direction: row;
+}
+.responds-status h1{
+    margin-left: 10px;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,11 +1,224 @@
 .guest-agenda-container{
     grid-area: main;
     padding: 10px;
-    height: 96%;
+    height: 100%;
     width: 98%;
-    display: flex;
     justify-content: center;
     align-items: center;
     background-color: white;
     border-radius: 2px;
+}
+
+.admin-main-container h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: left; 
+    margin-bottom: 10px;
+    margin-top: 0;
+    color: rgb(248, 102, 17);
+    padding: 10px 0;
+}
+.agenda-container{
+    background-color: rgb(250, 198, 131);
+    padding: 10px 30px;
+    border-radius: 5px;
+}
+.add-event-heading{
+    display: flex;
+    background-color: rgb(250, 198, 131);
+    align-items: center;
+    width: 95%;
+    justify-content:space-between;
+}
+.add-event-heading i{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    height: 25px;
+    aspect-ratio: 1/1;
+    border-radius: 5px;
+}
+.event-description{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    
+    gap: 15px;
+    width: 100%;
+}
+
+.event-location-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"],
+textarea {
+    width: 100%;
+    height: 20px;
+    padding: 10px;
+    border: 1px solid rgb(245, 153, 49);
+    border-radius: 3px;
+    transition: border-color 0.3s;
+}
+textarea {
+    width: 90%;
+    height: 20px;
+    padding: 10px;
+    border: 1px solid rgb(245, 153, 49);
+    border-radius: 3px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus,
+textarea:focus {
+    border-color: rgb(194, 76, 21); 
+    outline: none;
+    box-shadow: 2px 2px 5px rgba(245, 186, 109, 0.5);
+}
+
+textarea {
+    height: 70px; 
+}
+
+.event-save-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.event-save-btn button {
+    background-color: rgb(248, 102, 17);
+    color: white;
+    border: none;
+    height: 40px;
+    width: 100px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.event-save-btn button:hover {
+    background-color: rgb(247, 87, 8); 
+}
+
+.display-agenda {
+    margin-top: 5px;
+    width: 100%;
+}
+
+.display-agenda h2 {
+    margin-bottom: 15px;
+}
+
+.display-agenda table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.display-agenda th,
+.display-agenda td {
+    padding: 10px;
+    border: 1px solid rgb(236, 176, 119);
+    text-align: center;
+}
+
+.display-agenda th {
+    background-color: rgb(247, 204, 144);
+}
+
+.display-agenda tr:nth-child(even) {
+    background-color: rgb(244, 244, 244);
+}
+
+.display-agenda tr:hover {
+    background-color: rgb(230, 229, 229);
+}
+
+.actions-cell {
+    display: flex;
+    justify-content: center;
+    gap: 10px; 
+}
+
+.agenda-edit-btn,
+.agenda-delete-btn {
+    padding: 5px 10px;
+    border-radius: 3px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.agenda-edit-btn {
+    background-color: rgb(26, 127, 167);
+    height: 40px;
+    width: 50px;
+}
+
+.agenda-edit-btn:hover {
+    background-color: rgb(34, 133, 199);
+}
+
+.agenda-delete-btn {
+    background-color: red;
+    margin-left: 5px;
+    height: 40px;
+    width: 70px;
+}
+
+.agenda-delete-btn:hover {
+    background-color: darkred;
+}
+#agenda-description {
+    display: block;
+    width: 100%;
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
+    box-sizing: border-box; 
+    text-align: left; 
+}
+
+.error{
+    margin: 0;
+    color: red;
+}
+.admin-agenda-container select{
+    width: 100%;
+    height: 40px;
+    padding: 5px;
+    border: 1px solid orangered;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.admin-agenda-container select:focus{
+    outline: 2px solid rgb(255, 115, 0);
+}
+
+.admin-agenda-container select{
+    background-color: rgb(210, 250, 250);
+    border-radius: 5px;
+}
+.admin-agenda-container select:focus{
+    background-color: rgb(218, 253, 243);
 }

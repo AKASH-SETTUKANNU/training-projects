@@ -1,11 +1,278 @@
 .guest-management-container{
     grid-area: main;
     padding: 10px;
-    height: 96%;
+    height: 100%;
     width: 98%;
-    display: flex;
     justify-content: center;
     align-items: center;
     background-color: white;
     border-radius: 2px;
+}
+
+
+/* Add Guest Section */
+.add-guest-data {
+    background-color: rgb(252, 218, 170);
+    display: flex;
+    flex-direction:column;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 3px;
+    
+}
+#addGuestForm {
+    display: flex;
+    flex-direction: column;
+}
+.add-guest-heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.add-guest-data i{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    height: 15px;
+    aspect-ratio: 1/1;
+    border-radius: 5px;
+}
+.event-heading {
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-align: left; 
+        margin-bottom: 10px;
+        margin-top: 0;
+        color: rgb(248, 102, 17);
+        padding: 10px 0;
+    }
+
+.add-guest-data form {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+.input-user-data {
+    display: flex;
+    flex-direction: column;
+}
+.input-user-data p{
+    margin: 0;
+}
+.input-user-data input {
+    max-width: 100%;
+    height: 30px;
+    border-radius: 3px;
+    border: 1px solid orange;
+}
+
+.input-user-data button {
+    height: 40px;
+    width: 100%;
+    margin-top: 12px;
+    background-color: orange;
+    border: 1px solid orange;
+    color: white;
+    border-radius: 3px;
+}
+
+/* Find Guest Section */
+.find-guest {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(252, 202, 96);
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.find-guest-input {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 5px;
+}
+
+.find-guest-input label {
+    margin-right: 20px;
+}
+
+.find-guest-input input {
+    width: 100%;
+    height: 30px;
+    margin-right: 20px;
+    border-radius: 3px;
+    padding: 5px;
+    border: 1px solid orange;
+}
+
+.find-guest-input button {
+    height: 40px;
+    width: 100px;
+    background-color: orange;
+    border: 1px solid orange;
+    color: white;
+    border-radius: 3px;
+}
+
+/* Display Search Guest Section */
+.display-search-guest,
+.display-guest {
+    background-color: rgb(255, 219, 168);
+    padding: 10px;
+    border-radius: 3px;
+    margin-bottom: 5px;
+}
+
+.display-guest {
+  margin-top: 5px;
+}
+.display-search-guest table,
+.display-guest table {
+    border-collapse: collapse;
+    border: 1px solid rgb(226, 152, 13);
+    width: 100%;
+}
+
+.display-search-guest table thead th,
+.display-guest table thead th {
+    padding: 10px;
+    border-left: 1px solid rgb(226, 152, 13);
+    border-bottom: 1px solid rgb(223, 135, 21);
+}
+
+.display-search-guest table tr td,
+.display-guest table tr td {
+    padding: 10px;
+    border-left: 1px solid rgb(226, 152, 13);
+    border-bottom: 1px solid rgb(226, 152, 13);
+    text-align: center;
+}
+
+
+#error-message {
+    color: red;
+}
+
+.guest-edit-btn{
+    background-color: rgb(4, 143, 223);
+    padding: 5px;
+    color: white;
+    border-radius: 3px;
+    width: 70px;
+    margin-right: 5px;
+    border: 1px solid rgb(36, 188, 214);
+}
+
+.guest-delete-btn{
+    background-color: rgb(238, 34, 19);
+    padding: 5px;
+    color: white;
+    border-radius: 3px;
+    width: 70px;
+    margin-right: 5px;
+    margin-top: 5px;
+    border: 1px solid rgb(212, 53, 25);
+}
+#name-error,#email-error,#birthDate-error,#location-error{
+    color: red;
+    margin-top: 5px;
+}
+#success-message{
+    color: green;
+}
+.admin-main-container select{
+    width: 100%;
+    height: 40px;
+    padding: 5px;
+    border: 1px solid orangered;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.admin-main-container select:focus{
+    outline: 2px solid rgb(255, 115, 0);
+}
+
+.admin-main-container select{
+    background-color: rgb(210, 250, 250);
+    border-radius: 5px;
+}
+.admin-main-container select:focus{
+    background-color: rgb(218, 253, 243);
+}
+.guest-invite-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.guest-invite-btn button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid green;
+    color: white;
+    border-radius: 3px;
+    background-color: rgb(3, 176, 3);
+    margin: 10px;
+    padding: 5px;
+    width: 200px;
+    height: 50px;
+}
+.guest-invite-btn button:hover{
+   background-color: green;
+}
+.emailError{
+    color: red;
+}
+.responds-status{
+    display: flex;
+    background-color: antiquewhite;
+    height: 200px;
+    padding: 5px;
+}
+.respond-accept,
+.respond-pending,
+.respond-reject {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.respond-accept i,
+.respond-pending i,
+.respond-reject i {
+  font-size: 48px;
+  color: #4CAF50;
+}
+
+.respond-pending i {
+  color: #FFC107;
+}
+
+.respond-reject i {
+  color: #F44336;
+}
+.responds-status{
+    display: flex;
+    flex-direction: column;
+}
+.respond-container{
+    display: flex;
+    flex-direction: row;
+}
+.responds-status h1{
+    margin-left: 10px;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
 }

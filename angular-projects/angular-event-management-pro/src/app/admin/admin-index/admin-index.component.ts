@@ -6,7 +6,6 @@ import { User, Event } from '../../models/user';
 import { DatePipe } from '@angular/common';
 import { StorageService } from '../../storage/storage.service';
 import { EventImageService } from '../../services/event-image.service';
-import { Route } from '@angular/router';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-admin-index',

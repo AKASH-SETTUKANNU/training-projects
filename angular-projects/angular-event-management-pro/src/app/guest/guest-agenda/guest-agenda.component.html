@@ -1,4 +1,70 @@
 
 <div class="guest-agenda-container">
-    <p>guest-agenda works!</p>
+    <h2 class="event-heading">Select Event to Manage Agenda</h2>
+  <select [(ngModel)]="selectedEventId" (change)="onEventChange(selectedEventId)">
+    <option value="0">-- Select an Event --</option>
+    <option *ngFor="let event of events" [value]="event.id">{{ event.eventName }}</option>
+  </select>
+
+ 
+  <form (ngSubmit)="saveEventLocationDetails()" *ngIf="selectedEventId">
+    <h2 class="event-heading">Add New Agenda</h2>
+    <div class="event-location-details">
+      <div class="event-location">
+        <label for="location-name">Location:</label>
+        <input type="text" [(ngModel)]="agendaLocation" name="location-name" placeholder="Event Location...">
+      </div>
+      <div class="event-date">
+        <label for="event-date">Date:</label>
+        <input type="date" [(ngModel)]="agendaDate" name="event-date">
+      </div>
+      <div class="event-start-time">
+        <label for="start-time">Start Time:</label>
+        <input type="time" [(ngModel)]="agendaStartTime" name="start-time">
+      </div>
+      <div class="event-end-time">
+        <label for="end-time">End Time:</label>
+        <input type="time" [(ngModel)]="agendaEndTime" name="end-time">
+      </div>
+    </div>
+    <div class="event-description">
+      <label for="event-description">Description:</label>
+      <textarea name="event-description" [(ngModel)]="agendaDescription"></textarea>
+    </div>
+    <div class="event-save-btn">
+      <button type="submit">Save Agenda</button>
+    </div>
+  </form>
+  
+  <div class="display-agenda" *ngIf="selectedEventId">
+    <h2>Event Agenda</h2>
+    <table *ngIf="agendas.length > 0; else noAgenda">
+      <thead>
+        <tr>
+          <th>Location</th>
+          <th>Date</th>
+          <th>Start Time</th>
+          <th>End Time</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let agenda of agendas">
+          <td>{{ agenda.agendaLocation }}</td>
+          <td>{{ agenda.agendaDate }}</td>
+          <td>{{ agenda.agendaStartTime }}</td>
+          <td>{{ agenda.agendaEndtime }}</td>
+          <td>{{ agenda.agendaDescription }}</td>
+          <td>
+            <button (click)="editAgenda(agenda.agendaId)" class="agenda-edit-btn">Edit</button>
+            <button (click)="deleteAgenda(agenda.agendaId)" class="agenda-delete-btn">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <ng-template #noAgenda>
+      <p>No Agenda to display....</p>
+    </ng-template>
+  </div>
 </div>

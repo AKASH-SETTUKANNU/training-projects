@@ -1,4 +1,156 @@
 
 <div class="guest-index-container">
-    <p>guest-index works!</p>
+  <div class="backdrop" [ngClass]="{'active': showDetails}" *ngIf="showDetails"></div>
+
+  <div class="display-details" *ngIf="showDetails">
+    <div id="detail-close-icon" class="detail-close-icon" (click)="closeDetail()">
+      <i class="fa-solid fa-xmark"></i>
+    </div>
+    <div class="detail-image">
+      <img id="detail-img" class="detail-img" [src]="eventDetail.image" />
+    </div>
+    <div class="detail">
+      <h3 id="detail-name">{{ eventDetail.name }}</h3>
+      <h4 id="detail-date">{{ formatDate(eventDetail.date) }}</h4>
+      <h4>Event Description:</h4>
+      <p id="detail-description">{{ eventDetail.description }}</p>
+      <span>Event Category: {{ eventDetail.category }}</span>
+      <span>Event Status: {{ eventDetail.status }}</span>
+    </div>
+    <div class="action-btn">
+      <button (click)="manageAgenda()" class="manage-agenda-btn">Manage Agenda</button>
+      <button (click)="manageGuests()" class="managae-guest-btn">Manage Guests</button>
+    </div>
+  </div>
+
+  <!-- Edit form  -->
+  <div class="editform" *ngIf="showEdit">
+    <form class="event-form" (ngSubmit)="addEventItem()" id="event-form">
+      <div id="detail-close-icon" class="detail-close-icon" (click)="closeEdit()">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <div class="event-heading">
+        <h1>{{ eventToEditId ? "Update Event" : "Add Event" }}</h1>
+      </div>
+      <div class="event-data-name">
+        <label for="event-name">Event Name:</label>
+        <input type="text" class="event-name" id="event-name" [(ngModel)]="eventName" name="eventName" required />
+        <p id="name-error" class="error-message"></p>
+      </div>
+
+      <div class="event-data-date">
+        <label for="event-date">Event Date:</label>
+        <input type="date" class="event-date" id="event-date" [(ngModel)]="eventDate" name="eventDate" required />
+        <p id="date-error" class="error-message"></p>
+      </div>
+
+      <div class="event-data-description">
+        <label for="event-description">Description:</label>
+        <input type="text" class="event-description" id="event-description" [(ngModel)]="eventDescription" name="eventDescription" required />
+        <p id="description-error" class="error-message"></p>
+      </div>
+
+      <div class="event-data-category">
+        <label for="event-category">Event Category:</label>
+        <select id="event-category" [(ngModel)]="eventCategory" name="eventCategory" required>
+          <option value="conference">Conference</option>
+          <option value="wedding">Wedding</option>
+          <option value="birthday">Birthday</option>
+        </select>
+        <p id="category-error" class="error-message"></p>
+      </div>
+
+      <div class="event-data-status">
+        <label for="event-status">Event Status:</label>
+        <select id="event-status" [(ngModel)]="eventStatus" name="eventStatus" required>
+          <option value="planning">Planning</option>
+          <option value="finalized">Finalized</option>
+          <option value="canceled">Canceled</option>
+        </select>
+        <p id="status-error" class="error-message"></p>
+      </div>
+
+      <button type="submit" id="save-btn">Save Event</button>
+    </form>
+  </div>
+
+  <div id="home-page-content">
+    <div class="birthday-display-area">
+      <h1 id="Birthday-heading">Birthdays</h1>
+      <div class="birthday-lists">
+        <ul>
+          <li *ngFor="let event of birthdayEvents">
+            <div class="event-image">
+              <img [src]="event.imageUrl" alt="Birthday Event Image" />
+            </div>
+            <div>
+              <div class="event-details">
+                <span>{{ event.eventName }}</span>
+                <span>{{ formatDate(event.eventDate) }}</span>
+                <span id="event-description-span">{{ event.eventDescription }}</span>
+                <span [ngClass]="getStatusClass(event.eventStatus)">{{ event.eventStatus }}</span>
+              </div>
+              <div class="events-action-icon">
+                <i class="fa-solid fa-info" (click)="viewDetail(event)" id="viewDetail-icon"></i>
+                <i class="fa-regular fa-pen-to-square" (click)="editEvent(event.id)" id="editEvent-icon"></i>
+                <i class="fa-solid fa-trash" (click)="deleteEvent(event.id)" id="deleteEvent-icon"></i>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="wedding-display-area">
+      <h1 id="wedding-heading">Weddings</h1>
+      <div class="wedding-lists">
+        <ul>
+          <li *ngFor="let event of weddingEvents">
+            <div class="event-image">
+              <img [src]="event.imageUrl" alt="Wedding Event Image" />
+            </div>
+            <div>
+              <div class="event-details">
+                <span>{{ event.eventName }}</span>
+                <span>{{ formatDate(event.eventDate) }}</span>
+                <span id="event-description-span">{{ event.eventDescription }}</span>
+                <span [ngClass]="getStatusClass(event.eventStatus)">{{ event.eventStatus }}</span>
+              </div>
+              <div class="events-action-icon">
+                <i class="fa-solid fa-info" (click)="viewDetail(event)" id="viewDetail-icon"></i>
+                <i class="fa-regular fa-pen-to-square" (click)="editEvent(event.id)" id="editEvent-icon"></i>
+                <i class="fa-solid fa-trash" (click)="deleteEvent(event.id)" id="deleteEvent-icon"></i>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="conference-display-area">
+      <h1 id="conference-heading">Conferences</h1>
+      <div class="conference-lists">
+        <ul>
+          <li *ngFor="let event of conferenceEvents">
+            <div class="event-image">
+              <img [src]="event.imageUrl" alt="Conference Event Image" />
+            </div>
+            <div>
+              <div class="event-details">
+                <span>{{ event.eventName }}</span>
+                <span>{{ formatDate(event.eventDate) }}</span>
+                <span id="event-description-span">{{ event.eventDescription }}</span>
+                <span [ngClass]="getStatusClass(event.eventStatus)">{{ event.eventStatus }}</span>
+              </div>
+              <div class="events-action-icon">
+                <i class="fa-solid fa-info" (click)="viewDetail(event)" id="viewDetail-icon"></i>
+                <i class="fa-regular fa-pen-to-square" (click)="editEvent(event.id)" id="editEvent-icon"></i>
+                <i class="fa-solid fa-trash" (click)="deleteEvent(event.id)" id="deleteEvent-icon"></i>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
