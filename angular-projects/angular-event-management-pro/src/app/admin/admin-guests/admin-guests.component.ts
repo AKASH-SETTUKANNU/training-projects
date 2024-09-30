@@ -1,3 +1,4 @@
+
 import { GuestService } from './../../services/guest.service';
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
@@ -249,7 +250,6 @@ export class AdminGuestsComponent implements OnInit {
             }
             user.notifications.push(invitation);
   
-            // Update the user in storage after adding the notification
             this.storageService.updateUser(user);
           }
         });

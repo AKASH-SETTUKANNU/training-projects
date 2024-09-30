@@ -1,4 +1,41 @@
 
 <div class="admin-backup-container">
-    <p>admin-backup works!</p>
+    <div class="backup-restore-main-container">
+        <div id="backup-heading">
+          <h1>Backup and Restore</h1>
+        </div>
+        <div class="backup-restore-container">
+          <button id="backup-btn" (click)="backupData()">Backup Data</button>
+          <button id="restore-btn" (click)="toggleFileInput()">Restore</button>
+          <div class="file-input-container" id="file-input-container" [style.display]="fileInputVisible ? 'block' : 'none'">
+            <span id="restore-error-message" style="color: red;">{{ restoreErrorMessage }}</span>
+            <label class="file-input-label">
+              Choose file
+              <input type="file" class="file-input" id="file-input" (change)="onFileSelected($event)"/>
+            </label>
+            <span class="file-name" id="file-name">{{ selectedFileName || 'No file chosen' }}</span>
+          </div>
+        </div>
+        <span id="restore-success-message">{{ restoreSuccessMessage }}</span>
+    
+        <div class="displayBackupHistory">
+          <h2>Backup History</h2>
+          <div class="backup-history-items">
+            <div *ngFor="let item of backupHistory" class="backup-item">
+              <p>{{ item }}</p>
+            </div>
+          </div>
+        </div>
+        <button id="clear-backup-history" (click)="clearBackupHistory()">Clear Backup History</button>
+    
+        <div class="displayRestoreHistory">
+          <h2>Restore History</h2>
+          <div class="restore-history-items">
+            <div *ngFor="let item of restoreHistory" class="restore-item">
+              <p>{{ item }}</p>
+            </div>
+          </div>
+        </div>
+        <button id="clear-restore-history" (click)="clearRestoreHistory()">Clear Restore History</button>
+      </div>
 </div>

@@ -60,3 +60,20 @@ router-outlet {
   flex-direction: column;
   gap: 20px;
 }
+@media only screen and (max-width: 888px) {
+  app-menu{
+    display: none;
+  }
+  .main-container {
+    display: grid;
+    grid-template-areas:
+      "header header header header"
+      "main main main main"
+      "main main main main";
+    height: 100vh;
+    width: 98%;
+    gap: 1px;
+    padding: 5px;
+    height: 100vh;
+  }
+}

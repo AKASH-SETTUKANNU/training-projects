@@ -1,7 +1,18 @@
+<div *ngIf="ismenuDisplay" class="menu-list-container">
+  <ul class="menu-list" role="navigation">
+    <li *ngFor="let item of menuItems">
+        <a [routerLink]="item.link" [attr.aria-label]="item.name" routerLinkActive="active">
+            <div class="icon"><i [class]="item.icon"></i></div>
+            <p id="menu-name">{{ item.name }}</p>
+        </a>
+    </li>
+</ul>
+</div>
 <header>
   <button class="menu-icon" id="menu-icon" (click)="menubarDisplay()">
     <i class="fa-solid fa-bars"></i>
   </button>
+  
   <div class="logo">
     <img src="./eventLogo.jfif" alt="Logo" />
   </div>

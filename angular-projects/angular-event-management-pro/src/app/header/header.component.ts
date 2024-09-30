@@ -1,15 +1,17 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 import { StorageService } from '../storage/storage.service';
-import { Invitation, User,Event } from '../models/user';
+import { Invitation, User, Event } from '../models/user';
+import { MenuService } from '../services/menu.service';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterLink],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrls: ['./header.component.css'] 
 })
 export class HeaderComponent implements OnInit {
   showEventAddBlock = false;
@@ -17,22 +19,32 @@ export class HeaderComponent implements OnInit {
   showProfileEditArea = false;
   searchText: string = '';
   
-  isrespondSend:boolean=true;
+  ismenuDisplay: boolean = false;
+  isrespondSend: boolean = true;
   isShowNotificationInfo: boolean = false;
   notifications: Invitation[] = [];
   detailNotification: Invitation | undefined;
 
   profile: { name: string; dateOfBirth: string };
 
-  constructor(private storageService: StorageService) {
+  constructor(private storageService: StorageService, private menuService: MenuService) {
     const currentUserDetails = JSON.parse(localStorage.getItem('loggedInUser') || 'null');
     this.profile = {
       name: currentUserDetails ? currentUserDetails.userName : 'Guest',
       dateOfBirth: currentUserDetails ? currentUserDetails.userBirthDate : 'unknown'
     };
   }
+  menuItems: Array<{ name: string; link: string; icon: string }> = [];
+
+  setMenuItems() {
+    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser') || 'null');
+    const userRole = loggedInUser ? loggedInUser.userRole : ''; 
+    console.log(userRole);
+    this.menuItems = this.menuService.getMenuItems(userRole); 
+  }
 
   ngOnInit(): void {
+    this.setMenuItems();
     console.log('Component initialized');
     this.loadNotifications();
   }
@@ -58,7 +70,9 @@ export class HeaderComponent implements OnInit {
     { name: 'Others', icon: 'fa-solid fa-gift' },
   ];
 
-  menubarDisplay() {}
+  menubarDisplay() {
+    this.ismenuDisplay = !this.ismenuDisplay;
+  }
 
   addEvent() {
     this.showEventAddBlock = !this.showEventAddBlock;
@@ -89,6 +103,7 @@ export class HeaderComponent implements OnInit {
   closenotification(): void {
     this.isShowNotificationInfo = false;
   }
+
   invitationRespond(respond: string, eventId: number | undefined) {
     const loggedUser = this.storageService.getLoggedInUser();
     const users = this.storageService.getUsers();
@@ -124,6 +139,4 @@ export class HeaderComponent implements OnInit {
       console.error("User not found");
     }
   }
-  
-  
 }
