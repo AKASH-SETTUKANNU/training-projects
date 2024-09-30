@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { StorageService } from '../../storage/storage.service';
-import { Guests, User, Event } from '../../models/user';
+import { Guests, User, Event, Invitation, Agenda } from '../../models/user'; // Ensure Agenda is imported
 
 @Component({
   selector: 'app-admin-guests',
@@ -21,8 +21,10 @@ export class AdminGuestsComponent implements OnInit {
   guests: Guests[] = [];
   users: User[] = [];
   events: Event[] = [];
+  agendas: Agenda[] = [];  
   searchEmail: string = '';
   searchResults: Guests[] = [];
+  invites: Invitation[] = [];
   nameError: string = 'Name is required!';
   emailError: string = 'Valid email is required!';
   locationError: string = 'Location is required!';
@@ -50,8 +52,10 @@ export class AdminGuestsComponent implements OnInit {
     this.users = this.storageService.getUsers();
     const currentUser = this.users.find((u: User) => u.userEmail === loggedInUser?.userEmail);
     this.events = currentUser?.events || [];
+    this.agendas = currentUser?.events?.flatMap(event => event.agendas || []) || []; 
     console.log('Loaded events:', this.events);
   }
+  
 
   addGuest(): void {
     if (this.validateGuest() && this.selectedEventId !== null) {
@@ -65,7 +69,7 @@ export class AdminGuestsComponent implements OnInit {
       }
 
       const newGuest: Guests = {
-        guestId: this.guestId|| this.generateGuestId(),
+        guestId: this.guestId || this.generateGuestId(),
         guestName: this.guestName,
         guestEmail: this.guestEmail,
         guestBirthDate: this.guestBirthDate,
@@ -86,9 +90,11 @@ export class AdminGuestsComponent implements OnInit {
       this.refreshGuestsList();
     }
   }
+
   private generateGuestId(): number {
     return Math.max(0, ...this.guests.map(g => g.guestId)) + 1; 
-}
+  }
+
   displayAddGuest(): void {
     this.guestDisplay = !this.guestDisplay;
   }
@@ -119,14 +125,11 @@ export class AdminGuestsComponent implements OnInit {
       console.error('Guest not found');
     }
   }
-  
+
   deleteGuest(guestId: number): void {
-      this.guestService.deleteGuest(this.selectedEventId, guestId);
-      this.refreshGuestsList();
+    this.guestService.deleteGuest(this.selectedEventId, guestId);
+    this.refreshGuestsList();
   }
-  
-
-
 
   validateOnBlur(field: string): void {
     switch(field) {
@@ -179,4 +182,48 @@ export class AdminGuestsComponent implements OnInit {
       this.guests = [];
     }
   }
+
+  inviteGuests(): void {
+    if (this.guests.length > 0 && this.selectedEventId > 0) {
+      const selectedEvent = this.events.find(event => event.id === Number(this.selectedEventId));
+      
+      // Get agendas from the selected event directly
+      const eventAgendas = selectedEvent?.agendas || []; 
+      console.log(eventAgendas);
+      console.log(selectedEvent);
+      console.log(eventAgendas.length);
+  
+      if (selectedEvent && eventAgendas.length > 0) {
+        const agenda = eventAgendas[0];
+        this.invites = this.guests.map(guest => {
+          return {
+            guestId: guest.guestId,
+            guestName: guest.guestName,
+            guestEmail: guest.guestEmail,
+            eventId: selectedEvent.id,
+            eventName: selectedEvent.eventName,
+            eventLocation: agenda.agendaLocation,
+            eventDate: agenda.agendaDate,
+            eventStartTime: agenda.agendaStartTime,
+            eventEndTime: agenda.agendaEndtime,
+            eventDescription: agenda.agendaDescription,
+            agendaLocation: agenda.agendaLocation,
+            agendaDate: agenda.agendaDate,
+            agendaStartTime: agenda.agendaStartTime,
+            agendaEndTime: agenda.agendaEndtime,
+            agendaDescription: agenda.agendaDescription,
+            invitationSent: true
+          };
+        });
+  
+        console.log('Invitations sent with agendas:', this.invites);
+        alert('Invitations sent successfully!');
+      } else {
+        alert('No agendas found for the selected event.');
+      }
+    } else {
+      alert('No guests or event selected.');
+    }
+  }
+  
 }

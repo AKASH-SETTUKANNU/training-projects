@@ -33,6 +33,7 @@ export class LoginComponent implements OnInit{
          userPassword:'Akash@2003',
          userRole:'admin',
          userBirthDate:'09/10/2003',
+         invitations:[]
       };
       this.storageService.addUser(defaultAdmin);
       console.log("default Admin Created");

@@ -1,3 +1,4 @@
+import { Invitation } from './../../models/user';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { StorageService } from '../../storage/storage.service';
@@ -59,7 +60,7 @@ export class AdminEventsComponent  {
         eventCategory,
         imageUrl:this.eventImageService.getImageUrl(eventCategory),
         guests: [],
-        agendas:[]
+        agendas:[],
       };
       this.events.push(newEvent);
       this.eventImageService.saveEventItems(this.events); 

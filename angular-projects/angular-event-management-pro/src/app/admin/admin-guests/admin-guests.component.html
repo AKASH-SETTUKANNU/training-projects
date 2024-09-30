@@ -79,6 +79,7 @@
           <button type="submit">{{ iseditGuest ? "Update Guest" : "Add Guest" }}</button>
         </div>
         <p id="success-message" *ngIf="successMessage">{{ successMessage }}</p>
+       
       </form>
     </div>
 
@@ -106,7 +107,14 @@
             </td>
           </tr>
         </tbody>
+      
       </table>
+      <div class="guest-invite-btn">
+        <button type="button" (click)=" inviteGuests()">
+          <i class="fa-regular fa-message"></i> Invite Guests
+        </button>
+      </div>
+      
       <ng-template #noGuests>
         <p>No guests to display...</p>
       </ng-template>

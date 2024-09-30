@@ -58,6 +58,7 @@ export class SignupComponent {
         userPassword: this.password,
         userRole: 'user', 
         userBirthDate: this.birthDate,
+        invitations:[]
       };
       
       this.storageService.addUser(newUser);
