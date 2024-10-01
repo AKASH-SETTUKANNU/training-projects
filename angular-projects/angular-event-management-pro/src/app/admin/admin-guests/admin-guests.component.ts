@@ -46,12 +46,11 @@ export class AdminGuestsComponent implements OnInit {
   selectedEventId: number = 0;
 
   constructor(private storageService: StorageService, private guestService: GuestService) {}
-
   ngOnInit(): void {
     this.loadEvents();
     this.refreshGuestsList();
-   
-  }
+}
+
   updateResponseCounts(): void {
     const currentUser = this.storageService.getLoggedInUser();
     const user = this.storageService.getUsers().find((u: User) => u.userEmail === currentUser?.userEmail);
@@ -69,15 +68,7 @@ export class AdminGuestsComponent implements OnInit {
       this.respondCancelCount = 0;
     }
   }
-  loadEvents(): void {
-    const loggedInUser = this.storageService.getLoggedInUser();
-    this.users = this.storageService.getUsers();
-    const currentUser = this.users.find((u: User) => u.userEmail === loggedInUser?.userEmail);
-    this.events = currentUser?.events || [];
-    this.agendas = currentUser?.events?.flatMap(event => event.agendas || []) || []; 
-    console.log('Loaded events:', this.events);
-  }
-  
+
 
   addGuest(): void {
     if (this.validateGuest() && this.selectedEventId !== null) {
@@ -112,6 +103,7 @@ export class AdminGuestsComponent implements OnInit {
       }
 
       this.iseditGuest = false;
+      window.location.reload();
       this.resetForm();
       this.refreshGuestsList();
       this.updateResponseCounts();
@@ -202,19 +194,36 @@ export class AdminGuestsComponent implements OnInit {
     this.guestId = 0; 
   }
 
-  refreshGuestsList(): void {
+  loadEvents(): void {
+    const loggedInUser = this.storageService.getLoggedInUser();
+    console.log('Logged in user:', loggedInUser);
+    
+    this.users = this.storageService.getUsers();
+    const currentUser = this.users.find((u: User) => u.userEmail === loggedInUser?.userEmail);
+    console.log('Current user:', currentUser);
+    
+    this.events = currentUser?.events || [];
+    console.log('Loaded events:', this.events);
+  
+}
+
+refreshGuestsList(): void {
+ 
+    console.log('Selected event ID:', this.selectedEventId);
     if (this.selectedEventId > 0) {
-      this.guests = this.guestService.getGuestsList(this.selectedEventId);
+        this.guests = this.guestService.getGuestsList(this.selectedEventId);
+       
+        console.log('Guests list:', this.guests);
     } else {
-      this.guests = [];
+        this.guests = [];
+        console.log('No guests to display for this event.');
     }
-  }
+}
 
   inviteGuests(): void {
     if (this.guests.length > 0 && this.selectedEventId > 0) {
       const selectedEvent = this.events.find(event => event.id === Number(this.selectedEventId));
-      
-      // Get agendas from the selected event directly
+    
       const eventAgendas = selectedEvent?.agendas || []; 
   
       if (selectedEvent && eventAgendas.length > 0) {

@@ -141,7 +141,7 @@
   
   #restore-success-message, #restore-error-message {
     padding: 3px;
-    color: red;
+    color: green;
   }
   @media only screen and (max-width: 888px) {
     .displayBackupHistory,

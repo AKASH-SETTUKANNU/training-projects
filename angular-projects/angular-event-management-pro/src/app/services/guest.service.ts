@@ -16,10 +16,13 @@ export class GuestService {
     
     if (currentUser && currentUser.events) {
         const event = currentUser.events.find(e => e.id === Number(eventId));
-        return event?.guests || [];
+        if (event) {
+            return event.guests || [];
+        }
     }
     return [];
 }
+
 
 addGuests(eventId: string, guests: Guests[]): void { 
     const loggedInUser = this.storageService.getLoggedInUser();
