@@ -84,11 +84,12 @@
             <button class="accept-btn" (click)="invitationRespond('accept', detailNotification?.eventId)">Accept</button>
             <button class="pending-btn" (click)="invitationRespond('pending', detailNotification?.eventId)">Pending</button>
             <button class="reject-btn" (click)="invitationRespond('reject', detailNotification?.eventId)">Reject</button>
-          </div>
-          
-          <ng-template #respondSended>
+        </div>
+        
+        <ng-template #respondSended>
             <span>Response sent</span>
-          </ng-template>
+        </ng-template>
+        
         </div>
       </div>
       

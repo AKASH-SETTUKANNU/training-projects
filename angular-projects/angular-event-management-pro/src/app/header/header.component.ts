@@ -109,34 +109,48 @@ export class HeaderComponent implements OnInit {
     const users = this.storageService.getUsers();
     
     const user = users.find((u: User) => u.userEmail === loggedUser?.userEmail);
-    
+    console.log("enter1");
     if (user) {
-      const events = user.events || [];
-      const event = events.find((eve: Event) => eve.id === eventId);
-      
-      if (event) {
-        if (respond === 'accept') {
-          event.accept = (event.accept || 0) + 1;
-        } else if (respond === 'pending') {
-          event.pending = (event.pending || 0) + 1;
-        } else if (respond === 'reject') {
-          event.reject = (event.reject || 0) + 1;
+        const events = user.events || [];
+        const event = events.find((eve: Event) => eve.id === eventId);
+        console.log("enter1");
+        if (event) {
+          console.log("enter2");
+            // Update response count based on user action
+            if (respond === 'accept') {
+                event.accept = (event.accept || 0) + 1;
+            } else if (respond === 'pending') {
+                event.pending = (event.pending || 0) + 1;
+            } else if (respond === 'reject') {
+                event.reject = (event.reject || 0) + 1;
+            }
+            console.log(user.notifications);
+            // Safely check notifications
+            if (user.notifications) {
+                const notificationIndex = user.notifications.findIndex((n: Invitation) => n.eventId === eventId);
+                console.log(typeof eventId);
+                if (notificationIndex >= 0) {
+                  console.log(  user.notifications[notificationIndex].invitationSent);
+                    user.notifications[notificationIndex].invitationSent = true;
+                    this.detailNotification = user.notifications[notificationIndex]; // Update detailNotification
+                } else {
+                    console.error("Notification not found.");
+                }
+            } else {
+                console.error("Notifications are undefined for the user.");
+            }
+
+            // Update the user in storage
+            this.storageService.updateUser(user);
+            console.log(`Response recorded: ${respond} for event ID: ${eventId}`);
+        } else {
+            console.error(`Event with ID ${eventId} not found.`);
         }
-  
-        const invitationIndex = user.invitations?.findIndex((inv: Invitation) => inv.eventId === eventId) || -1;
-        
-        if (invitationIndex >= 0) {
-          user.invitations = user.invitations || [];
-          user.invitations[invitationIndex].invitationSent = true; // Mark as responded
-        }
-  
-        this.storageService.updateUser(user);
-        console.log(`Response recorded: ${respond} for event ID: ${eventId}`);
-      } else {
-        console.error(`Event with ID ${eventId} not found.`);
-      }
     } else {
-      console.error("User not found");
+        console.error("User not found");
     }
-  }
+}
+
+
+
 }
