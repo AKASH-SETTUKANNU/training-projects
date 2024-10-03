@@ -20,11 +20,6 @@ namespace calculator
 
                 int a = GetValidInput("Enter the Number 1:");
                 int b = GetValidInput("Enter the Number 2:");
-
-
-
-
-
                 switch (op)
                 {
                     case 1:
