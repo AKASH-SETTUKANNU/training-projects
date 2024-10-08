@@ -1,36 +1,25 @@
-﻿using Interface;
+﻿
+using Microsoft.Extensions.DependencyInjection;
+using System;
 
 public class Program
 {
-    public static void Main()
+    static void Main(string[] args)
     {
-        Icar myCar = new Tata();
+        var serviceProvider = new ServiceCollection()
+            .AddTransient<ILogger, ConsoleLogger>()
+            .AddTransient<FileLogger>(sp => new FileLogger("C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\training_projects\\training-projects\\c_sharp-training\\cSharp_training-projects\\Interface\\Interface\\log.txt"))
+            .BuildServiceProvider();
 
-        Console.WriteLine("Enter the Car name: ");
-        myCar.Name = Console.ReadLine();
+        var logger = serviceProvider.GetService<ILogger>();
+        var fileLogger = serviceProvider.GetService<FileLogger>();
 
-        Console.WriteLine("Enter the Color:");
-        myCar.Color = Console.ReadLine();
+        logger.LogInfo("This is an info message from ConsoleLogger");
+        logger.LogWarning("This is a warning message from ConsoleLogger");
+        logger.LogError("This is an error message from ConsoleLogger");
 
-        Console.WriteLine("Enter the Car year: ");
-        myCar.year = Console.ReadLine();
-
-        myCar.start();
-
-        Console.WriteLine("Enter the Speed to accelerate:");
-        int speed = 0;
-        while(!int.TryParse(Console.ReadLine(),out  speed))
-        {
-
-            Console.WriteLine("Enter the valid Input");
-        }
-        myCar.Accelerate(speed);
-
-        myCar.stop();
-
-
-
-
-
+        fileLogger.LogInfo("This is an info message from FileLogger");
+        fileLogger.LogWarning("This is a warning message from FileLogger");
+        fileLogger.LogError("This is an error message from FileLogger");
     }
 }

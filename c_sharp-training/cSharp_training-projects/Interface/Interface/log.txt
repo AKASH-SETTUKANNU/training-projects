@@ -1,0 +1,6 @@
+INFO: This is an info message from FileLogger - 08-10-2024 12:30:03
+WARNING: This is a warning message from FileLogger - 08-10-2024 12:30:03
+ERROR: This is an error message from FileLogger - 08-10-2024 12:30:03
+INFO: This is an info message from FileLogger - 08-10-2024 12:31:01
+WARNING: This is a warning message from FileLogger - 08-10-2024 12:31:01
+ERROR: This is an error message from FileLogger - 08-10-2024 12:31:01
