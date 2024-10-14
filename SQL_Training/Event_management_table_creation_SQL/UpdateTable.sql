@@ -1,0 +1,6 @@
+--DBCC CHECKIDENT ('Users', RESEED, 0);
+--DBCC CHECKIDENT ('Events', RESEED, 0);
+--DBCC CHECKIDENT ('Notifications', RESEED, 0);
+--DBCC CHECKIDENT ('Agendas', RESEED, 0);
+--DBCC CHECKIDENT ('Guests', RESEED, 0);
+--DBCC CHECKIDENT ('Invitations', RESEED, 0);

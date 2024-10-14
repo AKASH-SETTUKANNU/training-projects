@@ -1,4 +1,3 @@
-
 CREATE PROCEDURE AddUser
     @UserName VARCHAR(100),
     @Email VARCHAR(100),
@@ -7,8 +6,6 @@ CREATE PROCEDURE AddUser
     @UserRole VARCHAR(50) = 'User'
 AS
 BEGIN
-    SET NOCOUNT ON;
-
     IF EXISTS (SELECT 1 FROM Users WHERE Email = @Email)
     BEGIN
         RAISERROR('Email already exists.', 16, 1);
@@ -18,65 +15,70 @@ BEGIN
     INSERT INTO Users (UserName, Email, BirthDate, UserPassword, UserRole)
     VALUES (@UserName, @Email, @BirthDate, @UserPassword, @UserRole);
 END;
+go
 
-create procedure AddEvent
- @EventName VARCHAR(100),
+
+CREATE PROCEDURE AddEvent
+    @EventName VARCHAR(100),
     @EventDate DATETIME,
     @EventDescription VARCHAR(100),
     @EventStatus VARCHAR(100),
     @EventCategory VARCHAR(50),
     @UserId INT
-	as
-	begin
+AS
+BEGIN
+    INSERT INTO Events (EventName, EventDate, EventDescription, EventStatus, EventCategory, UserId)
+    VALUES (@EventName, @EventDate, @EventDescription, @EventStatus, @EventCategory, @UserId);
+END;
+go
 
-	insert into Events(EventName,EventDate,EventDescription,EventStatus,EventCategory,UserId)
-	values (@EventName,@EventDate,@EventDescription,@EventStatus,@EventCategory,@UserId);
 
-	end;
+CREATE PROCEDURE AddNotification
+    @UserId INT,
+    @SenderEmail VARCHAR(100),
+    @SenderName VARCHAR(100),
+    @GuestEmail VARCHAR(100),
+    @EventId INT,
+    @RespondSent BIT
+AS
+BEGIN
+    INSERT INTO Notifications (UserID, SenderEmail, SenderName, GuestEmail, EventId, RespondSent)
+    VALUES (@UserId, @SenderEmail, @SenderName, @GuestEmail, @EventId, @RespondSent);
+END;
+go
 
-create procedure AddNotification
-     @UserId int,
-	 @SenderEmail varchar(100),
-	 @SenderName varchar(100),
-	 @GuestEmail varchar(100),
-	 @EventId int,
-	 @RespondSent BIT
 
- as
- begin
-  
-  insert into Notifications(UserID,SenderEmail,SenderName,GuestEmail,EventId,RespondSent)
-  values (@UserId,@SenderEmail,@SenderName,@GuestEmail,@EventId,@RespondSent);
-  end;
 
-create procedure AddAgenda
-        @EventID int,
-		@AgendaLocation varchar(100),
-		@AgendaDate date,
-		@AgendaStartTime time,
-		@AgendaEndTime time,
-		@AgendaDescription varchar(100)
+CREATE PROCEDURE AddAgenda
+    @EventID INT,
+    @AgendaLocation VARCHAR(100),
+    @AgendaDate DATE,
+    @AgendaStartTime TIME,
+    @AgendaEndTime TIME,
+    @AgendaDescription VARCHAR(100)
+AS
+BEGIN
+    INSERT INTO Agendas (EventID, AgendaLocation, AgendaDate, AgendaStartTime, AgendaEndTime, AgendaDescription)
+    VALUES (@EventID, @AgendaLocation, @AgendaDate, @AgendaStartTime, @AgendaEndTime, @AgendaDescription);
+END;
+go
 
-	as
-	begin 
 
-	insert into Agendas(EventID,AgendaLocation,AgendaDate,AgendaStartTime,AgendaEndTime,AgendaDescription)
-	values (@EventID,@AgendaLocation,@AgendaDate,@AgendaStartTime,@AgendaEndTime,@AgendaDescription);
 
-	end;
-
-create procedure AddGuest
-      @EventID int,
-	  @GuestName varchar(100),
-	  @GuestEmail varchar(100),
-	  @GuestBirthDate date,
-	  @GuestLocation varchar(100)
-
-as
- begin
-	 INSERT INTO Guests (EventID, GuestName, GuestEmail, GuestBirthDate, GuestLocation)
+CREATE PROCEDURE AddGuest
+    @EventID INT,
+    @GuestName VARCHAR(100),
+    @GuestEmail VARCHAR(100),
+    @GuestBirthDate DATE,
+    @GuestLocation VARCHAR(100)
+AS
+BEGIN
+    INSERT INTO Guests (EventID, GuestName, GuestEmail, GuestBirthDate, GuestLocation)
     VALUES (@EventID, @GuestName, @GuestEmail, @GuestBirthDate, @GuestLocation);
 END;
+go
+
+
 CREATE PROCEDURE AddInvitation
     @UserID INT,
     @EventID INT,
@@ -93,12 +95,77 @@ CREATE PROCEDURE AddInvitation
     @Response VARCHAR(20)
 AS
 BEGIN
-    SET NOCOUNT ON;
-
     INSERT INTO Invitations (UserID, EventID, EventName, EventLocation, EventDate, EventDescription, 
                              AgendaLocation, AgendaDate, AgendaStartTime, AgendaEndTime, 
                              AgendaDescription, InvitationSent, Response)
     VALUES (@UserID, @EventID, @EventName, @EventLocation, @EventDate, @EventDescription, 
             @AgendaLocation, @AgendaDate, @AgendaStartTime, @AgendaEndTime, 
             @AgendaDescription, @InvitationSent, @Response);
+END;
+go
+
+
+
+CREATE PROCEDURE DeleteUser
+    @UserID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    DELETE FROM Invitations WHERE UserID = @UserID;
+    DELETE FROM Notifications WHERE UserID = @UserID;
+    DELETE FROM Guests WHERE EventID IN (SELECT EventID FROM Events WHERE UserId = @UserID);
+    DELETE FROM Agendas WHERE EventID IN (SELECT EventID FROM Events WHERE UserId = @UserID);
+    DELETE FROM Events WHERE UserId = @UserID;
+    DELETE FROM Users WHERE UserID = @UserID;
+END;
+go
+
+CREATE PROCEDURE DeleteEvent
+     @EventID int
+as
+begin
+   delete from  Notifications where EventID = @EventID;
+   delete from Events where EventID=@EventID;
+   delete from Agendas where EventID=@EventID;
+   delete from Guests where EventID=@EventID;
+   delete from Invitations where  EventID=@EventID;
+end;
+
+go
+
+
+CREATE PROCEDURE DeleteNotification
+    @NotificationID INT
+AS
+BEGIN
+    DELETE FROM Notifications WHERE NotificationID = @NotificationID;
+END;
+go
+
+
+CREATE PROCEDURE DeleteAgenda
+    @AgendaID INT
+AS
+BEGIN
+    DELETE FROM Agendas WHERE AgendaID = @AgendaID;
+END;
+go
+
+
+
+CREATE PROCEDURE DeleteGuest
+    @GuestID INT
+AS
+BEGIN
+    DELETE FROM Guests WHERE GuestID = @GuestID;
+END;
+go
+
+
+
+CREATE PROCEDURE DeleteInvitation
+    @InvitationID INT
+AS
+BEGIN
+    DELETE FROM Invitations WHERE InvitationID = @InvitationID;
 END;

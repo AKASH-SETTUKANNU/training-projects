@@ -1,55 +1,71 @@
 
-create table Users(UserID int identity(1,1) primary key,
-                   UserName varchar(100) not null,
-				   Email varchar(100) not null unique,
-				   BirthDate date not null,
-				  UserPassword varchar(100) not null,
-				  createdAt Datetime default getdate(),
-				  UserRole varchar(50) not null default 'User'
+create database Users;
+use Users;
+select * from Users;
+select * from Agendas;
+select * from Events;
+select * from Guests;
+select * from Invitations;
+select * from Notifications;
+select * from UserDeletionLog;
+select * from EventDeletionLog;
+
+SELECT * FROM dbo.getAllUsersAndData();
+
+
+CREATE TABLE Users (
+    UserID INT IDENTITY(1,1) PRIMARY KEY,
+    UserName VARCHAR(100) NOT NULL,
+    Email VARCHAR(100) NOT NULL UNIQUE,
+    BirthDate DATE NOT NULL,
+    UserPassword VARCHAR(100) NOT NULL,
+    CreatedAt DATETIME DEFAULT GETDATE(),
+    UserRole VARCHAR(50) NOT NULL DEFAULT 'User'
 );
 
-create table Events(
-    EventId int identity(1,1) primary key,
-	EventName varchar(100) not null,
-	EventDate datetime not null,
-	EventDescription varchar(100) not null,
-	EventStatus varchar(100) not null,
-	EventCategory varchar(50) not null,
-	AcceptCount int default 0,
-	PendingCount int default 0,
-	RejectCount int default 0,
-	ImageUrl varchar(255),
-	UserId int foreign key references Users(UserId)
-	);
+ 
+CREATE TABLE Events (
+    EventID INT IDENTITY(1,1) PRIMARY KEY,
+    EventName VARCHAR(100) NOT NULL,
+    EventDate DATETIME NOT NULL,
+    EventDescription VARCHAR(100) NOT NULL,
+    EventStatus VARCHAR(100) NOT NULL,
+    EventCategory VARCHAR(50) NOT NULL,
+    AcceptCount INT DEFAULT 0,
+    PendingCount INT DEFAULT 0,
+    RejectCount INT DEFAULT 0,
+    ImageUrl VARCHAR(255),
+    UserID INT FOREIGN KEY REFERENCES Users(UserID)
+);
 
-create table Notifications(
-     NotificationID int identity(1,1) primary key,
-	 UserID INT FOREIGN KEY REFERENCES Users(UserID),
-	 SenderEmail varchar(100) not null,
-	 SenderName varchar(100) not null,
-	 GuestEmail varchar(100) not Null,
-	 EventId int foreign key references Events(EventID),
-	 RespondSent bit not null
-	 );
+CREATE TABLE Notifications (
+    NotificationID INT IDENTITY(1,1) PRIMARY KEY,
+    UserID INT FOREIGN KEY REFERENCES Users(UserID),
+    SenderEmail VARCHAR(100) NOT NULL,
+    SenderName VARCHAR(100) NOT NULL,
+    GuestEmail VARCHAR(100) NOT NULL,
+    EventID INT FOREIGN KEY REFERENCES Events(EventID),
+    RespondSent BIT NOT NULL
+);
 
-create table Agendas(
-      AgendaID int identity(1,1) primary key,
-	  EventID int foreign key references Events(EventID),
-	  AgendaLocation varchar(100),
-	  AgendaDate date not null,
-	  AgendaStartTime time not null,
-	  AgendaEndTime time not null,
-	  AgendaDescription varchar(100) not null
-	  );
+CREATE TABLE Agendas (
+    AgendaID INT IDENTITY(1,1) PRIMARY KEY,
+    EventID INT FOREIGN KEY REFERENCES Events(EventID),
+    AgendaLocation VARCHAR(100),
+    AgendaDate DATE NOT NULL,
+    AgendaStartTime TIME NOT NULL,
+    AgendaEndTime TIME NOT NULL,
+    AgendaDescription VARCHAR(100) NOT NULL
+);
 
-create table Guests(
-     GuestID int identity(1,1) primary key,
-	 EventID int foreign key references Events(EventID),
-	 GuestName varchar(100),
-	 GuestEmail varchar(100),
-	 GuestBirthDate date,
-	 GuestLocation varchar(100)
-	 );
+CREATE TABLE Guests (
+    GuestID INT IDENTITY(1,1) PRIMARY KEY,
+    EventID INT FOREIGN KEY REFERENCES Events(EventID),
+    GuestName VARCHAR(100),
+    GuestEmail VARCHAR(100),
+    GuestBirthDate DATE,
+    GuestLocation VARCHAR(100)
+);
 
 CREATE TABLE Invitations (
     InvitationID INT IDENTITY(1,1) PRIMARY KEY,
@@ -65,5 +81,17 @@ CREATE TABLE Invitations (
     AgendaEndTime TIME NOT NULL,
     AgendaDescription VARCHAR(255),
     InvitationSent BIT NOT NULL,
-    Response VARCHAR(20)  
+    Response VARCHAR(20)
 );
+
+CREATE TABLE UserDeletionLog (
+    LogID INT IDENTITY(1,1) PRIMARY KEY,
+    UserID INT NOT NULL,
+    DeletionDate DATETIME NOT NULL
+);
+ 
+CREATE TABLE EventDeletionLog(
+     LogID int identity(1,1) primary key,
+	 EventID int not null,
+	 DeletionDate datetime not null
+	 );
