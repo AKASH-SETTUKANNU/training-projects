@@ -35,16 +35,17 @@ CREATE TABLE Event_Management.Events (
     ImageUrl VARCHAR(255),
     UserID INT FOREIGN KEY REFERENCES Event_Management.Users(UserID)
 );
-
+drop table Event_Management.Notifications
 CREATE TABLE Event_Management.Notifications (
     NotificationID INT IDENTITY(1,1) PRIMARY KEY,
-    ReciverID INT FOREIGN KEY REFERENCES Users(UserID),       
-    SenderID INT FOREIGN KEY REFERENCES Users(UserID),         
-    SenderName VARCHAR(100) NOT NULL,                         
-    GuestID INT FOREIGN KEY REFERENCES Users(UserID),          
-    EventID INT FOREIGN KEY REFERENCES Events(EventID),       
-    RespondSent BIT NOT NULL                                 
+    ReciverUserID INT FOREIGN KEY REFERENCES Event_Management.Users(UserID),    
+    SenderUserID INT FOREIGN KEY REFERENCES Event_Management.Users(UserID),        
+    SenderName VARCHAR(100) NOT NULL,                        
+    GuestID INT FOREIGN KEY REFERENCES Event_Management.Users(UserID),        
+    EventID INT FOREIGN KEY REFERENCES Event_Management.Events(EventID),       
+    RespondSent BIT NOT NULL                               
 );
+
 
 
 CREATE TABLE Event_Management.Agendas (

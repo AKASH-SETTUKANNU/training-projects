@@ -53,17 +53,37 @@ go
 
 
 CREATE PROCEDURE Event_Management.AddNotification
-    @UserId INT,
-    @SenderEmail VARCHAR(100),
+    @ReciverUserID INT,
+    @SenderUserID INT,
     @SenderName VARCHAR(100),
-    @GuestEmail VARCHAR(100),
-    @EventId INT,
+    @GuestID INT,
+    @EventID INT,
+    @AgendaID INT,
     @RespondSent BIT
 AS
 BEGIN
-    INSERT INTO Notifications (UserID, SenderEmail, SenderName, GuestEmail, EventId, RespondSent)
-    VALUES (@UserId, @SenderEmail, @SenderName, @GuestEmail, @EventId, @RespondSent);
+    INSERT INTO Event_Management.Notifications 
+    (
+        ReciverUserID, 
+        SenderUserID, 
+        SenderName, 
+        GuestID, 
+        EventID, 
+        AgendaID, 
+        RespondSent
+    )
+    VALUES 
+    (
+        @ReciverUserID, 
+        @SenderUserID, 
+        @SenderName, 
+        @GuestID, 
+        @EventID, 
+        @AgendaID, 
+        @RespondSent
+    );
 END;
+
 go
 
 drop procedure Event_Management.AddAgenda
