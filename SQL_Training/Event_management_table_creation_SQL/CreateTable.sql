@@ -1,19 +1,18 @@
 
 create database Users;
 use Users;
-select * from Users;
-select * from Agendas;
-select * from Events;
-select * from Guests;
-select * from Invitations;
-select * from Notifications;
-select * from UserDeletionLog;
-select * from EventDeletionLog;
+select * from Event_Management.Users ;
+select * from Event_Management.Agendas;
+select * from Event_Management.Events;
+select * from Event_Management.Guests;
+select * from Event_Management.Invitations;
+select * from Event_Management.Notifications;
+
 
 SELECT * FROM dbo.getAllUsersAndData();
 
 
-CREATE TABLE Users (
+CREATE TABLE Event_Management.Users (
     UserID INT IDENTITY(1,1) PRIMARY KEY,
     UserName VARCHAR(100) NOT NULL,
     Email VARCHAR(100) NOT NULL UNIQUE,
@@ -23,8 +22,7 @@ CREATE TABLE Users (
     UserRole VARCHAR(50) NOT NULL DEFAULT 'User'
 );
 
- 
-CREATE TABLE Events (
+CREATE TABLE Event_Management.Events (
     EventID INT IDENTITY(1,1) PRIMARY KEY,
     EventName VARCHAR(100) NOT NULL,
     EventDate DATETIME NOT NULL,
@@ -35,22 +33,23 @@ CREATE TABLE Events (
     PendingCount INT DEFAULT 0,
     RejectCount INT DEFAULT 0,
     ImageUrl VARCHAR(255),
-    UserID INT FOREIGN KEY REFERENCES Users(UserID)
+    UserID INT FOREIGN KEY REFERENCES Event_Management.Users(UserID)
 );
 
-CREATE TABLE Notifications (
+CREATE TABLE Event_Management.Notifications (
     NotificationID INT IDENTITY(1,1) PRIMARY KEY,
-    UserID INT FOREIGN KEY REFERENCES Users(UserID),
-    SenderEmail VARCHAR(100) NOT NULL,
-    SenderName VARCHAR(100) NOT NULL,
-    GuestEmail VARCHAR(100) NOT NULL,
-    EventID INT FOREIGN KEY REFERENCES Events(EventID),
-    RespondSent BIT NOT NULL
+    ReciverID INT FOREIGN KEY REFERENCES Users(UserID),       
+    SenderID INT FOREIGN KEY REFERENCES Users(UserID),         
+    SenderName VARCHAR(100) NOT NULL,                         
+    GuestID INT FOREIGN KEY REFERENCES Users(UserID),          
+    EventID INT FOREIGN KEY REFERENCES Events(EventID),       
+    RespondSent BIT NOT NULL                                 
 );
 
-CREATE TABLE Agendas (
+
+CREATE TABLE Event_Management.Agendas (
     AgendaID INT IDENTITY(1,1) PRIMARY KEY,
-    EventID INT FOREIGN KEY REFERENCES Events(EventID),
+    EventID INT FOREIGN KEY REFERENCES Event_Management.Events(EventID),
     AgendaLocation VARCHAR(100),
     AgendaDate DATE NOT NULL,
     AgendaStartTime TIME NOT NULL,
@@ -58,40 +57,20 @@ CREATE TABLE Agendas (
     AgendaDescription VARCHAR(100) NOT NULL
 );
 
-CREATE TABLE Guests (
+CREATE TABLE Event_Management.Guests (
     GuestID INT IDENTITY(1,1) PRIMARY KEY,
-    EventID INT FOREIGN KEY REFERENCES Events(EventID),
+    EventID INT FOREIGN KEY REFERENCES Event_Management.Events(EventID),
     GuestName VARCHAR(100),
     GuestEmail VARCHAR(100),
     GuestBirthDate DATE,
     GuestLocation VARCHAR(100)
 );
 
-CREATE TABLE Invitations (
+CREATE TABLE Event_Management.Invitations (
     InvitationID INT IDENTITY(1,1) PRIMARY KEY,
-    UserID INT FOREIGN KEY REFERENCES Users(UserID),
-    EventID INT FOREIGN KEY REFERENCES Events(EventID),
-    EventName VARCHAR(100),
-    EventLocation VARCHAR(100),
-    EventDate DATETIME NOT NULL,
-    EventDescription VARCHAR(255),
-    AgendaLocation VARCHAR(100),
-    AgendaDate DATE NOT NULL,
-    AgendaStartTime TIME NOT NULL,
-    AgendaEndTime TIME NOT NULL,
-    AgendaDescription VARCHAR(255),
+    UserID INT FOREIGN KEY REFERENCES Users(UserID),  
+    EventID INT FOREIGN KEY REFERENCES Events(EventID), 
+    AgendaID INT FOREIGN KEY REFERENCES Agendas(AgendaID),  
     InvitationSent BIT NOT NULL,
     Response VARCHAR(20)
 );
-
-CREATE TABLE UserDeletionLog (
-    LogID INT IDENTITY(1,1) PRIMARY KEY,
-    UserID INT NOT NULL,
-    DeletionDate DATETIME NOT NULL
-);
- 
-CREATE TABLE EventDeletionLog(
-     LogID int identity(1,1) primary key,
-	 EventID int not null,
-	 DeletionDate datetime not null
-	 );

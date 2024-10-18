@@ -11,7 +11,7 @@ namespace EventManagementPro.models
         public string GuestEmail { get; set; }
         public int EventID { get; set; }
         public bool RespondSent { get; set; }
-        public EventData Event { get; set; } // Navigation property
-        public UserData User { get; set; } // Navigation property
+        public EventData Event { get; set; } 
+        public UserData User { get; set; } 
     }
 }

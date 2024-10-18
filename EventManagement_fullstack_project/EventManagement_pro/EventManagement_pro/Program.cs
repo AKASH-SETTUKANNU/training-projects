@@ -1,3 +1,5 @@
+using EventManagement_pro.Repositories;
+using EventManagement_pro.Services;
 using EventManagementPro.Data;
 using EventManagementPro.Repositories;
 using EventManagementPro.Services;
@@ -16,6 +18,14 @@ builder.Services.AddScoped<IDataAccess>(provider =>
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<UserService>();
 
+builder.Services.AddScoped<EventService>();
+builder.Services.AddScoped<IEventsRepository, EventsRepository>();
+
+builder.Services.AddScoped<GuestService>();
+builder.Services.AddScoped<IGuestRepository, GuestRepository>();
+
+builder.Services.AddScoped<AgendaService>();
+builder.Services.AddScoped<IAgendaRepository,AgendaRepository>();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

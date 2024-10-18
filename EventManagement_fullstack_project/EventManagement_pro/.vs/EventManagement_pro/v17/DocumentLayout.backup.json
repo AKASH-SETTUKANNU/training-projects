@@ -3,40 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\EventManagement_pro\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D2083B63-2F9D-4AC7-A92C-09BCC0C7F0A4}|EventManagement_pro\\EventManagement_pro.csproj|c:\\users\\akash.settukannu\\onedrive - claysys technologies pvt ltd -1\\desktop\\eventmanagement_pro\\eventmanagement_pro\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2083B63-2F9D-4AC7-A92C-09BCC0C7F0A4}|EventManagement_pro\\EventManagement_pro.csproj|solutionrelative:eventmanagement_pro\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D2083B63-2F9D-4AC7-A92C-09BCC0C7F0A4}|EventManagement_pro\\EventManagement_pro.csproj|c:\\users\\akash.settukannu\\onedrive - claysys technologies pvt ltd -1\\desktop\\eventmanagement_pro\\eventmanagement_pro\\controllers\\eventscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2083B63-2F9D-4AC7-A92C-09BCC0C7F0A4}|EventManagement_pro\\EventManagement_pro.csproj|solutionrelative:eventmanagement_pro\\controllers\\eventscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D2083B63-2F9D-4AC7-A92C-09BCC0C7F0A4}|EventManagement_pro\\EventManagement_pro.csproj|c:\\users\\akash.settukannu\\onedrive - claysys technologies pvt ltd -1\\desktop\\eventmanagement_pro\\eventmanagement_pro\\repositories\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2083B63-2F9D-4AC7-A92C-09BCC0C7F0A4}|EventManagement_pro\\EventManagement_pro.csproj|solutionrelative:eventmanagement_pro\\repositories\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D2083B63-2F9D-4AC7-A92C-09BCC0C7F0A4}|EventManagement_pro\\EventManagement_pro.csproj|c:\\users\\akash.settukannu\\onedrive - claysys technologies pvt ltd -1\\desktop\\eventmanagement_pro\\eventmanagement_pro\\repositories\\eventsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2083B63-2F9D-4AC7-A92C-09BCC0C7F0A4}|EventManagement_pro\\EventManagement_pro.csproj|solutionrelative:eventmanagement_pro\\repositories\\eventsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D2083B63-2F9D-4AC7-A92C-09BCC0C7F0A4}|EventManagement_pro\\EventManagement_pro.csproj|c:\\users\\akash.settukannu\\onedrive - claysys technologies pvt ltd -1\\desktop\\eventmanagement_pro\\eventmanagement_pro\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2083B63-2F9D-4AC7-A92C-09BCC0C7F0A4}|EventManagement_pro\\EventManagement_pro.csproj|solutionrelative:eventmanagement_pro\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D2083B63-2F9D-4AC7-A92C-09BCC0C7F0A4}|EventManagement_pro\\EventManagement_pro.csproj|c:\\users\\akash.settukannu\\onedrive - claysys technologies pvt ltd -1\\desktop\\eventmanagement_pro\\eventmanagement_pro\\models\\eventdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2083B63-2F9D-4AC7-A92C-09BCC0C7F0A4}|EventManagement_pro\\EventManagement_pro.csproj|solutionrelative:eventmanagement_pro\\models\\eventdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2083B63-2F9D-4AC7-A92C-09BCC0C7F0A4}|EventManagement_pro\\EventManagement_pro.csproj|c:\\users\\akash.settukannu\\onedrive - claysys technologies pvt ltd -1\\desktop\\eventmanagement_pro\\eventmanagement_pro\\controllers\\agendacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2083B63-2F9D-4AC7-A92C-09BCC0C7F0A4}|EventManagement_pro\\EventManagement_pro.csproj|solutionrelative:eventmanagement_pro\\controllers\\agendacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2083B63-2F9D-4AC7-A92C-09BCC0C7F0A4}|EventManagement_pro\\EventManagement_pro.csproj|c:\\users\\akash.settukannu\\onedrive - claysys technologies pvt ltd -1\\desktop\\eventmanagement_pro\\eventmanagement_pro\\controllers\\guestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2083B63-2F9D-4AC7-A92C-09BCC0C7F0A4}|EventManagement_pro\\EventManagement_pro.csproj|solutionrelative:eventmanagement_pro\\controllers\\guestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D2083B63-2F9D-4AC7-A92C-09BCC0C7F0A4}|EventManagement_pro\\EventManagement_pro.csproj|c:\\users\\akash.settukannu\\onedrive - claysys technologies pvt ltd -1\\desktop\\eventmanagement_pro\\eventmanagement_pro\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D2083B63-2F9D-4AC7-A92C-09BCC0C7F0A4}|EventManagement_pro\\EventManagement_pro.csproj|solutionrelative:eventmanagement_pro\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D2083B63-2F9D-4AC7-A92C-09BCC0C7F0A4}|EventManagement_pro\\EventManagement_pro.csproj|c:\\users\\akash.settukannu\\onedrive - claysys technologies pvt ltd -1\\desktop\\eventmanagement_pro\\eventmanagement_pro\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2083B63-2F9D-4AC7-A92C-09BCC0C7F0A4}|EventManagement_pro\\EventManagement_pro.csproj|solutionrelative:eventmanagement_pro\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D2083B63-2F9D-4AC7-A92C-09BCC0C7F0A4}|EventManagement_pro\\EventManagement_pro.csproj|c:\\users\\akash.settukannu\\onedrive - claysys technologies pvt ltd -1\\desktop\\eventmanagement_pro\\eventmanagement_pro\\data\\idataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2083B63-2F9D-4AC7-A92C-09BCC0C7F0A4}|EventManagement_pro\\EventManagement_pro.csproj|solutionrelative:eventmanagement_pro\\data\\idataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D2083B63-2F9D-4AC7-A92C-09BCC0C7F0A4}|EventManagement_pro\\EventManagement_pro.csproj|c:\\users\\akash.settukannu\\onedrive - claysys technologies pvt ltd -1\\desktop\\eventmanagement_pro\\eventmanagement_pro\\data\\dataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2083B63-2F9D-4AC7-A92C-09BCC0C7F0A4}|EventManagement_pro\\EventManagement_pro.csproj|solutionrelative:eventmanagement_pro\\data\\dataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D2083B63-2F9D-4AC7-A92C-09BCC0C7F0A4}|EventManagement_pro\\EventManagement_pro.csproj|c:\\users\\akash.settukannu\\onedrive - claysys technologies pvt ltd -1\\desktop\\eventmanagement_pro\\eventmanagement_pro\\models\\userdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2083B63-2F9D-4AC7-A92C-09BCC0C7F0A4}|EventManagement_pro\\EventManagement_pro.csproj|solutionrelative:eventmanagement_pro\\models\\userdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D2083B63-2F9D-4AC7-A92C-09BCC0C7F0A4}|EventManagement_pro\\EventManagement_pro.csproj|c:\\users\\akash.settukannu\\onedrive - claysys technologies pvt ltd -1\\desktop\\eventmanagement_pro\\eventmanagement_pro\\models\\notificationdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2083B63-2F9D-4AC7-A92C-09BCC0C7F0A4}|EventManagement_pro\\EventManagement_pro.csproj|solutionrelative:eventmanagement_pro\\models\\notificationdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D2083B63-2F9D-4AC7-A92C-09BCC0C7F0A4}|EventManagement_pro\\EventManagement_pro.csproj|c:\\users\\akash.settukannu\\onedrive - claysys technologies pvt ltd -1\\desktop\\eventmanagement_pro\\eventmanagement_pro\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D2083B63-2F9D-4AC7-A92C-09BCC0C7F0A4}|EventManagement_pro\\EventManagement_pro.csproj|solutionrelative:eventmanagement_pro\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2083B63-2F9D-4AC7-A92C-09BCC0C7F0A4}|EventManagement_pro\\EventManagement_pro.csproj|c:\\users\\akash.settukannu\\onedrive - claysys technologies pvt ltd -1\\desktop\\eventmanagement_pro\\eventmanagement_pro\\repositories\\guestrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2083B63-2F9D-4AC7-A92C-09BCC0C7F0A4}|EventManagement_pro\\EventManagement_pro.csproj|solutionrelative:eventmanagement_pro\\repositories\\guestrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2083B63-2F9D-4AC7-A92C-09BCC0C7F0A4}|EventManagement_pro\\EventManagement_pro.csproj|c:\\users\\akash.settukannu\\onedrive - claysys technologies pvt ltd -1\\desktop\\eventmanagement_pro\\eventmanagement_pro\\repositories\\agendarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2083B63-2F9D-4AC7-A92C-09BCC0C7F0A4}|EventManagement_pro\\EventManagement_pro.csproj|solutionrelative:eventmanagement_pro\\repositories\\agendarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,120 +58,127 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\EventManagement_pro\\EventManagement_pro\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "EventManagement_pro\\Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\EventManagement_pro\\EventManagement_pro\\Controllers\\UserController.cs*",
-              "RelativeToolTip": "EventManagement_pro\\Controllers\\UserController.cs*",
-              "ViewState": "AgIAACwAAAAAAAAAAAAgwEAAAAA/AAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "EventData.cs",
+              "DocumentMoniker": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\EventManagement_pro\\EventManagement_pro\\models\\EventData.cs",
+              "RelativeDocumentMoniker": "EventManagement_pro\\models\\EventData.cs",
+              "ToolTip": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\EventManagement_pro\\EventManagement_pro\\models\\EventData.cs",
+              "RelativeToolTip": "EventManagement_pro\\models\\EventData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-16T08:34:02.22Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\EventManagement_pro\\EventManagement_pro\\data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "EventManagement_pro\\data\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\EventManagement_pro\\EventManagement_pro\\data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "EventManagement_pro\\data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-16T08:33:59.969Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "DataAccess.cs",
-              "DocumentMoniker": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\EventManagement_pro\\EventManagement_pro\\data\\DataAccess.cs",
-              "RelativeDocumentMoniker": "EventManagement_pro\\data\\DataAccess.cs",
-              "ToolTip": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\EventManagement_pro\\EventManagement_pro\\data\\DataAccess.cs*",
-              "RelativeToolTip": "EventManagement_pro\\data\\DataAccess.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-16T08:33:58.66Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IDataAccess.cs",
-              "DocumentMoniker": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\EventManagement_pro\\EventManagement_pro\\data\\IDataAccess.cs",
-              "RelativeDocumentMoniker": "EventManagement_pro\\data\\IDataAccess.cs",
-              "ToolTip": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\EventManagement_pro\\EventManagement_pro\\data\\IDataAccess.cs",
-              "RelativeToolTip": "EventManagement_pro\\data\\IDataAccess.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAQAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-16T08:33:57.43Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "UserData.cs",
-              "DocumentMoniker": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\EventManagement_pro\\EventManagement_pro\\models\\UserData.cs",
-              "RelativeDocumentMoniker": "EventManagement_pro\\models\\UserData.cs",
-              "ToolTip": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\EventManagement_pro\\EventManagement_pro\\models\\UserData.cs",
-              "RelativeToolTip": "EventManagement_pro\\models\\UserData.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-16T08:33:55.717Z",
+              "WhenOpened": "2024-10-18T05:40:06.363Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "IUserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\EventManagement_pro\\EventManagement_pro\\Repositories\\IUserRepository.cs",
-              "RelativeDocumentMoniker": "EventManagement_pro\\Repositories\\IUserRepository.cs",
-              "ToolTip": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\EventManagement_pro\\EventManagement_pro\\Repositories\\IUserRepository.cs",
-              "RelativeToolTip": "EventManagement_pro\\Repositories\\IUserRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAAXAAAAAAAAAA==",
+              "Title": "EventsRepository.cs",
+              "DocumentMoniker": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\EventManagement_pro\\EventManagement_pro\\Repositories\\EventsRepository.cs",
+              "RelativeDocumentMoniker": "EventManagement_pro\\Repositories\\EventsRepository.cs",
+              "ToolTip": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\EventManagement_pro\\EventManagement_pro\\Repositories\\EventsRepository.cs",
+              "RelativeToolTip": "EventManagement_pro\\Repositories\\EventsRepository.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAYwBoAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-16T08:33:53.614Z",
+              "WhenOpened": "2024-10-18T05:07:42.079Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AgendaController.cs",
+              "DocumentMoniker": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\EventManagement_pro\\EventManagement_pro\\Controllers\\AgendaController.cs",
+              "RelativeDocumentMoniker": "EventManagement_pro\\Controllers\\AgendaController.cs",
+              "ToolTip": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\EventManagement_pro\\EventManagement_pro\\Controllers\\AgendaController.cs",
+              "RelativeToolTip": "EventManagement_pro\\Controllers\\AgendaController.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAgwC4AAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-17T10:33:44.887Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\EventManagement_pro\\EventManagement_pro\\Repositories\\UserRepository.cs",
-              "RelativeDocumentMoniker": "EventManagement_pro\\Repositories\\UserRepository.cs",
-              "ToolTip": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\EventManagement_pro\\EventManagement_pro\\Repositories\\UserRepository.cs",
-              "RelativeToolTip": "EventManagement_pro\\Repositories\\UserRepository.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAYwCcAAAAsAAAAAAAAAA==",
+              "Title": "EventsController.cs",
+              "DocumentMoniker": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\EventManagement_pro\\EventManagement_pro\\Controllers\\EventsController.cs",
+              "RelativeDocumentMoniker": "EventManagement_pro\\Controllers\\EventsController.cs",
+              "ToolTip": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\EventManagement_pro\\EventManagement_pro\\Controllers\\EventsController.cs",
+              "RelativeToolTip": "EventManagement_pro\\Controllers\\EventsController.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAiwGoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-16T08:33:52.152Z",
+              "WhenOpened": "2024-10-17T10:33:43.089Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\EventManagement_pro\\EventManagement_pro\\Services\\UserService.cs",
-              "RelativeDocumentMoniker": "EventManagement_pro\\Services\\UserService.cs",
-              "ToolTip": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\EventManagement_pro\\EventManagement_pro\\Services\\UserService.cs",
-              "RelativeToolTip": "EventManagement_pro\\Services\\UserService.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAgwBoAAAAvAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "GuestController.cs",
+              "DocumentMoniker": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\EventManagement_pro\\EventManagement_pro\\Controllers\\GuestController.cs",
+              "RelativeDocumentMoniker": "EventManagement_pro\\Controllers\\GuestController.cs",
+              "ToolTip": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\EventManagement_pro\\EventManagement_pro\\Controllers\\GuestController.cs",
+              "RelativeToolTip": "EventManagement_pro\\Controllers\\GuestController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-16T08:33:47.446Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-17T10:33:41.448Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\EventManagement_pro\\EventManagement_pro\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "EventManagement_pro\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\EventManagement_pro\\EventManagement_pro\\Controllers\\UserController.cs",
+              "RelativeToolTip": "EventManagement_pro\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-17T10:33:39.614Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "NotificationData.cs",
+              "DocumentMoniker": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\EventManagement_pro\\EventManagement_pro\\models\\NotificationData.cs",
+              "RelativeDocumentMoniker": "EventManagement_pro\\models\\NotificationData.cs",
+              "ToolTip": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\EventManagement_pro\\EventManagement_pro\\models\\NotificationData.cs",
+              "RelativeToolTip": "EventManagement_pro\\models\\NotificationData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-17T10:16:34.18Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
+              "Title": "GuestRepository.cs",
+              "DocumentMoniker": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\EventManagement_pro\\EventManagement_pro\\Repositories\\GuestRepository.cs",
+              "RelativeDocumentMoniker": "EventManagement_pro\\Repositories\\GuestRepository.cs",
+              "ToolTip": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\EventManagement_pro\\EventManagement_pro\\Repositories\\GuestRepository.cs",
+              "RelativeToolTip": "EventManagement_pro\\Repositories\\GuestRepository.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAEQAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-17T10:09:55.087Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AgendaRepository.cs",
+              "DocumentMoniker": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\EventManagement_pro\\EventManagement_pro\\Repositories\\AgendaRepository.cs",
+              "RelativeDocumentMoniker": "EventManagement_pro\\Repositories\\AgendaRepository.cs",
+              "ToolTip": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\EventManagement_pro\\EventManagement_pro\\Repositories\\AgendaRepository.cs",
+              "RelativeToolTip": "EventManagement_pro\\Repositories\\AgendaRepository.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAYwC0AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-17T09:56:00.114Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\EventManagement_pro\\EventManagement_pro\\Program.cs",
               "RelativeDocumentMoniker": "EventManagement_pro\\Program.cs",
-              "ToolTip": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\EventManagement_pro\\EventManagement_pro\\Program.cs*",
-              "RelativeToolTip": "EventManagement_pro\\Program.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\EventManagement_pro\\EventManagement_pro\\Program.cs",
+              "RelativeToolTip": "EventManagement_pro\\Program.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABUAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-16T08:33:38.407Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-17T09:40:32.77Z"
             }
           ]
         }

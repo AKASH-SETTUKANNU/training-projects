@@ -77,9 +77,8 @@ namespace EventManagementPro.Repositories
 
         public async Task<bool> Delete(int id)
         {
-            try
-            {
-                var parameters = new { UserId = id };
+            try { 
+                 var parameters = new { UserId = id };
                 await _dataAccess.ExecuteStoredProcedureAsync("Event_Management.DeleteUser", parameters);
                 return true;
             }
