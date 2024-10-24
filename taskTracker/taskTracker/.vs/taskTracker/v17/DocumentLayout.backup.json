@@ -1,0 +1,228 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\taskTracker\\taskTracker\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{32D5FB3B-9E84-4046-9B1A-9A2A57E2C07B}|taskTracker\\taskTracker.csproj|c:\\users\\akash.settukannu\\onedrive - claysys technologies pvt ltd -1\\desktop\\tasktracker\\tasktracker\\tasktracker\\controllers\\taskcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32D5FB3B-9E84-4046-9B1A-9A2A57E2C07B}|taskTracker\\taskTracker.csproj|solutionrelative:tasktracker\\controllers\\taskcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32D5FB3B-9E84-4046-9B1A-9A2A57E2C07B}|taskTracker\\taskTracker.csproj|c:\\users\\akash.settukannu\\onedrive - claysys technologies pvt ltd -1\\desktop\\tasktracker\\tasktracker\\tasktracker\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32D5FB3B-9E84-4046-9B1A-9A2A57E2C07B}|taskTracker\\taskTracker.csproj|solutionrelative:tasktracker\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32D5FB3B-9E84-4046-9B1A-9A2A57E2C07B}|taskTracker\\taskTracker.csproj|c:\\users\\akash.settukannu\\onedrive - claysys technologies pvt ltd -1\\desktop\\tasktracker\\tasktracker\\tasktracker\\repositories\\taskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32D5FB3B-9E84-4046-9B1A-9A2A57E2C07B}|taskTracker\\taskTracker.csproj|solutionrelative:tasktracker\\repositories\\taskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32D5FB3B-9E84-4046-9B1A-9A2A57E2C07B}|taskTracker\\taskTracker.csproj|c:\\users\\akash.settukannu\\onedrive - claysys technologies pvt ltd -1\\desktop\\tasktracker\\tasktracker\\tasktracker\\models\\taskdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32D5FB3B-9E84-4046-9B1A-9A2A57E2C07B}|taskTracker\\taskTracker.csproj|solutionrelative:tasktracker\\models\\taskdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32D5FB3B-9E84-4046-9B1A-9A2A57E2C07B}|taskTracker\\taskTracker.csproj|c:\\users\\akash.settukannu\\onedrive - claysys technologies pvt ltd -1\\desktop\\tasktracker\\tasktracker\\tasktracker\\repositories\\itaskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32D5FB3B-9E84-4046-9B1A-9A2A57E2C07B}|taskTracker\\taskTracker.csproj|solutionrelative:tasktracker\\repositories\\itaskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32D5FB3B-9E84-4046-9B1A-9A2A57E2C07B}|taskTracker\\taskTracker.csproj|c:\\users\\akash.settukannu\\onedrive - claysys technologies pvt ltd -1\\desktop\\tasktracker\\tasktracker\\tasktracker\\services\\taskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32D5FB3B-9E84-4046-9B1A-9A2A57E2C07B}|taskTracker\\taskTracker.csproj|solutionrelative:tasktracker\\services\\taskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32D5FB3B-9E84-4046-9B1A-9A2A57E2C07B}|taskTracker\\taskTracker.csproj|c:\\users\\akash.settukannu\\onedrive - claysys technologies pvt ltd -1\\desktop\\tasktracker\\tasktracker\\tasktracker\\data\\dataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32D5FB3B-9E84-4046-9B1A-9A2A57E2C07B}|taskTracker\\taskTracker.csproj|solutionrelative:tasktracker\\data\\dataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32D5FB3B-9E84-4046-9B1A-9A2A57E2C07B}|taskTracker\\taskTracker.csproj|c:\\users\\akash.settukannu\\onedrive - claysys technologies pvt ltd -1\\desktop\\tasktracker\\tasktracker\\tasktracker\\repositories\\activityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32D5FB3B-9E84-4046-9B1A-9A2A57E2C07B}|taskTracker\\taskTracker.csproj|solutionrelative:tasktracker\\repositories\\activityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32D5FB3B-9E84-4046-9B1A-9A2A57E2C07B}|taskTracker\\taskTracker.csproj|c:\\users\\akash.settukannu\\onedrive - claysys technologies pvt ltd -1\\desktop\\tasktracker\\tasktracker\\tasktracker\\models\\activitydata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32D5FB3B-9E84-4046-9B1A-9A2A57E2C07B}|taskTracker\\taskTracker.csproj|solutionrelative:tasktracker\\models\\activitydata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32D5FB3B-9E84-4046-9B1A-9A2A57E2C07B}|taskTracker\\taskTracker.csproj|c:\\users\\akash.settukannu\\onedrive - claysys technologies pvt ltd -1\\desktop\\tasktracker\\tasktracker\\tasktracker\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32D5FB3B-9E84-4046-9B1A-9A2A57E2C07B}|taskTracker\\taskTracker.csproj|solutionrelative:tasktracker\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32D5FB3B-9E84-4046-9B1A-9A2A57E2C07B}|taskTracker\\taskTracker.csproj|c:\\users\\akash.settukannu\\onedrive - claysys technologies pvt ltd -1\\desktop\\tasktracker\\tasktracker\\tasktracker\\controllers\\activitycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32D5FB3B-9E84-4046-9B1A-9A2A57E2C07B}|taskTracker\\taskTracker.csproj|solutionrelative:tasktracker\\controllers\\activitycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32D5FB3B-9E84-4046-9B1A-9A2A57E2C07B}|taskTracker\\taskTracker.csproj|c:\\users\\akash.settukannu\\onedrive - claysys technologies pvt ltd -1\\desktop\\tasktracker\\tasktracker\\tasktracker\\data\\idataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32D5FB3B-9E84-4046-9B1A-9A2A57E2C07B}|taskTracker\\taskTracker.csproj|solutionrelative:tasktracker\\data\\idataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\taskTracker\\taskTracker\\taskTracker\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "taskTracker\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\taskTracker\\taskTracker\\taskTracker\\Controllers\\UserController.cs",
+              "RelativeToolTip": "taskTracker\\Controllers\\UserController.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-24T18:05:44.1Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TaskRepository.cs",
+              "DocumentMoniker": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\taskTracker\\taskTracker\\taskTracker\\Repositories\\TaskRepository.cs",
+              "RelativeDocumentMoniker": "taskTracker\\Repositories\\TaskRepository.cs",
+              "ToolTip": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\taskTracker\\taskTracker\\taskTracker\\Repositories\\TaskRepository.cs",
+              "RelativeToolTip": "taskTracker\\Repositories\\TaskRepository.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAkwHwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-24T09:18:06.654Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DataAccess.cs",
+              "DocumentMoniker": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\taskTracker\\taskTracker\\taskTracker\\data\\DataAccess.cs",
+              "RelativeDocumentMoniker": "taskTracker\\data\\DataAccess.cs",
+              "ToolTip": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\taskTracker\\taskTracker\\taskTracker\\data\\DataAccess.cs",
+              "RelativeToolTip": "taskTracker\\data\\DataAccess.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAwwDUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-24T09:33:16.836Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ActivityData.cs",
+              "DocumentMoniker": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\taskTracker\\taskTracker\\taskTracker\\models\\ActivityData.cs",
+              "RelativeDocumentMoniker": "taskTracker\\models\\ActivityData.cs",
+              "ToolTip": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\taskTracker\\taskTracker\\taskTracker\\models\\ActivityData.cs",
+              "RelativeToolTip": "taskTracker\\models\\ActivityData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-24T13:23:21.324Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ActivityRepository.cs",
+              "DocumentMoniker": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\taskTracker\\taskTracker\\taskTracker\\Repositories\\ActivityRepository.cs",
+              "RelativeDocumentMoniker": "taskTracker\\Repositories\\ActivityRepository.cs",
+              "ToolTip": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\taskTracker\\taskTracker\\taskTracker\\Repositories\\ActivityRepository.cs",
+              "RelativeToolTip": "taskTracker\\Repositories\\ActivityRepository.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAQwD0AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-24T09:49:56.222Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TaskData.cs",
+              "DocumentMoniker": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\taskTracker\\taskTracker\\taskTracker\\models\\TaskData.cs",
+              "RelativeDocumentMoniker": "taskTracker\\models\\TaskData.cs",
+              "ToolTip": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\taskTracker\\taskTracker\\taskTracker\\models\\TaskData.cs",
+              "RelativeToolTip": "taskTracker\\models\\TaskData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-24T10:50:23.716Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TaskController.cs",
+              "DocumentMoniker": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\taskTracker\\taskTracker\\taskTracker\\Controllers\\TaskController.cs",
+              "RelativeDocumentMoniker": "taskTracker\\Controllers\\TaskController.cs",
+              "ToolTip": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\taskTracker\\taskTracker\\taskTracker\\Controllers\\TaskController.cs",
+              "RelativeToolTip": "taskTracker\\Controllers\\TaskController.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAiwCYAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-24T05:36:21.574Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TaskService.cs",
+              "DocumentMoniker": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\taskTracker\\taskTracker\\taskTracker\\services\\TaskService.cs",
+              "RelativeDocumentMoniker": "taskTracker\\services\\TaskService.cs",
+              "ToolTip": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\taskTracker\\taskTracker\\taskTracker\\services\\TaskService.cs",
+              "RelativeToolTip": "taskTracker\\services\\TaskService.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAuwCIAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-24T11:00:20.494Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ITaskRepository.cs",
+              "DocumentMoniker": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\taskTracker\\taskTracker\\taskTracker\\Repositories\\ITaskRepository.cs",
+              "RelativeDocumentMoniker": "taskTracker\\Repositories\\ITaskRepository.cs",
+              "ToolTip": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\taskTracker\\taskTracker\\taskTracker\\Repositories\\ITaskRepository.cs",
+              "RelativeToolTip": "taskTracker\\Repositories\\ITaskRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAUwBQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-24T10:58:57.693Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ActivityController.cs",
+              "DocumentMoniker": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\taskTracker\\taskTracker\\taskTracker\\Controllers\\ActivityController.cs",
+              "RelativeDocumentMoniker": "taskTracker\\Controllers\\ActivityController.cs",
+              "ToolTip": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\taskTracker\\taskTracker\\taskTracker\\Controllers\\ActivityController.cs",
+              "RelativeToolTip": "taskTracker\\Controllers\\ActivityController.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAcwF8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-24T08:58:11.741Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\taskTracker\\taskTracker\\taskTracker\\Program.cs",
+              "RelativeDocumentMoniker": "taskTracker\\Program.cs",
+              "ToolTip": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\taskTracker\\taskTracker\\taskTracker\\Program.cs",
+              "RelativeToolTip": "taskTracker\\Program.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAiwBgAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-24T09:31:18.318Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IDataAccess.cs",
+              "DocumentMoniker": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\taskTracker\\taskTracker\\taskTracker\\data\\IDataAccess.cs",
+              "RelativeDocumentMoniker": "taskTracker\\data\\IDataAccess.cs",
+              "ToolTip": "C:\\Users\\akash.settukannu\\OneDrive - Claysys Technologies Pvt Ltd -1\\Desktop\\taskTracker\\taskTracker\\taskTracker\\data\\IDataAccess.cs",
+              "RelativeToolTip": "taskTracker\\data\\IDataAccess.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-24T11:16:19.046Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
